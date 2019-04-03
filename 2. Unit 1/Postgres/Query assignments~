@@ -1,0 +1,60 @@
+1. What was the hottest day in our data set? Where was that?
+
+- select max(maxtemperaturef), zip from weather group by zip limit 1;
+
+2. How many trips started at each station?
+
+- select count(*) from trips group by start_station;
+
+3. What's the shortest trip that happened?
+
+- select min(duration) from trips;
+
+4. What is the average trip duration, by end station?
+
+- select avg(duration) from trips group by end_station;
+
+
+5. To know the column data types: 
+- select column_name, data_type from information_schema.columns where table_name = 'trips' 
+
+
+
+6. What if we wanted to also include a count of the number of trips that started in each cities with its latitude,longitude and the name of the city?
+
+If we want to find out average lat and long for the city: 
+ 
+SELECT s.city, AVG(s.lat) lat, AVG(s.long) long FROM stations s JOIN trips t ON t.start_station = s.name GROUP BY 1;
+     city      |         lat         |         long          
+---------------+---------------------+-----------------------
+ San Jose      | 37.3349988308354056 | -121.8944113008938773
+ San Francisco | 37.7865994780770754 | -122.3992924366962397
+ Palo Alto     | 37.4417411342747112 | -122.1580163356867779
+ Mountain View | 37.3951558365369589 | -122.0844534471011095
+
+
+We are tempted to use the following code: 
+
+SELECT s.city, AVG(s.lat) lat, AVG(s.long) long, count(t.trip_id) FROM stations s JOIN trips t ON t.start_station = s.name GROUP BY 1;
+
+     city      |         lat         |         long          | count  
+---------------+---------------------+-----------------------+--------
+ San Jose      | 37.3349988308354056 | -121.8944113008938773 |  14879
+ San Francisco | 37.7865994780770754 | -122.3992924366962397 | 280323
+ Palo Alto     | 37.4417411342747112 | -122.1580163356867779 |   3116
+ Mountain View | 37.3951558365369589 | -122.0844534471011095 |   6399
+
+
+But the above query is incorrect! When working with JOINs, the join happens before any aggregate functions. So in the example above we're actually taking the average of the latitude and longitude for every trip that occurred in each city, so we'll be skewed to more popular station's coordinates. To show you actual lat and longs for the city:
+
+
+SELECT s.city, AVG(s.lat) lat, AVG(s.long) long FROM stations s GROUP BY 1;    
+ city      |         lat         |         long          
+---------------+---------------------+-----------------------
+ San Jose      | 37.3359428888888889 | -121.8909861666666667
+ San Francisco | 37.7874744864864865 | -122.4017257567567568
+ Palo Alto     | 37.4383745800000000 | -122.1535877000000000
+ Mountain View | 37.3990230000000000 | -122.0843545714285714
+
+
+

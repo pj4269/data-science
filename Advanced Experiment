@@ -1,0 +1,83 @@
+Advanced Experiment: 
+1. Gaussian distribution = normal distrib.
+
+2. If Data Is Gaussian:
+	Use Parametric Statistical Methods
+   Else:
+	Use Nonparametric Statistical Methods
+
+3. I) Normality tests:  ref https://machinelearningmastery.com/a-gentle-introduction-to-normality-tests-in-python/
+
+   a) graphic: 1) look at the histogram.
+                   from matplotlib import pyplot
+                  # seed the random number generator
+                  seed(1)
+                  # generate univariate observations
+                  data = 5 * randn(100) + 50
+                  pyplot.hist(data)
+                  pyplot.show() 
+               2) Q-Q plot = Quantile-Quantile Plot = One Segne used
+                      from statsmodels.graphics.gofplots import qqplot
+                      # q-q plot
+                      qqplot(data, line='s') 
+                      pyplot.show()
+   b) statistical: looking for a larger P value(result above 5%)
+           1) Shapiro-Wilk Test: 
+           H0: normal
+ 
+           if p <= alpha: reject H0, not normal.
+              p > alpha: fail to reject H0, normal.
+
+
+              from scipy.stats import shapiro
+              # normality test
+              stat, p = shapiro(data)
+               result: Statistics=0.992, p=0.822  (>0.05)=> Sample looks Gaussian (fail to reject H0)
+           2) other tests
+   II) Multiple testing: instead of running multiple t tests
+
+   Problem: 3 archers trying to find out who the best archer is. Shoots 6 times with 10 being highest and 1 being smallest score. 
+   a) find out if the groups are different from each other: one way ANOVA test
+   Pat: 5, 4, 4, 3, 9, 4
+   Jack: 4, 8, 7, 5, 1, 5
+   Alex: 9, 9, 8, 10, 4, 10
+
+   H0: mean1=mean2=mean3            => rejecting it would mean there' significant difference in at least 2 of them!
+      if p <= alpha => reject H0
+
+      import numpy as np
+      from scipy import stats
+ 
+      data = np.rec.array([('Pat', 5),('Pat', 4),('Pat', 4),('Pat', 3),('Pat', 9),('Pat', 4),('Jack', 4),('Jack', 8),('Jack', 7),('Jack', 
+             5),('Jack', 1),('Jack', 5),('Alex', 9),('Alex', 8),('Alex', 8),('Alex', 10),('Alex', 5),('Alex', 10)], dtype = [('Archer','|
+             U5'),('Score', '<i8')])
+ 
+      f, p = stats.f_oneway(data[data['Archer'] == 'Pat'].Score,
+                      data[data['Archer'] == 'Jack'].Score,
+                      data[data['Archer'] == 'Alex'].Score)
+ 
+      p = 0.02 < alpha   => reject H0  => ok arhcers don't perform quickly. BUt who's best and the worst? => Post Hoc Analysis
+    
+     b) who's best and the worst archer? => Tukey's range test
+
+      from statsmodels.stats.multicomp import pairwise_tukeyhsd
+      from statsmodels.stats.multicomp import MultiComparison
+
+      mc = MultiComparison(data['Score'], data['Archer'])
+      result = mc.pairwise_tukeyhsd()
+ 
+      print(result)
+      print(mc.groupsunique)
+
+
+group1 group2 meandiff  lower   upper  reject
+---------------------------------------------
+  0      1    -3.3333  -6.5755 -0.0911  True => reject null H0 mean_group_1 = mean_group 2
+  0      2      -3.5   -6.7422 -0.2578  True
+  1      2    -0.1667  -3.4089  3.0755 False
+---------------------------------------------
+
+group 0 has a mean difference that r large and statistically significant. Group 0 is the best!
+
+
+ref: http://cleverowl.uk/2015/07/01/using-one-way-anova-and-tukeys-test-to-compare-data-sets/

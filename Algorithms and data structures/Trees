@@ -1,0 +1,2 @@
+Trees represent useful way for storing information that has either a hierarchical structure or that needs to be rapidly searchable. 
+All trees are a set of nodes connected in a hierarchy. Each node is a value. That node can connect to nodes below it, which are called its children. The node linked above it, should it exist, is called a parent. The top node is called the root. If the node has no children it’s called a leaf. Every tree is a combination or permutation of these elements.

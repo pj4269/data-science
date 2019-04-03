@@ -1,0 +1,52 @@
+From linux, type in the following commands to log in:
+ 
+1. To access root: 
+sudo su -
+
+2. Start PostgreSQL.
+service postgresql start
+
+3. Log into the postgres user:
+su - postgres
+
+4. Log into the database by typing:
+psql
+
+
+After logging in, you can do the following commands: 
+1. To list all the data (ls in linux and dir in windows)
+postgres=# \l;
+
+2. to create database
+postgres=# create database thinkful;
+
+To create a database sales owned by user salesapp with a default tablespace of salesspace:
+postgres=# CREATE DATABASE sales OWNER salesapp TABLESPACE salesspace;
+
+To create a database music which supports the ISO-8859-1 character set:
+postgres=# CREATE DATABASE music ENCODING 'LATIN1' TEMPLATE template0;
+
+3. To connect to the database: 
+postgres=# \c thinkful
+
+4. To list tables:
+thinkful=# \dt
+
+5. To create table:
+thinkful=# CREATE TABLE leads (id INTEGER PRIMARY KEY, name VARCHAR);
+
+6. To quit and exit:
+postgres=# \q
+postgres=# exit
+
+
+7. To uploade the data from a local computer, change your directory(cd ..) from inside the postgress to wherever the file maybe! then type in psql database_name < file_name.sql
+
+to check: 
+postgres=# \c bikeshare
+
+bikeshare=# \dt
+
+bikeshare=# select * from stations limit 10;
+
+to exit from command line: q

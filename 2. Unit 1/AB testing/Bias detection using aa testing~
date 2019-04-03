@@ -1,0 +1,3 @@
+12.33
+
+All but sampling bias can be detected using A/A testing. A/A testing provides context for the results of A/B testing. As the name suggests, A/A testing means comparing the outcome of choice between two identical versions of something. This might seem rather silly – after all, if we divide all newsletter subscribers into two groups but send both groups the same email, we would expect that clickthrough rates for both groups would be identical. In practice, however, that doesn't always happen.

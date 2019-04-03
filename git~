@@ -15,12 +15,13 @@ git clone = copy remote repo(from github) into your current folder
                                      => can start using git command now
 3. git$ git config --global email.name 'Micah@investanalyze.com' = creates name and user
 4. git add index.html = let' add index.html file to our git repo (index.html is in the staging area now)
-   => git rm --cached index.html (will remove file from staging area or adds)
+                      => git rm --cached index.html (will remove file from staging area)
 
    git add *.html = will add all the html files into staging area
    git add .  = will add everything!
    if you modify a file, then always make sure git add . it afterwards!
    
+   git rm --cached index.html => removes it from add
 
 5. git commit = # is a comment
 6. :wq
