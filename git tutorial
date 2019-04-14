@@ -24,7 +24,8 @@ Examples:
    
 
 5. git commit = # is a comment
-6. :wq
+6. The follow up code for commit: 
+   :wq
    control X
    shift Y
    ENTER
