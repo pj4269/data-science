@@ -50,3 +50,5 @@ bikeshare=# \dt
 bikeshare=# select * from stations limit 10;
 
 to exit from command line: q
+
+8. Note: JOIN comes after the FROM statement. 

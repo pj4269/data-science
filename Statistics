@@ -1,0 +1,89 @@
+standard error = sat. dev of a sample
+
+100 -> 99.99% of 999,999 people(1 is really positive) =? if you get positive => 1/101 chance
+
+P(A | B) = P(B | A) * P(A) / P(B) = 
+
+P(Infected| Positive Test) = P(Positive Test| Infected) * P(Infected) / P(Positive Test)
+
+= .9999 * .000001/(.000001*.9999 + .999999*.0001) = .0099 or .99%
+
+answers: 1)   => A     B      C
+              %  0.8  0.15  0.05
+            def: 4%    6%     5%
+        product: 0.032 .009 .0045 = sum(0.032)
+        prob : 0.032/0.0455
+
+         2) 1/10,000 => 99% = True Pos
+                         1% = False Pos!
+                          0%= False Neg
+                        100%= True Neg
+
+            you are positive: prob that you have swine flu? => Pos + Swine flu
+          P(D) be the probability you have swine flu. = 0.0001
+          P(T) be the probability of a positive test. = 0.0001*0.99 + 0.9999*0.01
+
+          P(D|T)?
+                     0.99    * 0.0001/
+           P(D|T) = P(T| D) * P(D) / P(T) = P(D|T) = 1*0.0001 / (0.99*0.0001+0.01*0.9999) ≈ 0.01
+                      
+           P(T| D) = % of tested positive when you really have a flu =  if you have swine flu the test is always positive)
+
+
+          With Mexico, replace 1/10000 with 1/200
+ 
+         3) 10% vs 20%  but R vs B not known. Took 1 shot.
+            P(R)- % red
+            P(B)- % blue
+            P(J)- % payout (“jackpot”).
+            P(R|NJ) ?  Since we just tried and there were no pay off => NJ and tying to find out the good machine!
+
+            P(R|NJ) = (P(NJ|R)P(R)) / (P(NJ|R)P(R) + P(NJ|B)P(B)) = P(R|NJ) = 0.8*0.5 / (0.8*0.5 + 0.9*0.5) ≈ 0.47
+            
+            if there was a payoff: P(NJ) (0.8,0.9) is replaced with P(J) (0.2, 0.1) 
+
+
+         4) 1% of people have a certain genetic defect = P(Def)
+            90% of tests for the gene detect the defect (true positives) = P(True|Def)
+            9.6% of the tests are false positives. = P(~T|Def)
+            If a person gets a positive test result, what are the odds they actually have the genetic defect?
+                  P(Def|True) - ?
+ P(D|T) = P(T|D) * P(D) / P(T) = 0.9 * 
+
+             0.9 *0.01         0.9 * 0.01 + 0.096 * 0.99
+P(A|X) = (Pr(X|A)Pr(A)) / (Pr(X|A)Pr(A)+Pr(X|~A)Pr(~A)) same as formula in 3) => Blue and Red r 2 choices!
+
+          5) Assume u r a woman over 50!
+
+Given the following statistics, what is the probability that a woman has cancer if she has a positive mammogram result?
+         1% of women over 50 have breast cancer. 90% of women who have breast cancer test positive on mammograms.
+         8% of women will have false positives ?
+         8% = P(~T|C)
+
+###################################################
+
+Bias = not being random
+
+Quality = NANs, distribution, ... 
+
+Q 1.AirBnB: Amsterdam availability data scraped from AirBnB on December 24th. Question: What are the popular neighborhoods in Amsterdam?
+- Price != Popularity
+- Dec 24th: Xmas => less demand
+
+Q 2.  Mental health services use on September 12, 2001 in San Francisco, CA and New York City, NY. Question: How do patterns of mental health service use vary between cities?
+- Date: Just after Sep 11  attack
+-
+Q 3. Environment, music, Hang out with Friends, 
+
+
+#####################################################
+
+The gamma distribution represents the time until an event (such as lifespan until death), when the event starts out unlikely (few people die in youth), becomes more likely (more people die in old age), then becomes less likely again (few people die in extreme old age because most have already died)
+
+p _ value = T value by chance.
+
+H_0 = No difference.  High t value => there's a difference! => "The t-value scales the difference between the two groups by the amount of variance in the two samples. High variability in samples can lead to groups with means that look very different"
+
+
+
+

@@ -27,7 +27,7 @@ To create a database music which supports the ISO-8859-1 character set:
 postgres=# CREATE DATABASE music ENCODING 'LATIN1' TEMPLATE template0;
 
 3. To connect to the database: 
-postgres=# \c thinkful
+postgres=# \c bikeshare
 
 4. To list tables:
 thinkful=# \dt
