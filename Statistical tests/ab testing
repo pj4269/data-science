@@ -1,0 +1,27 @@
+
+Components of AB test are: 
+ 1.Two versions: one version is a 'control version', already in use. And the other is a 'test version', which has some changes or 'treatments' from the control
+ 2. Sample from each versions. Samples should be similar to the population you are trying to understand and be selected at random as possible. The samples A, B must be as comparable as possible with only difference being the treatment they receive. When you randomize things that happen all the time, like marketing emails, it is easy to randomize it. But when the choices are 'all in' or 'all off', such as when you want to know the effect of music in coffee shop where you can't separate people into groups who are listening and no listening, things become a bit more complicated. You need to take account seasonality, the day, weekend to make sure the behavior of the people are the same. 
+  
+ 3. A hypothesis: a statement you expect to happen, such as: "I expect the HTML email will achieve a higher open and conversion rate than the plain text email."
+ 4. Outcome: what you expect from both versions. Follow several metrics but you will have a one key metric that determines whether your test was successfull or not. Consider the following to make sure you have a good key metric: 
+ a) focus on the actual goal and not get distracted by the means to the end.For example, measuring number of clicks is good, however, measuring the effect on actual sales of the company might have more value.   
+ b) measurement reliability: test should be passively recorded, rather than requiring additional engagement from users, as users with more engagement will present extra biases. Also avoid self-reported data and try to capture complete effect of your change, which sometimes mean give enough window of time to be consistent and reasonable. For example, some users sign up or convert later rather than sooner. 
+
+Here are quick tests on the following hypotheses: 
+
+Does a new supplement help people sleep better?
+- We will divide the experiment group into two groups based on the characteristics in age, race, income and gender, to make sure groups are similar. Our hypothesis would the new supplement will help people sleep better. Then with the follow up emails on the sleep quality, we can gather data to conduct our test.
+
+Will new uniforms help a gym's business?
+- Our hypothesis would the new uniform will increase gym's sales. Try the different uniforms on different comparable weeks, with no holidays in between. Make sure the people who are buying from the gym are similar in both weeks. 
+
+Will a new homepage improve my online exotic pet rental business?
+- The following metrics can be used: how long visitor stayed on the page, clickthrough rate, how many pages been clicked. The key metric can be the clickthrough rate. Randomize the two different versions on a random people who in a bigger sense represent similar population. 
+
+
+If I put 'please read' in the email subject will more people read my emails?
+ 
+- We may want to look at the gender and age of our sample, if we have that information, to make sure the groups are similar. We can also look at whether the two different emails affect how quickly people open the email after receiving it (a secondary outcome) as well as the click rate.
+
+

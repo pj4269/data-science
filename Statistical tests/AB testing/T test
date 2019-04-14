@@ -1,0 +1,28 @@
+T test completes AB testing by answering the question 'are groups 1 and 2 are really different?.'
+
+𝑡=(𝑦1−𝑦2)/ √ (𝑠1^2/𝑁1+𝑠2^2/𝑁2) = size of the group mean difference divided by the statistical noise
+
+𝑦1 and 𝑦2 - represent the sample means of groups 1 and 2.
+𝑠1 and 𝑠2 -represent the sample standard deviations of groups 1 and 2.
+𝑁1 and 𝑁2 represent the sample sizes for groups 1 and groups 2
+
+
+Larger t-values mean that the difference between the groups is less likely to be due to noise.
+
+What is the probability of getting a t-value this extreme or more so if there were no difference between the groups in the population?' We can decide how improbable we need our t-value to be before we accept that there is a real difference between the two groups. The probability we refer to is called a p-value, and the threshold of improbability we choose is called a significance level. The p-value represents the probability of getting a t-value that large or larger if the null hypothesis is true.The standard p value threshold .05 because, in theory, it would return a false positive (evidence to reject the null hypothesis when in fact there is no effect) for 1 in 20 tests and happens to correspond to two standard deviations, or two sigma. Some fields, such as neuroscience and genetics, use much lower thresholds, down to p < .000001. And then there's high energy physics, which places the "discovery" of a new particle at p < 0.0000003 or five sigma.
+
+Why look at both the positive and negative t-value?
+
+The default t-test is "two-tailed", meaning it tests the likelihood of getting a value "more extreme" than the t-value in either direction. If there is no possibility of getting a negative t-value, then you can use a "one-tailed" p-value which means the p-value is calculated by summing the area under the curve of only one of the two tails. A one-tailed test would be appropriate, for example, when comparing an average weight to zero. For the t-value to be negative, the average weight would have to be negative, which is obviously impossible. Typically, the two-tailed t-test is used, under the assumption that it is better to be too conservative (get higher p-values than we should) than too liberal (get lower p-values than we should).
+
+
+Null hypothesis: is the hypothesis that states that the mean of the two groups are the same.  
+EXAMPLE 1:
+    Hypothesis: People who whistle will be happier than people who do not whistle.
+    Null: There will be no difference in happiness between people who whistle and people who do not.
+
+EXAMPLE 2:
+    Hypothesis: There is intelligent life on other planets.
+    Null: There is no intelligent life on other planets.
+
+So if the null hypothesis, your hypothesis is most likely to be correct. 

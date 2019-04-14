@@ -1,0 +1,44 @@
+Hypothesis testing:
+
+I ) Tests about means: 
+ a) Tests about one mean: 
+    - Z-Test: When Population Variance(or std) is Known
+    - T-Test(Student's t test): When Population Variance(or std) is Unknown but the sample std is known.
+    - Matched paired t test(Paired T-Test or paired difference test for dependent two sample t test): when the 2 samples are dependent on  
+      each other, such as IQ test of a first born and second born of a family,  blood sample analysis from 2 different labs on the same 
+      people(data from a same person). Since samples are dependent on each other, we can calculate the difference between samples and focus 
+      on the mean of the difference. Hence, it is considered a test about one mean.
+
+ b) Tests of the Equality of Two Means (for μ1−μ2 )
+    : Similar to paired t-test, but the  2 samples are independent from each other to test the means of two sets of data ar
+      significantly different from each other.
+    - pooled two-sample t-test(independent two-sample t test): population variances are equal  (based on the t-distribution)
+    - Welch's t-test(independent two sample t test): population variances are not equal (based on the t-distribution)
+      : Of course, because population variances are generally not known, there is no way of being 100% sure that the population variances 
+        are equal or not equal. So in practical terms, there have been a number of papers which examine whether Welch's t-test canbe used 
+        all the time. Most of them come to the conclusion that Welch's version of the t-test can be safely used in most circumstances.The 
+        only situation in which the test seems to have undesirable performance is in very small sample sizes.
+
+II. Tests about proportions (percentage) tests:  => done
+    - 1 sample proportional z test: 1 population(US population) were asked yes, no question(very happy and not happy with not happy is further divided into fairly happyand not too happy) 
+    - 2 sample proporional z test: 2 samples(smokers, non-smokers) were asked yes, no question(raising taxes, or not raising)
+
+
+III. Non-parametric methods: 
+   -  chi-square goodness of fit test to test whether random categorical variables follow a particular probability distribution
+   -  use the chi-square test for testing whether two or more multinomial distributions are equal
+
+   -  use the chi-square test to test whether two (or more) random categorical variables are independent
+   -  use the Wilcoxon test to conduct a hypothesis test for the median of a population
+
+IV. multivariate test: multiple variables are tested together to uncover the ideal combination that is effective in improving the ultimate goal.
+
+For AB testing use the following: 
+ 1. Student-t test(pooled two-sample t-test), if the variance of both groups are the same and both are normally distributed.Use   
+            scipy.stats.ttest_ind(a, b, axis=0, equal_var=True, nan_policy='propagate'), equal_var=False, then it will use Welch-t test. 
+ 2. Welch-t test (unequal variance t-test), if the variance of both groups might not be the same but both are still normally distributed            
+ 3. Mann–Whitney U test (Wilcoxon rank-sum test), if I cannot make any assumptions about the distribution of both groups. But some researches suggest that if you rank the databefore the test, you can always use Welch-t test unless tjhe sample size is small. 
+
+
+
+Z-tests are statistical calculations that can be used to compare population means to a sample's. The z-score tells you how far, in standard deviations, a data point is from the mean or average of a data set. A z-test compares a sample to a defined population and is typically used for dealing with problems relating to large samples (n > 30). Z-tests can also be helpful when we want to test a hypothesis. Generally, they are most useful when the standard deviation is known.

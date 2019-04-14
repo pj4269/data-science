@@ -1,0 +1,14 @@
+𝑡=(𝑦1−𝑦2)/ √ (𝑠1^2/𝑁1+𝑠2^2/𝑁2) = mean difference divided by the statistical noise
+
+𝑦1 and 𝑦2 - represent the sample means of groups 1 and 2.
+𝑠1 and 𝑠2 -represent the sample standard deviations of groups 1 and 2.
+𝑁1 and 𝑁2 represent the sample sizes for groups 1 and groups 2
+
+
+Larger t-values mean that the difference between the groups is less likely to be due to noise.
+
+
+Notice how, as variance gets larger (staying in the same column and comparing down rows) it gets harder and harder to tell the means apart. Comparing within a row, however, it is clear that regardless of variance, larger sample sizes make it easier to tell the means apart.
+
+
+With a t-test we calculate the t-statistic, which gives us the size of the group difference divided by the noise level of the data. Bigger t-values signal a group difference large enough to be interesting to us.

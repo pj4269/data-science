@@ -1,0 +1,99 @@
+1. What was the hottest day in our data set? Where was that?
+
+- select max(maxtemperaturef), zip from weather group by zip limit 1;
+
+2. How many trips started at each station?
+
+- select count(*) from trips group by start_station;
+
+3. What's the shortest trip that happened?
+
+- select min(duration) from trips;
+
+4. What is the average trip duration, by end station?
+
+- select avg(duration) from trips group by end_station;
+
+
+5. To know the column data types: 
+select column_name, data_type from information_schema.columns where table_name = 'trips' 
+
+
+
+6. What if we wanted to also include a count of the number of trips that started in each cities with its latitude,longitude and the name of the city? The answer: Use Common Table Expressions. 
+
+If we want to find out average lat and long for the city: 
+ 
+SELECT s.city, AVG(s.lat) lat, AVG(s.long) long, count(t.trip_id) FROM stations s JOIN trips t ON t.start_station = s.name GROUP BY 1;
+
+     city      |         lat         |         long          | count  
+---------------+---------------------+-----------------------+--------
+ San Jose      | 37.3349988308354056 | -121.8944113008938773 |  14879
+ San Francisco | 37.7865994780770754 | -122.3992924366962397 | 280323
+ Palo Alto     | 37.4417411342747112 | -122.1580163356867779 |   3116
+ Mountain View | 37.3951558365369589 | -122.0844534471011095 |   6399
+
+
+But the above query is incorrect! When working with JOINs, the join happens before any aggregate functions. So in the example above we're actually taking the average of the latitude and longitude for every trip that occurred in each city instead of giving an equal weight to each stations within the city to find the average of each stations. Here we'll be skewed to more popular station's coordinates. To show you actual lat and longs for the city:
+
+
+SELECT s.city, AVG(s.lat) lat, AVG(s.long) long FROM stations s GROUP BY 1;    
+ city      |         lat         |         long          
+---------------+---------------------+-----------------------
+ San Jose      | 37.3359428888888889 | -121.8909861666666667
+ San Francisco | 37.7874744864864865 | -122.4017257567567568
+ Palo Alto     | 37.4383745800000000 | -122.1535877000000000
+ Mountain View | 37.3990230000000000 | -122.0843545714285714
+
+The correct query would be to use Common Table Expressions: 
+
+WITH Locations AS (select city, avg(lat) lat, avg(long) long from stations group by city) # creates temporary table locations
+
+SELECT
+    l.city,
+    l.lat,
+    l.long,
+    COUNT(*)
+FROM
+    locations l
+
+-- We need to join again with the city because we need bring in all the stations names. 
+-- stations names are all mentioned once!
+
+JOIN
+    stations s
+ON
+    l.city = s.city
+JOIN
+    trips t
+ON
+    t.start_station = s.name
+GROUP BY 1,2,3;
+
+
+7. To create size columns: 
+
+SELECT (CASE WHEN dockcount > 20 THEN 'large' ELSE 'small' END) station_size, COUNT(*) as station_count FROM stations GROUP BY 1
+
+
+8. What are the three longest trips on rainy days?
+
+Solution: 
+a) 
+WITH rainy as (SELECT DATE(date) rain_date From weather WHERE events = 'Rain' GROUP BY 1 ) SELECT t.trip_id, t.duration, DATE(t.start_date) FROM trips t JOIN rainy r on DATE(t.start_date) = r.rain_date ORDER BY duration DESC LIMIT 3;
+
+b)
+SELECT DATE(r.date) rain_date, t.trip_id, t.duration, DATE(t.start_date) FROM trips t JOIN weather r on DATE(t.start_date) = DATE(r.date) WHERE r.events = 'Rain' group by 1, 2, 3, 4 ORDER BY duration DESC LIMIT 3;
+
+
+
+9. Which station is full most often?
+
+SELECT s1.station_id, sum(case when s1.docks_available = 0 then 1 else 0 end) rank FROM status s1 join stations s2 on s1.station_id = s2.station_id group by 1 order by rank desc
+
+10. Return a list of stations with a count of number of trips starting at that station but ordered by dock count.
+
+SELECT start_station, dockcount, COUNT(*) FROM trips JOIN stations ON stations.name=trips.start_station GROUP BY 1, 2 ORDER BY 2 DESC;
+
+11. (Challenge) What's the length of the longest trip for each day it rains anywhere?
+

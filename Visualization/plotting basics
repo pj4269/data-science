@@ -1,0 +1,5 @@
+For Categorical data, use Bar chart and pie chart. 
+For Numeric data is composed of continuous and discrete data. It uses scatter plot, histograms and whisker plots (for quartiles, median, min, max)
+
+Discrete data example: number of children you have, SAT score. 
+Continous: you weight
