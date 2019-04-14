@@ -61,7 +61,7 @@ Examples:
 
 
 17. git remote => gives me all the remote repos and there' none. Let' add my github account to it.
-    git remote add origin git@github.com:pj4269/sample.git  => adds it. 
+    git remote add origin git@github.com:pj4269/data-science.git  => adds it. 
     git push -u origin master                               => pushes your local code to the remote repos
     git pull -u origin master                               => changes from remote repo to your local
 
@@ -79,4 +79,4 @@ other:
     $ git diff
 21. to store changes in a temp space: 
     $ git stash
-ref: https://www.youtube.com/watch?v=SWYqp7iY_Tc
+
