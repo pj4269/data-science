@@ -66,7 +66,7 @@ Examples:
     git push -u origin master                               => pushes your local code to the remote repos
     git pull -u origin master                               => changes from remote repo to your local
 
-other: 
+
 18. github key generation a) : cd ~/.ssh. => should see .pub file => if not create keys:  ssh-keygen -t rsa -C "your_email@example.com".
     b) copy the key from key.pub file and paste it on your githubs 'Account Settings > SSH Keys'
     c) push again
@@ -81,3 +81,7 @@ other:
 21. to store changes in a temp space: 
     $ git stash
 
+22. To remove deleted files: 
+    git add -u .
+    git commit -m 'deleted files'
+    git push -u origin master
