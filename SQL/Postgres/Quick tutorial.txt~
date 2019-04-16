@@ -27,7 +27,7 @@ To create a database music which supports the ISO-8859-1 character set:
 postgres=# CREATE DATABASE music ENCODING 'LATIN1' TEMPLATE template0;
 
 3. To connect to the database: 
-postgres=# \c thinkful
+postgres=# \c bikeshare
 
 4. To list tables:
 thinkful=# \dt
@@ -52,3 +52,27 @@ bikeshare=# select * from stations limit 10;
 to exit from command line: q
 
 8. Note: JOIN comes after the FROM statement. 
+
+
+9. To connect to a remote databse: 
+
+First type in the following code from your root directory: 
+ vim /etc/postgresql/9.4/main/postgresql.conf
+
+then, edit the file by changing: 
+listen_addresses = 'localhost' to listen_addresses = '*'
+
+
+save the file. 
+
+Then use:
+psql -h <host> -p <port> -u <database>
+psql -h <host> -p <port> -U <username> -W <password> <database>
+
+
+psql -h 142.93.121.174 -p 5432 -U dsbc_student air_bnb_data
+Password: 7*.8G9QH21
+
+sfo_calendar, sfo_listings, and sfo_reviews
+
+
