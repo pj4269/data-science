@@ -1,0 +1,25 @@
+When Does Missingness Matter?
+Sometimes dropping all rows with missing data is fine, but sometimes it creates problems. Missing data matter if we believe the missingness will cause:
+1) Loss of statistical power because so many rows have to be thrown out, making it harder to detect effects, or
+2) Bias because certain values are more likely to be missing than others.
+
+To know when to worry about missing data and when to throw out incomplete cases and proceed as planned, see where the missingness falls in the following categories:
+
+Missing Completely at Random ("MCAR"):
+
+- A catastrophic flood washed away some of the servers and 20% of the data was lost.
+- Unless so much data is lost that sample sizes are now too small, it is fair to throw out the missing values and proceed.
+
+
+Missing at Random ("MAR")
+
+- Women are more likely to skip a question about weight, regardless of their actual weight.
+- Because we can explain why the data is missing using data we have, we can proceed as long as we include the variable that "explains" the missingness in our analyses.There is no way to know that data is MAR, but sometimes we can assume it is. If we find a variable in our dataset that seems to differentiate really well between missing and non-missing (90% of the people with missing values on the "depression" score are men) we have reason to suspect MAR.
+
+Missing Not at Random ("MNAR")
+
+- LGBT individuals less likely to answer a survey question about their sexual orientation.
+Systematic missingness: People who would answer in a certain way (LGBT vs. Heterosexual) are less likely to answer at all.
+Stop, do not pass Go, do not collect $200. If we throw out MNAR data, we end up with a biased sample (proportionately fewer LGBT people than in the population we want to study) and biased conclusions.
+Note that since, by definition, we don't know what people would have said for questions they don't answer, MNAR is an assumption based on looking at the data and noticing what isn't there: Abnormally low counts of LGBT people, almost no men who say they are depressed, variables with missingness where nobody picks the highest or lowest value, etc.
+

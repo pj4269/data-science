@@ -1,4 +1,12 @@
 For Categorical data, use Bar chart and pie chart. 
 For Numeric data is composed of continuous and discrete data. It uses scatter plot, histograms and whisker plots (for quartiles, median, min, max)
 
-Discrete data example: number of children you have. 
+Discrete data example: number of children you have, SAT score. 
+Continous: you weight
+
+
+- Line plots show data over time'
+- Scatterplots show the relationship between two variables.
+- Histograms show the distribution of the dataset and any outliers.
+- QQ plots show how close a variable is to known distribution, and any outliers.
+- Boxplots are used to compare groups and to identify differences in variance, as well as outliers.

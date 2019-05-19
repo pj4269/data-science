@@ -1,0 +1,111 @@
+ Cross sectional data is a data collected by observing many subjects at the same point of time, or without regard to differences in time.
+
+There are seem to be three ways to deal with it:  A) Single imputation, B) Multiple Imputation, C) Maximum likelihood
+
+Single imputation methods result in biased parameter estimates, such as means, correlations, and regression coefficients, unless the data are Missing Completely at Random (MCAR) and underestimate standard errors. However, Multiple Imputation(MI) capture the uncertainty in those estimates, MI estimates the values multiple times. On the other hand, Maximum likelihood estimation does not impute any data, but rather uses each cases available data to compute maximum likelihood estimates. The maximum likelihood estimate of a parameter is the value of the parameter that is most likely to have resulted in the observed data.
+
+Modern researches suggest to use Multiple Imputation or Maximum likelihood to avoid biases and get a better estimate. 
+
+1- Leave it to the algorithm:
+
+You just let the algorithm handle the missing data. Some algorithms can factor in the missing values and learn the best imputation values for the missing data based on the training loss reduction (XGBoost). Some others have the option to just ignore them (ie. LightGBM — use_missing=false). However, other algorithms will panic and throw an error complaining about the missing values (ie. Scikit learn — LinearRegression). In that case, you will need to handle the missing data and clean it before feeding it to the algorithm.
+
+2. Use mean, median for numeric and the mode, zero, constant for the categorical data
+
+Pros:
+- Easy and fast.
+- Works well with small numerical datasets.
+
+Cons:
+
+- Doesn’t factor the correlations between features. It only works on the column level.
+- Not very accurate.
+- Doesn’t account for the uncertainty in the imputations.
+- It can introduce bias in the data(mode)
+
+example: 
+
+from sklearn.impute import SimpleImputer
+imp_mean = SimpleImputer( strategy='mean') #for median imputation replace 'mean' with 'median'
+# imp_mean = SimpleImputer( strategy='most_frequent')
+imp_mean.fit(train)
+
+
+3. Use KNN feature similarity
+
+Pros:
+- Can be much more accurate than the mean, median or most frequent imputation methods (It depends on the dataset).
+
+Cons:
+- Computationally expensive.
+- KNN is quite sensitive to outliers in the data (unlike SVM)
+
+example: 
+
+import sys
+from impyute.imputation.cs import fast_knn #  library which provides a simple and easy way to use KNN for imputation:
+sys.setrecursionlimit(100000) #Increase the recursion limit of the OS
+
+# start the KNN training
+imputed_training=fast_knn(train.values, k=30)
+
+
+
+4. Multivariate Imputation by Chained Equation (MICE) 
+
+This type of imputation works by filling the missing data multiple times
+
+Pros: 
+- Multiple Imputations (MIs) are much better than a single imputation as it measures the uncertainty of the missing values in a better way. 
+- Very flexible and can handle different variables of different data types (ie., continuous or binary) as well as complexities such as bounds or survey skip patterns.
+
+example: 
+
+from impyute.imputation.cs import mice
+
+# start the MICE training
+imputed_training=mice(train.values)
+
+5. Deep Learning library Datawig(Neural Network)
+
+Pros: 
+- This method works very well with categorical and non-numerical features.
+- Quite accurate
+
+Cons: 
+- Computationally expensive
+
+
+Example: 
+
+import datawig
+
+df_train, df_test = datawig.utils.random_split(train)
+
+#Initialize a SimpleImputer model
+imputer = datawig.SimpleImputer(
+    input_columns=['1','2','3','4','5','6','7', 'target'], # column(s) containing information about the column we want to impute
+    output_column= '0', # the column we'd like to impute values for
+    output_path = 'imputer_model' # stores model data and metrics
+    )
+
+imputer.fit(train_df=df_train, num_epochs=50)
+
+imputed = imputer.predict(df_test)
+
+6. Hot-Deck imputation:
+Works by randomly choosing the missing value from a set of related and similar variables.
+
+
+
+7. Extrapolation and Interpolation:
+It tries to estimate values from other observations within the range of a discrete set of known data points.
+
+
+Recommendation: 
+ There is not a single best way to work with the missing values in a dataset. Each strategy has its pros and cons for specific datasets and missing data types. You just have to experiment with your specific dataset and work with the method that gives the best result! Obviously if you have a time, try to use Multiple Imputation or Maximum likelihood to avoid biases and get a better estimate. 
+
+
+reference: 
+
+https://www.researchgate.net/publication/47341348_A_review_of_current_software_for_handling_missing_data

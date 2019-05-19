@@ -1,0 +1,29 @@
+Apply interpolation methods: 
+1) Linear 2) Time 3) Quadratic 4) Cubic 5) Slinear 6) Akima 7) Polynomial 8) Spline
+
+or Apply impyute library methods: 
+1) Last Observation Carried Forward  2) Moving Window  3) Autoregressive Integrated Moving Average (WIP)
+
+example: 
+
+
+import pandas as pd
+import numpy as np
+from sklearn.metrics import r2_score
+df=pd.read_csv('tempreture.csv')
+
+
+
+df = df.assign(InterpolateLinear=df.target.interpolate(method='linear'))
+df = df.assign(InterpolateTime=df.target.interpolate(method='time'))
+df = df.assign(InterpolateQuadratic=df.target.interpolate(method='quadratic'))
+df = df.assign(InterpolateCubic=df.target.interpolate(method='cubic'))
+df = df.assign(InterpolateSLinear=df.target.interpolate(method='slinear'))
+df = df.assign(InterpolateAkima=df.target.interpolate(method='akima'))
+df = df.assign(InterpolatePoly5=df.target.interpolate(method='polynomial', order=5)) 
+df = df.assign(InterpolatePoly7=df.target.interpolate(method='polynomial', order=7))
+df = df.assign(InterpolateSpline3=df.target.interpolate(method='spline', order=3))
+df = df.assign(InterpolateSpline4=df.target.interpolate(method='spline', order=4))
+df = df.assign(InterpolateSpline5=df.target.interpolate(method='spline', order=5))
+
+

@@ -3,3 +3,13 @@ For Numeric data is composed of continuous and discrete data. It uses scatter pl
 
 Discrete data example: number of children you have, SAT score. 
 Continous: you weight
+
+
+- Line plots show data over time'
+- Scatterplots show the relationship between two variables.
+- Histograms show the distribution of the dataset and any outliers.
+- QQ plots show how close a variable is to known distribution, and any outliers.
+- Boxplots are used to compare groups and to identify differences in variance, as well as outliers.
+
+
+when data is skewed apply square root, cube root, log transformation, or box-cox transformation 

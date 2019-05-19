@@ -27,8 +27,7 @@ II. Tests about proportions (percentage) tests:  => done
 III. Non-parametric methods: 
    -  chi-square goodness of fit test to test whether random categorical variables follow a particular probability distribution
    -  use the chi-square test for testing whether two or more multinomial distributions are equal
-
-   -  use the chi-square test to test whether two (or more) random categorical variables are independent
+   -  use the chi-square test of independence to test whether two (or more) random categorical variables are independent
    -  use the Wilcoxon test to conduct a hypothesis test for the median of a population
 
 IV. multivariate test: multiple variables are tested together to uncover the ideal combination that is effective in improving the ultimate goal.
