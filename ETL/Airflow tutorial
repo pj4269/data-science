@@ -1,0 +1,30 @@
+
+1. How to install?
+
+- You can create a virtual environment for Airflow to keep it as a separate entity: virtualenv airflow_virtualenv
+- Go to the bin folder the virtual env: cd airflow_virtualenv/bin
+- Activate the virtual env: source activate
+S- et the airflow home path: export AIRFLOW_HOME=~/airflow [You can also put this statement in your ~/.profile or ~/.bashrc file so that yo-u don't have to export every time]
+- Install Airflow: pip install airflow [If it throws the "six" error while installing then run: pip install airflow --ignore-installed six]
+- Initialize the database: airflow initdb
+- Start the webserver: airflow webserver -p 8080
+- View the Airflow UI: http://localhost:8080/
+
+
+2. how to start?
+
+- /Desktop/Work/ETL$  virtualenv  airflow_virtualenv
+- /Desktop/Work/ETL/airflow_virtualenv$ source airflow_virtualenv/bin/activate
+- mkdir airflow_home
+-(airflow_virtualenv) $  export AIRFLOW_HOME=airflow_home
+- $ airflow initdb
+- $ airflow webserver
+- create dags directory in airflow_home to store all the dags.
+- then create a test.py file
+
+to run your first dag, open a new terminal: 
+
+- go to your airflow workspace
+- $ export AIRFLOW_HOME=airflow_home
+$ source airflow_virtualenv/bin/activate
+(airflow_virtualenv) $ airflow scheduler

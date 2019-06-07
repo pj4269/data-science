@@ -75,4 +75,10 @@ Password: 7*.8G9QH21
 
 sfo_calendar, sfo_listings, and sfo_reviews
 
+10. To C=check existing users
+
+postgres=# \du
+
+11. To create a username:
+CREATE USER yourname WITH SUPERUSER PASSWORD 'yourpassword';
 

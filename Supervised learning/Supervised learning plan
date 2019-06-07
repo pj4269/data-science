@@ -1,0 +1,37 @@
+try to do it on your own first!
+
+data cleaning: - 
+
+Preprocessing: 
+- data transformation:  
+       Categorical - onehotencoding (pd.dummies) = multi label
+                     labelencoder(pd.) = binary label = factorize
+                     labelbinarizer(seem to perform the best and a better version of onehot with lower dimensions) => 
+                              from sklearn.preprocessing import LabelBinarizer 
+                              lb = LabelBinarizer()
+                              lb_res = lb.fit_transform(df["cat_col"])
+                              pd.DataFrame(lb_res, columns=lb.classes_).head()
+                              (first the categories are encoded as ordinal, then those integers are converted into binary code, then the digits from that binary string are split into separate columns.  This encodes the data in fewer dimensions that one-hot, but with some distortion of the distances.) => best result
+                     Backward Difference: the mean of the dependent variable for a level is compared with the mean of the dependent variable for the prior level. This type of coding may be useful for a nominal or an ordinal variable.
+                     Polynomial: The coefficients taken on by polynomial coding for k=4 levels are the linear, quadratic, and cubic trends in the categorical variable. The categorical variable here is assumed to be represented by an underlying, equally spaced numeric variable. Therefore, this type of encoding is used only for ordered categorical variables with equal spacing.
+
+          NUmeric: scale: 
+ref: https://pbpython.com/categorical-encoding.html
+     https://www.kdnuggets.com/2015/12/beyond-one-hot-exploration-categorical-variables.html
+0. Make sure numeric and objects are appropriate columns.
+1. make sure no data is missing: check => data imputation. 
+2. outliers: apply interquartile range or z score and transform the outliers to min, max z score or interquartile range.
+3. skewnewss (numeric data): box - cox transformation or apply log => from scipy.special import boxcox1p vs sklearn powertransformer()
+
+
+start with train test split
+
+
+- apply others 
+- cross val => make predictions 
+
+spam => knn classifier
+     => logistic regression
+     => random forest
+
+amazon reviews => naive bayesian

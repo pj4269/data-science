@@ -10,6 +10,6 @@ Continous: you weight
 - Histograms show the distribution of the dataset and any outliers.
 - QQ plots show how close a variable is to known distribution, and any outliers.
 - Boxplots are used to compare groups and to identify differences in variance, as well as outliers.
-
+- Barchart
 
 when data is skewed apply square root, cube root, log transformation, or box-cox transformation 

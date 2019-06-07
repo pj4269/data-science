@@ -1,0 +1,24 @@
+[2019-06-06 16:21:56,843] {__init__.py:1139} INFO - Dependencies all met for <TaskInstance: hello_world.dummy_task 2019-06-06T23:20:15.767087+00:00 [queued]>
+[2019-06-06 16:21:56,847] {__init__.py:1139} INFO - Dependencies all met for <TaskInstance: hello_world.dummy_task 2019-06-06T23:20:15.767087+00:00 [queued]>
+[2019-06-06 16:21:56,847] {__init__.py:1353} INFO - 
+--------------------------------------------------------------------------------
+[2019-06-06 16:21:56,847] {__init__.py:1354} INFO - Starting attempt 1 of 1
+[2019-06-06 16:21:56,847] {__init__.py:1355} INFO - 
+--------------------------------------------------------------------------------
+[2019-06-06 16:21:56,948] {__init__.py:1374} INFO - Executing <Task(DummyOperator): dummy_task> on 2019-06-06T23:20:15.767087+00:00
+[2019-06-06 16:21:56,949] {base_task_runner.py:119} INFO - Running: [u'airflow', u'run', 'hello_world', 'dummy_task', '2019-06-06T23:20:15.767087+00:00', u'--job_id', '50', u'--raw', u'-sd', u'DAGS_FOLDER//home/micah/Desktop/Work/ETL/hello_world.py', u'--cfg_path', '/tmp/tmpsrPaBw']
+[2019-06-06 16:21:57,146] {base_task_runner.py:101} INFO - Job 50: Subtask dummy_task /home/micah/Desktop/Work/ETL/airflow_virtualenv/local/lib/python2.7/site-packages/airflow/configuration.py:590: DeprecationWarning: You have two airflow.cfg files: /home/micah/airflow/airflow.cfg and airflow_home/airflow.cfg. Airflow used to look at ~/airflow/airflow.cfg, even when AIRFLOW_HOME was set to a different value. Airflow will now only read airflow_home/airflow.cfg, and you should remove the other file
+[2019-06-06 16:21:57,146] {base_task_runner.py:101} INFO - Job 50: Subtask dummy_task   category=DeprecationWarning,
+[2019-06-06 16:21:57,564] {base_task_runner.py:101} INFO - Job 50: Subtask dummy_task [2019-06-06 16:21:57,563] {__init__.py:51} INFO - Using executor SequentialExecutor
+[2019-06-06 16:21:57,874] {base_task_runner.py:101} INFO - Job 50: Subtask dummy_task [2019-06-06 16:21:57,873] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/airflow_home/dags/home/micah/Desktop/Work/ETL/hello_world.py
+[2019-06-06 16:21:57,937] {base_task_runner.py:101} INFO - Job 50: Subtask dummy_task Traceback (most recent call last):
+[2019-06-06 16:21:57,937] {base_task_runner.py:101} INFO - Job 50: Subtask dummy_task   File "/home/micah/Desktop/Work/ETL/airflow_virtualenv/bin/airflow", line 32, in <module>
+[2019-06-06 16:21:57,937] {base_task_runner.py:101} INFO - Job 50: Subtask dummy_task     args.func(args)
+[2019-06-06 16:21:57,937] {base_task_runner.py:101} INFO - Job 50: Subtask dummy_task   File "/home/micah/Desktop/Work/ETL/airflow_virtualenv/local/lib/python2.7/site-packages/airflow/utils/cli.py", line 74, in wrapper
+[2019-06-06 16:21:57,937] {base_task_runner.py:101} INFO - Job 50: Subtask dummy_task     return f(*args, **kwargs)
+[2019-06-06 16:21:57,937] {base_task_runner.py:101} INFO - Job 50: Subtask dummy_task   File "/home/micah/Desktop/Work/ETL/airflow_virtualenv/local/lib/python2.7/site-packages/airflow/bin/cli.py", line 501, in run
+[2019-06-06 16:21:57,937] {base_task_runner.py:101} INFO - Job 50: Subtask dummy_task     dag = get_dag(args)
+[2019-06-06 16:21:57,938] {base_task_runner.py:101} INFO - Job 50: Subtask dummy_task   File "/home/micah/Desktop/Work/ETL/airflow_virtualenv/local/lib/python2.7/site-packages/airflow/bin/cli.py", line 145, in get_dag
+[2019-06-06 16:21:57,938] {base_task_runner.py:101} INFO - Job 50: Subtask dummy_task     'parse.'.format(args.dag_id))
+[2019-06-06 16:21:57,938] {base_task_runner.py:101} INFO - Job 50: Subtask dummy_task airflow.exceptions.AirflowException: dag_id could not be found: hello_world. Either the dag did not exist or it failed to parse.
+[2019-06-06 16:22:01,875] {logging_mixin.py:95} INFO - [2019-06-06 16:22:01,875] {jobs.py:2562} INFO - Task exited with return code 1

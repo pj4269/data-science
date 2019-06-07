@@ -1,0 +1,7 @@
+#!/home/micah/Desktop/Work/ETL/airflow_virtualenv/bin/python
+import json_merge_patch.cli
+json_merge_patch.cli.main()
+
+
+
+

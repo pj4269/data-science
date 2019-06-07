@@ -1,0 +1,240 @@
+[2019-06-05 14:14:10,322] {jobs.py:398} INFO - Started process (PID=11539) to work on /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:14:10,327] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py for tasks to queue
+[2019-06-05 14:14:10,328] {logging_mixin.py:95} INFO - [2019-06-05 14:14:10,328] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:14:10,344] {jobs.py:1723} INFO - DAG(s) ['hello_world'] retrieved from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:14:10,355] {logging_mixin.py:95} INFO - [2019-06-05 14:14:10,355] {__init__.py:4113} INFO - Creating ORM DAG for hello_world
+[2019-06-05 14:14:10,437] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py took 0.116 seconds
+[2019-06-05 14:14:50,347] {jobs.py:398} INFO - Started process (PID=11618) to work on /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:14:50,353] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py for tasks to queue
+[2019-06-05 14:14:50,353] {logging_mixin.py:95} INFO - [2019-06-05 14:14:50,353] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:14:50,361] {jobs.py:1723} INFO - DAG(s) ['hello_world'] retrieved from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:14:50,498] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py took 0.151 seconds
+[2019-06-05 14:15:30,385] {jobs.py:398} INFO - Started process (PID=11674) to work on /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:15:30,389] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py for tasks to queue
+[2019-06-05 14:15:30,390] {logging_mixin.py:95} INFO - [2019-06-05 14:15:30,390] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:15:30,401] {jobs.py:1723} INFO - DAG(s) ['hello_world'] retrieved from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:15:30,517] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py took 0.131 seconds
+[2019-06-05 14:16:10,415] {jobs.py:398} INFO - Started process (PID=11739) to work on /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:16:10,418] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py for tasks to queue
+[2019-06-05 14:16:10,418] {logging_mixin.py:95} INFO - [2019-06-05 14:16:10,418] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:16:10,427] {jobs.py:1723} INFO - DAG(s) ['hello_world'] retrieved from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:16:10,540] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py took 0.124 seconds
+[2019-06-05 14:16:50,459] {jobs.py:398} INFO - Started process (PID=11819) to work on /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:16:50,462] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py for tasks to queue
+[2019-06-05 14:16:50,462] {logging_mixin.py:95} INFO - [2019-06-05 14:16:50,462] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:16:50,470] {jobs.py:1723} INFO - DAG(s) ['hello_world'] retrieved from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:16:50,590] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py took 0.131 seconds
+[2019-06-05 14:22:00,112] {jobs.py:398} INFO - Started process (PID=12236) to work on /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:22:00,115] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py for tasks to queue
+[2019-06-05 14:22:00,115] {logging_mixin.py:95} INFO - [2019-06-05 14:22:00,115] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:22:00,123] {jobs.py:1723} INFO - DAG(s) ['hello_world'] retrieved from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:22:00,240] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py took 0.128 seconds
+[2019-06-05 14:22:42,147] {jobs.py:398} INFO - Started process (PID=12297) to work on /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:22:42,150] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py for tasks to queue
+[2019-06-05 14:22:42,150] {logging_mixin.py:95} INFO - [2019-06-05 14:22:42,150] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:22:42,158] {jobs.py:1723} INFO - DAG(s) ['hello_world'] retrieved from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:22:42,279] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py took 0.132 seconds
+[2019-06-05 14:23:24,185] {jobs.py:398} INFO - Started process (PID=12394) to work on /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:23:24,191] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py for tasks to queue
+[2019-06-05 14:23:24,192] {logging_mixin.py:95} INFO - [2019-06-05 14:23:24,192] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:23:24,203] {jobs.py:1723} INFO - DAG(s) ['hello_world'] retrieved from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:23:24,321] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py took 0.136 seconds
+[2019-06-05 14:24:11,922] {jobs.py:398} INFO - Started process (PID=12498) to work on /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:24:11,926] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py for tasks to queue
+[2019-06-05 14:24:11,926] {logging_mixin.py:95} INFO - [2019-06-05 14:24:11,926] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:24:11,936] {jobs.py:1723} INFO - DAG(s) ['hello_world'] retrieved from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:24:12,050] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py took 0.128 seconds
+[2019-06-05 14:24:53,963] {jobs.py:398} INFO - Started process (PID=12578) to work on /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:24:53,966] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py for tasks to queue
+[2019-06-05 14:24:53,966] {logging_mixin.py:95} INFO - [2019-06-05 14:24:53,966] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:24:53,974] {jobs.py:1723} INFO - DAG(s) ['hello_world'] retrieved from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:24:54,113] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py took 0.150 seconds
+[2019-06-05 14:25:35,998] {jobs.py:398} INFO - Started process (PID=12642) to work on /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:25:36,002] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py for tasks to queue
+[2019-06-05 14:25:36,002] {logging_mixin.py:95} INFO - [2019-06-05 14:25:36,002] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:25:36,009] {jobs.py:1723} INFO - DAG(s) ['hello_world'] retrieved from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:25:36,147] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py took 0.149 seconds
+[2019-06-05 14:26:18,032] {jobs.py:398} INFO - Started process (PID=12714) to work on /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:26:18,034] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py for tasks to queue
+[2019-06-05 14:26:18,034] {logging_mixin.py:95} INFO - [2019-06-05 14:26:18,034] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:26:18,044] {jobs.py:1723} INFO - DAG(s) ['hello_world'] retrieved from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:26:18,161] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py took 0.129 seconds
+[2019-06-05 14:27:00,087] {jobs.py:398} INFO - Started process (PID=12781) to work on /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:27:00,092] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py for tasks to queue
+[2019-06-05 14:27:00,092] {logging_mixin.py:95} INFO - [2019-06-05 14:27:00,092] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:27:00,101] {jobs.py:1723} INFO - DAG(s) ['hello_world'] retrieved from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:27:00,237] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py took 0.150 seconds
+[2019-06-05 14:27:42,103] {jobs.py:398} INFO - Started process (PID=12844) to work on /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:27:42,108] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py for tasks to queue
+[2019-06-05 14:27:42,108] {logging_mixin.py:95} INFO - [2019-06-05 14:27:42,108] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:27:42,117] {jobs.py:1723} INFO - DAG(s) ['hello_world'] retrieved from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:27:42,294] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py took 0.191 seconds
+[2019-06-05 14:28:24,282] {jobs.py:398} INFO - Started process (PID=12915) to work on /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:28:24,287] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py for tasks to queue
+[2019-06-05 14:28:24,289] {logging_mixin.py:95} INFO - [2019-06-05 14:28:24,288] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:28:24,301] {jobs.py:1723} INFO - DAG(s) ['hello_world'] retrieved from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:28:24,444] {jobs.py:1446} INFO - Processing hello_world
+[2019-06-05 14:28:24,747] {jobs.py:1450} INFO - Created <DagRun hello_world @ 2019-06-04 12:00:00+00:00: scheduled__2019-06-04T12:00:00+00:00, externally triggered: False>
+[2019-06-05 14:28:24,751] {jobs.py:921} INFO - Examining DAG run <DagRun hello_world @ 2019-06-04 12:00:00+00:00: scheduled__2019-06-04T12:00:00+00:00, externally triggered: False>
+[2019-06-05 14:28:24,758] {jobs.py:921} INFO - Examining DAG run <DagRun hello_world @ 2019-06-05 21:28:23.990252+00:00: manual__2019-06-05T21:28:23.990252+00:00, externally triggered: True>
+[2019-06-05 14:28:24,778] {jobs.py:632} INFO - Skipping SLA check for <DAG: hello_world> because no tasks in DAG have SLAs
+[2019-06-05 14:28:24,782] {jobs.py:1787} INFO - Creating / updating <TaskInstance: hello_world.dummy_task 2019-06-04 12:00:00+00:00 [scheduled]> in ORM
+[2019-06-05 14:28:24,789] {jobs.py:1787} INFO - Creating / updating <TaskInstance: hello_world.dummy_task 2019-06-05 21:28:23.990252+00:00 [scheduled]> in ORM
+[2019-06-05 14:28:24,890] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py took 0.608 seconds
+[2019-06-05 14:29:24,525] {jobs.py:398} INFO - Started process (PID=13029) to work on /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:29:24,528] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py for tasks to queue
+[2019-06-05 14:29:24,528] {logging_mixin.py:95} INFO - [2019-06-05 14:29:24,528] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:29:24,536] {jobs.py:1723} INFO - DAG(s) ['hello_world'] retrieved from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:29:24,658] {jobs.py:1446} INFO - Processing hello_world
+[2019-06-05 14:29:24,670] {jobs.py:921} INFO - Examining DAG run <DagRun hello_world @ 2019-06-04 12:00:00+00:00: scheduled__2019-06-04T12:00:00+00:00, externally triggered: False>
+[2019-06-05 14:29:24,677] {jobs.py:921} INFO - Examining DAG run <DagRun hello_world @ 2019-06-05 21:28:23.990252+00:00: manual__2019-06-05T21:28:23.990252+00:00, externally triggered: True>
+[2019-06-05 14:29:24,706] {jobs.py:632} INFO - Skipping SLA check for <DAG: hello_world> because no tasks in DAG have SLAs
+[2019-06-05 14:29:24,860] {logging_mixin.py:95} INFO - [2019-06-05 14:29:24,860] {__init__.py:512} INFO - Marked zombie job <TaskInstance: hello_world.dummy_task 2019-06-05 21:28:23.990252+00:00 [up_for_retry]> as up_for_retry
+[2019-06-05 14:29:24,993] {logging_mixin.py:95} INFO - [2019-06-05 14:29:24,993] {__init__.py:512} INFO - Marked zombie job <TaskInstance: hello_world.dummy_task 2019-06-04 12:00:00+00:00 [up_for_retry]> as up_for_retry
+[2019-06-05 14:29:24,993] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py took 0.469 seconds
+[2019-06-05 14:30:06,556] {jobs.py:398} INFO - Started process (PID=13093) to work on /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:30:06,558] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py for tasks to queue
+[2019-06-05 14:30:06,558] {logging_mixin.py:95} INFO - [2019-06-05 14:30:06,558] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:30:06,567] {jobs.py:1723} INFO - DAG(s) ['hello_world'] retrieved from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:30:06,705] {jobs.py:1446} INFO - Processing hello_world
+[2019-06-05 14:30:06,717] {jobs.py:921} INFO - Examining DAG run <DagRun hello_world @ 2019-06-04 12:00:00+00:00: scheduled__2019-06-04T12:00:00+00:00, externally triggered: False>
+[2019-06-05 14:30:06,726] {jobs.py:921} INFO - Examining DAG run <DagRun hello_world @ 2019-06-05 21:28:23.990252+00:00: manual__2019-06-05T21:28:23.990252+00:00, externally triggered: True>
+[2019-06-05 14:30:06,749] {jobs.py:632} INFO - Skipping SLA check for <DAG: hello_world> because no tasks in DAG have SLAs
+[2019-06-05 14:30:06,751] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py took 0.196 seconds
+[2019-06-05 14:30:48,600] {jobs.py:398} INFO - Started process (PID=13155) to work on /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:30:48,607] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py for tasks to queue
+[2019-06-05 14:30:48,608] {logging_mixin.py:95} INFO - [2019-06-05 14:30:48,607] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:30:48,627] {jobs.py:1723} INFO - DAG(s) ['hello_world'] retrieved from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:30:48,778] {jobs.py:1446} INFO - Processing hello_world
+[2019-06-05 14:30:48,790] {jobs.py:921} INFO - Examining DAG run <DagRun hello_world @ 2019-06-04 12:00:00+00:00: scheduled__2019-06-04T12:00:00+00:00, externally triggered: False>
+[2019-06-05 14:30:48,797] {jobs.py:921} INFO - Examining DAG run <DagRun hello_world @ 2019-06-05 21:28:23.990252+00:00: manual__2019-06-05T21:28:23.990252+00:00, externally triggered: True>
+[2019-06-05 14:30:48,822] {jobs.py:632} INFO - Skipping SLA check for <DAG: hello_world> because no tasks in DAG have SLAs
+[2019-06-05 14:30:48,825] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py took 0.225 seconds
+[2019-06-05 14:31:30,758] {jobs.py:398} INFO - Started process (PID=13213) to work on /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:31:30,761] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py for tasks to queue
+[2019-06-05 14:31:30,761] {logging_mixin.py:95} INFO - [2019-06-05 14:31:30,761] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:31:30,769] {jobs.py:1723} INFO - DAG(s) ['hello_world'] retrieved from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:31:30,904] {jobs.py:1446} INFO - Processing hello_world
+[2019-06-05 14:31:30,919] {jobs.py:921} INFO - Examining DAG run <DagRun hello_world @ 2019-06-04 12:00:00+00:00: scheduled__2019-06-04T12:00:00+00:00, externally triggered: False>
+[2019-06-05 14:31:30,929] {jobs.py:921} INFO - Examining DAG run <DagRun hello_world @ 2019-06-05 21:28:23.990252+00:00: manual__2019-06-05T21:28:23.990252+00:00, externally triggered: True>
+[2019-06-05 14:31:30,957] {jobs.py:632} INFO - Skipping SLA check for <DAG: hello_world> because no tasks in DAG have SLAs
+[2019-06-05 14:31:30,961] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py took 0.203 seconds
+[2019-06-05 14:32:12,799] {jobs.py:398} INFO - Started process (PID=13278) to work on /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:32:12,802] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py for tasks to queue
+[2019-06-05 14:32:12,803] {logging_mixin.py:95} INFO - [2019-06-05 14:32:12,803] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:32:12,810] {jobs.py:1723} INFO - DAG(s) ['hello_world'] retrieved from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:32:12,992] {jobs.py:1446} INFO - Processing hello_world
+[2019-06-05 14:32:13,014] {jobs.py:921} INFO - Examining DAG run <DagRun hello_world @ 2019-06-04 12:00:00+00:00: scheduled__2019-06-04T12:00:00+00:00, externally triggered: False>
+[2019-06-05 14:32:13,024] {jobs.py:921} INFO - Examining DAG run <DagRun hello_world @ 2019-06-05 21:28:23.990252+00:00: manual__2019-06-05T21:28:23.990252+00:00, externally triggered: True>
+[2019-06-05 14:32:13,052] {jobs.py:632} INFO - Skipping SLA check for <DAG: hello_world> because no tasks in DAG have SLAs
+[2019-06-05 14:32:13,056] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py took 0.257 seconds
+[2019-06-05 14:32:54,833] {jobs.py:398} INFO - Started process (PID=13338) to work on /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:32:54,836] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py for tasks to queue
+[2019-06-05 14:32:54,836] {logging_mixin.py:95} INFO - [2019-06-05 14:32:54,836] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:32:54,844] {jobs.py:1723} INFO - DAG(s) ['hello_world'] retrieved from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:32:54,968] {jobs.py:1446} INFO - Processing hello_world
+[2019-06-05 14:32:54,980] {jobs.py:921} INFO - Examining DAG run <DagRun hello_world @ 2019-06-04 12:00:00+00:00: scheduled__2019-06-04T12:00:00+00:00, externally triggered: False>
+[2019-06-05 14:32:54,990] {jobs.py:921} INFO - Examining DAG run <DagRun hello_world @ 2019-06-05 21:28:23.990252+00:00: manual__2019-06-05T21:28:23.990252+00:00, externally triggered: True>
+[2019-06-05 14:32:55,021] {jobs.py:632} INFO - Skipping SLA check for <DAG: hello_world> because no tasks in DAG have SLAs
+[2019-06-05 14:32:55,025] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py took 0.192 seconds
+[2019-06-05 14:33:36,887] {jobs.py:398} INFO - Started process (PID=13542) to work on /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:33:36,891] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py for tasks to queue
+[2019-06-05 14:33:36,891] {logging_mixin.py:95} INFO - [2019-06-05 14:33:36,891] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:33:36,906] {jobs.py:1723} INFO - DAG(s) ['hello_world'] retrieved from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:33:37,101] {jobs.py:1446} INFO - Processing hello_world
+[2019-06-05 14:33:37,117] {jobs.py:921} INFO - Examining DAG run <DagRun hello_world @ 2019-06-04 12:00:00+00:00: scheduled__2019-06-04T12:00:00+00:00, externally triggered: False>
+[2019-06-05 14:33:37,125] {jobs.py:921} INFO - Examining DAG run <DagRun hello_world @ 2019-06-05 21:28:23.990252+00:00: manual__2019-06-05T21:28:23.990252+00:00, externally triggered: True>
+[2019-06-05 14:33:37,217] {jobs.py:632} INFO - Skipping SLA check for <DAG: hello_world> because no tasks in DAG have SLAs
+[2019-06-05 14:33:37,220] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py took 0.333 seconds
+[2019-06-05 14:34:25,215] {jobs.py:398} INFO - Started process (PID=13643) to work on /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:34:25,220] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py for tasks to queue
+[2019-06-05 14:34:25,220] {logging_mixin.py:95} INFO - [2019-06-05 14:34:25,220] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:34:25,231] {jobs.py:1723} INFO - DAG(s) ['hello_world'] retrieved from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:34:25,386] {jobs.py:1446} INFO - Processing hello_world
+[2019-06-05 14:34:25,407] {jobs.py:921} INFO - Examining DAG run <DagRun hello_world @ 2019-06-04 12:00:00+00:00: scheduled__2019-06-04T12:00:00+00:00, externally triggered: False>
+[2019-06-05 14:34:25,422] {jobs.py:921} INFO - Examining DAG run <DagRun hello_world @ 2019-06-05 21:28:23.990252+00:00: manual__2019-06-05T21:28:23.990252+00:00, externally triggered: True>
+[2019-06-05 14:34:25,520] {jobs.py:632} INFO - Skipping SLA check for <DAG: hello_world> because no tasks in DAG have SLAs
+[2019-06-05 14:34:25,525] {jobs.py:1787} INFO - Creating / updating <TaskInstance: hello_world.dummy_task 2019-06-04 12:00:00+00:00 [scheduled]> in ORM
+[2019-06-05 14:34:25,528] {jobs.py:1787} INFO - Creating / updating <TaskInstance: hello_world.dummy_task 2019-06-05 21:28:23.990252+00:00 [scheduled]> in ORM
+[2019-06-05 14:34:25,631] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py took 0.417 seconds
+[2019-06-05 14:35:19,947] {jobs.py:398} INFO - Started process (PID=13820) to work on /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:35:19,949] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py for tasks to queue
+[2019-06-05 14:35:19,950] {logging_mixin.py:95} INFO - [2019-06-05 14:35:19,949] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:35:19,959] {jobs.py:1723} INFO - DAG(s) ['hello_world'] retrieved from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:35:20,086] {jobs.py:1446} INFO - Processing hello_world
+[2019-06-05 14:35:20,099] {jobs.py:921} INFO - Examining DAG run <DagRun hello_world @ 2019-06-04 12:00:00+00:00: scheduled__2019-06-04T12:00:00+00:00, externally triggered: False>
+[2019-06-05 14:35:20,107] {jobs.py:921} INFO - Examining DAG run <DagRun hello_world @ 2019-06-05 21:28:23.990252+00:00: manual__2019-06-05T21:28:23.990252+00:00, externally triggered: True>
+[2019-06-05 14:35:20,177] {jobs.py:632} INFO - Skipping SLA check for <DAG: hello_world> because no tasks in DAG have SLAs
+[2019-06-05 14:35:20,180] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py took 0.233 seconds
+[2019-06-05 14:36:02,746] {jobs.py:398} INFO - Started process (PID=13882) to work on /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:36:02,751] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py for tasks to queue
+[2019-06-05 14:36:02,751] {logging_mixin.py:95} INFO - [2019-06-05 14:36:02,751] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:36:02,763] {jobs.py:1723} INFO - DAG(s) ['hello_world'] retrieved from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:36:02,913] {jobs.py:1446} INFO - Processing hello_world
+[2019-06-05 14:36:02,935] {jobs.py:921} INFO - Examining DAG run <DagRun hello_world @ 2019-06-04 12:00:00+00:00: scheduled__2019-06-04T12:00:00+00:00, externally triggered: False>
+[2019-06-05 14:36:03,017] {jobs.py:921} INFO - Examining DAG run <DagRun hello_world @ 2019-06-05 21:28:23.990252+00:00: manual__2019-06-05T21:28:23.990252+00:00, externally triggered: True>
+[2019-06-05 14:36:03,046] {jobs.py:632} INFO - Skipping SLA check for <DAG: hello_world> because no tasks in DAG have SLAs
+[2019-06-05 14:36:03,049] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py took 0.304 seconds
+[2019-06-05 14:36:50,789] {jobs.py:398} INFO - Started process (PID=13963) to work on /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:36:50,795] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py for tasks to queue
+[2019-06-05 14:36:50,796] {logging_mixin.py:95} INFO - [2019-06-05 14:36:50,796] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:36:50,804] {jobs.py:1723} INFO - DAG(s) ['hello_world'] retrieved from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:36:51,366] {jobs.py:1446} INFO - Processing hello_world
+[2019-06-05 14:36:51,379] {jobs.py:921} INFO - Examining DAG run <DagRun hello_world @ 2019-06-04 12:00:00+00:00: scheduled__2019-06-04T12:00:00+00:00, externally triggered: False>
+[2019-06-05 14:36:51,386] {jobs.py:921} INFO - Examining DAG run <DagRun hello_world @ 2019-06-05 21:28:23.990252+00:00: manual__2019-06-05T21:28:23.990252+00:00, externally triggered: True>
+[2019-06-05 14:36:51,411] {jobs.py:632} INFO - Skipping SLA check for <DAG: hello_world> because no tasks in DAG have SLAs
+[2019-06-05 14:36:51,414] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py took 0.625 seconds
+[2019-06-05 14:37:32,878] {jobs.py:398} INFO - Started process (PID=14022) to work on /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:37:32,881] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py for tasks to queue
+[2019-06-05 14:37:32,881] {logging_mixin.py:95} INFO - [2019-06-05 14:37:32,881] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:37:32,894] {jobs.py:1723} INFO - DAG(s) ['hello_world'] retrieved from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:37:33,122] {jobs.py:1446} INFO - Processing hello_world
+[2019-06-05 14:37:33,136] {jobs.py:921} INFO - Examining DAG run <DagRun hello_world @ 2019-06-04 12:00:00+00:00: scheduled__2019-06-04T12:00:00+00:00, externally triggered: False>
+[2019-06-05 14:37:33,144] {jobs.py:921} INFO - Examining DAG run <DagRun hello_world @ 2019-06-05 21:28:23.990252+00:00: manual__2019-06-05T21:28:23.990252+00:00, externally triggered: True>
+[2019-06-05 14:37:33,168] {jobs.py:632} INFO - Skipping SLA check for <DAG: hello_world> because no tasks in DAG have SLAs
+[2019-06-05 14:37:33,171] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py took 0.293 seconds
+[2019-06-05 14:38:14,913] {jobs.py:398} INFO - Started process (PID=14080) to work on /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:38:14,917] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py for tasks to queue
+[2019-06-05 14:38:14,918] {logging_mixin.py:95} INFO - [2019-06-05 14:38:14,918] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:38:14,994] {jobs.py:1723} INFO - DAG(s) ['hello_world'] retrieved from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:38:15,128] {jobs.py:1446} INFO - Processing hello_world
+[2019-06-05 14:38:15,143] {jobs.py:921} INFO - Examining DAG run <DagRun hello_world @ 2019-06-04 12:00:00+00:00: scheduled__2019-06-04T12:00:00+00:00, externally triggered: False>
+[2019-06-05 14:38:15,151] {jobs.py:921} INFO - Examining DAG run <DagRun hello_world @ 2019-06-05 21:28:23.990252+00:00: manual__2019-06-05T21:28:23.990252+00:00, externally triggered: True>
+[2019-06-05 14:38:15,177] {jobs.py:632} INFO - Skipping SLA check for <DAG: hello_world> because no tasks in DAG have SLAs
+[2019-06-05 14:38:15,179] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py took 0.266 seconds
+[2019-06-05 14:38:56,949] {jobs.py:398} INFO - Started process (PID=14148) to work on /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:38:56,951] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py for tasks to queue
+[2019-06-05 14:38:56,951] {logging_mixin.py:95} INFO - [2019-06-05 14:38:56,951] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:38:56,965] {jobs.py:1723} INFO - DAG(s) ['hello_world'] retrieved from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:38:57,103] {jobs.py:1446} INFO - Processing hello_world
+[2019-06-05 14:38:57,115] {jobs.py:921} INFO - Examining DAG run <DagRun hello_world @ 2019-06-04 12:00:00+00:00: scheduled__2019-06-04T12:00:00+00:00, externally triggered: False>
+[2019-06-05 14:38:57,122] {jobs.py:921} INFO - Examining DAG run <DagRun hello_world @ 2019-06-05 21:28:23.990252+00:00: manual__2019-06-05T21:28:23.990252+00:00, externally triggered: True>
+[2019-06-05 14:38:57,142] {jobs.py:632} INFO - Skipping SLA check for <DAG: hello_world> because no tasks in DAG have SLAs
+[2019-06-05 14:38:57,145] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py took 0.196 seconds
+[2019-06-05 14:39:38,989] {jobs.py:398} INFO - Started process (PID=14201) to work on /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:39:38,991] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py for tasks to queue
+[2019-06-05 14:39:38,992] {logging_mixin.py:95} INFO - [2019-06-05 14:39:38,991] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:39:39,000] {jobs.py:1723} INFO - DAG(s) ['hello_world'] retrieved from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:39:39,145] {jobs.py:1446} INFO - Processing hello_world
+[2019-06-05 14:39:39,157] {jobs.py:921} INFO - Examining DAG run <DagRun hello_world @ 2019-06-04 12:00:00+00:00: scheduled__2019-06-04T12:00:00+00:00, externally triggered: False>
+[2019-06-05 14:39:39,165] {jobs.py:921} INFO - Examining DAG run <DagRun hello_world @ 2019-06-05 21:28:23.990252+00:00: manual__2019-06-05T21:28:23.990252+00:00, externally triggered: True>
+[2019-06-05 14:39:39,185] {jobs.py:632} INFO - Skipping SLA check for <DAG: hello_world> because no tasks in DAG have SLAs
+[2019-06-05 14:39:39,187] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py took 0.198 seconds
+[2019-06-05 14:40:21,027] {jobs.py:398} INFO - Started process (PID=14305) to work on /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:40:21,030] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py for tasks to queue
+[2019-06-05 14:40:21,030] {logging_mixin.py:95} INFO - [2019-06-05 14:40:21,030] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:40:21,038] {jobs.py:1723} INFO - DAG(s) ['hello_world'] retrieved from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:40:21,164] {jobs.py:1446} INFO - Processing hello_world
+[2019-06-05 14:40:21,176] {jobs.py:921} INFO - Examining DAG run <DagRun hello_world @ 2019-06-04 12:00:00+00:00: scheduled__2019-06-04T12:00:00+00:00, externally triggered: False>
+[2019-06-05 14:40:21,184] {jobs.py:921} INFO - Examining DAG run <DagRun hello_world @ 2019-06-05 21:28:23.990252+00:00: manual__2019-06-05T21:28:23.990252+00:00, externally triggered: True>
+[2019-06-05 14:40:21,204] {jobs.py:632} INFO - Skipping SLA check for <DAG: hello_world> because no tasks in DAG have SLAs
+[2019-06-05 14:40:21,206] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py took 0.179 seconds
+[2019-06-05 14:41:03,065] {jobs.py:398} INFO - Started process (PID=14390) to work on /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:41:03,069] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py for tasks to queue
+[2019-06-05 14:41:03,070] {logging_mixin.py:95} INFO - [2019-06-05 14:41:03,070] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:41:03,080] {jobs.py:1723} INFO - DAG(s) ['hello_world'] retrieved from /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py
+[2019-06-05 14:41:03,250] {jobs.py:1446} INFO - Processing hello_world
+[2019-06-05 14:41:03,273] {jobs.py:921} INFO - Examining DAG run <DagRun hello_world @ 2019-06-04 12:00:00+00:00: scheduled__2019-06-04T12:00:00+00:00, externally triggered: False>
+[2019-06-05 14:41:03,290] {jobs.py:921} INFO - Examining DAG run <DagRun hello_world @ 2019-06-05 21:28:23.990252+00:00: manual__2019-06-05T21:28:23.990252+00:00, externally triggered: True>
+[2019-06-05 14:41:03,314] {jobs.py:632} INFO - Skipping SLA check for <DAG: hello_world> because no tasks in DAG have SLAs
+[2019-06-05 14:41:03,316] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/airflow_home/dags/hello_world.py took 0.251 seconds

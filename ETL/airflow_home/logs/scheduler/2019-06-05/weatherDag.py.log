@@ -1,0 +1,314 @@
+[2019-06-05 14:22:24,131] {jobs.py:398} INFO - Started process (PID=12274) to work on /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:22:24,134] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py for tasks to queue
+[2019-06-05 14:22:24,134] {logging_mixin.py:95} INFO - [2019-06-05 14:22:24,134] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:22:24,141] {logging_mixin.py:95} WARNING - /home/micah/Desktop/Work/ETL/airflow_virtualenv/local/lib/python2.7/site-packages/airflow/utils/helpers.py:387: DeprecationWarning: Importing 'PythonOperator' directly from 'airflow.operators' has been deprecated. Please import from 'airflow.operators.[operator_module]' instead. Support for direct imports will be dropped entirely in Airflow 2.0.
+  DeprecationWarning)
+[2019-06-05 14:22:24,158] {logging_mixin.py:95} WARNING - /home/micah/Desktop/Work/ETL/airflow_virtualenv/local/lib/python2.7/site-packages/airflow/utils/helpers.py:387: DeprecationWarning: Importing 'PostgresHook' directly from 'airflow.hooks' has been deprecated. Please import from 'airflow.hooks.[operator_module]' instead. Support for direct imports will be dropped entirely in Airflow 2.0.
+  DeprecationWarning)
+[2019-06-05 14:22:24,161] {jobs.py:1723} INFO - DAG(s) ['weatherDag'] retrieved from /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:22:24,278] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py took 0.147 seconds
+[2019-06-05 14:23:06,170] {jobs.py:398} INFO - Started process (PID=12366) to work on /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:23:06,173] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py for tasks to queue
+[2019-06-05 14:23:06,173] {logging_mixin.py:95} INFO - [2019-06-05 14:23:06,173] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:23:06,181] {logging_mixin.py:95} WARNING - /home/micah/Desktop/Work/ETL/airflow_virtualenv/local/lib/python2.7/site-packages/airflow/utils/helpers.py:387: DeprecationWarning: Importing 'PythonOperator' directly from 'airflow.operators' has been deprecated. Please import from 'airflow.operators.[operator_module]' instead. Support for direct imports will be dropped entirely in Airflow 2.0.
+  DeprecationWarning)
+[2019-06-05 14:23:06,200] {logging_mixin.py:95} WARNING - /home/micah/Desktop/Work/ETL/airflow_virtualenv/local/lib/python2.7/site-packages/airflow/utils/helpers.py:387: DeprecationWarning: Importing 'PostgresHook' directly from 'airflow.hooks' has been deprecated. Please import from 'airflow.hooks.[operator_module]' instead. Support for direct imports will be dropped entirely in Airflow 2.0.
+  DeprecationWarning)
+[2019-06-05 14:23:06,206] {jobs.py:1723} INFO - DAG(s) ['weatherDag'] retrieved from /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:23:06,321] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py took 0.151 seconds
+[2019-06-05 14:23:48,210] {jobs.py:398} INFO - Started process (PID=12442) to work on /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:23:48,215] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py for tasks to queue
+[2019-06-05 14:23:48,215] {logging_mixin.py:95} INFO - [2019-06-05 14:23:48,215] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:23:48,221] {logging_mixin.py:95} WARNING - /home/micah/Desktop/Work/ETL/airflow_virtualenv/local/lib/python2.7/site-packages/airflow/utils/helpers.py:387: DeprecationWarning: Importing 'PythonOperator' directly from 'airflow.operators' has been deprecated. Please import from 'airflow.operators.[operator_module]' instead. Support for direct imports will be dropped entirely in Airflow 2.0.
+  DeprecationWarning)
+[2019-06-05 14:23:48,237] {logging_mixin.py:95} WARNING - /home/micah/Desktop/Work/ETL/airflow_virtualenv/local/lib/python2.7/site-packages/airflow/utils/helpers.py:387: DeprecationWarning: Importing 'PostgresHook' directly from 'airflow.hooks' has been deprecated. Please import from 'airflow.hooks.[operator_module]' instead. Support for direct imports will be dropped entirely in Airflow 2.0.
+  DeprecationWarning)
+[2019-06-05 14:23:48,240] {jobs.py:1723} INFO - DAG(s) ['weatherDag'] retrieved from /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:23:48,439] {jobs.py:1446} INFO - Processing weatherDag
+[2019-06-05 14:23:48,695] {jobs.py:1450} INFO - Created <DagRun weatherDag @ 2019-06-04T00:00:00+00:00: scheduled__2019-06-04T00:00:00+00:00, externally triggered: False>
+[2019-06-05 14:23:48,697] {jobs.py:921} INFO - Examining DAG run <DagRun weatherDag @ 2019-06-04 00:00:00+00:00: scheduled__2019-06-04T00:00:00+00:00, externally triggered: False>
+[2019-06-05 14:23:48,715] {jobs.py:632} INFO - Skipping SLA check for <DAG: weatherDag> because no tasks in DAG have SLAs
+[2019-06-05 14:23:48,718] {jobs.py:1787} INFO - Creating / updating <TaskInstance: weatherDag.get_weather 2019-06-04 00:00:00+00:00 [scheduled]> in ORM
+[2019-06-05 14:23:48,839] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py took 0.629 seconds
+[2019-06-05 14:24:35,938] {jobs.py:398} INFO - Started process (PID=12541) to work on /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:24:35,941] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py for tasks to queue
+[2019-06-05 14:24:35,941] {logging_mixin.py:95} INFO - [2019-06-05 14:24:35,941] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:24:35,946] {logging_mixin.py:95} WARNING - /home/micah/Desktop/Work/ETL/airflow_virtualenv/local/lib/python2.7/site-packages/airflow/utils/helpers.py:387: DeprecationWarning: Importing 'PythonOperator' directly from 'airflow.operators' has been deprecated. Please import from 'airflow.operators.[operator_module]' instead. Support for direct imports will be dropped entirely in Airflow 2.0.
+  DeprecationWarning)
+[2019-06-05 14:24:35,964] {logging_mixin.py:95} WARNING - /home/micah/Desktop/Work/ETL/airflow_virtualenv/local/lib/python2.7/site-packages/airflow/utils/helpers.py:387: DeprecationWarning: Importing 'PostgresHook' directly from 'airflow.hooks' has been deprecated. Please import from 'airflow.hooks.[operator_module]' instead. Support for direct imports will be dropped entirely in Airflow 2.0.
+  DeprecationWarning)
+[2019-06-05 14:24:35,968] {jobs.py:1723} INFO - DAG(s) ['weatherDag'] retrieved from /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:24:36,085] {jobs.py:1446} INFO - Processing weatherDag
+[2019-06-05 14:24:36,097] {jobs.py:921} INFO - Examining DAG run <DagRun weatherDag @ 2019-06-04 00:00:00+00:00: scheduled__2019-06-04T00:00:00+00:00, externally triggered: False>
+[2019-06-05 14:24:36,117] {jobs.py:632} INFO - Skipping SLA check for <DAG: weatherDag> because no tasks in DAG have SLAs
+[2019-06-05 14:24:36,119] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py took 0.181 seconds
+[2019-06-05 14:25:17,976] {jobs.py:398} INFO - Started process (PID=12612) to work on /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:25:17,979] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py for tasks to queue
+[2019-06-05 14:25:17,979] {logging_mixin.py:95} INFO - [2019-06-05 14:25:17,979] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:25:17,986] {logging_mixin.py:95} WARNING - /home/micah/Desktop/Work/ETL/airflow_virtualenv/local/lib/python2.7/site-packages/airflow/utils/helpers.py:387: DeprecationWarning: Importing 'PythonOperator' directly from 'airflow.operators' has been deprecated. Please import from 'airflow.operators.[operator_module]' instead. Support for direct imports will be dropped entirely in Airflow 2.0.
+  DeprecationWarning)
+[2019-06-05 14:25:18,003] {logging_mixin.py:95} WARNING - /home/micah/Desktop/Work/ETL/airflow_virtualenv/local/lib/python2.7/site-packages/airflow/utils/helpers.py:387: DeprecationWarning: Importing 'PostgresHook' directly from 'airflow.hooks' has been deprecated. Please import from 'airflow.hooks.[operator_module]' instead. Support for direct imports will be dropped entirely in Airflow 2.0.
+  DeprecationWarning)
+[2019-06-05 14:25:18,006] {jobs.py:1723} INFO - DAG(s) ['weatherDag'] retrieved from /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:25:18,150] {jobs.py:1446} INFO - Processing weatherDag
+[2019-06-05 14:25:18,161] {jobs.py:921} INFO - Examining DAG run <DagRun weatherDag @ 2019-06-04 00:00:00+00:00: scheduled__2019-06-04T00:00:00+00:00, externally triggered: False>
+[2019-06-05 14:25:18,186] {jobs.py:632} INFO - Skipping SLA check for <DAG: weatherDag> because no tasks in DAG have SLAs
+[2019-06-05 14:25:18,189] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py took 0.213 seconds
+[2019-06-05 14:26:00,018] {jobs.py:398} INFO - Started process (PID=12687) to work on /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:26:00,024] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py for tasks to queue
+[2019-06-05 14:26:00,024] {logging_mixin.py:95} INFO - [2019-06-05 14:26:00,024] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:26:00,029] {logging_mixin.py:95} WARNING - /home/micah/Desktop/Work/ETL/airflow_virtualenv/local/lib/python2.7/site-packages/airflow/utils/helpers.py:387: DeprecationWarning: Importing 'PythonOperator' directly from 'airflow.operators' has been deprecated. Please import from 'airflow.operators.[operator_module]' instead. Support for direct imports will be dropped entirely in Airflow 2.0.
+  DeprecationWarning)
+[2019-06-05 14:26:00,045] {logging_mixin.py:95} WARNING - /home/micah/Desktop/Work/ETL/airflow_virtualenv/local/lib/python2.7/site-packages/airflow/utils/helpers.py:387: DeprecationWarning: Importing 'PostgresHook' directly from 'airflow.hooks' has been deprecated. Please import from 'airflow.hooks.[operator_module]' instead. Support for direct imports will be dropped entirely in Airflow 2.0.
+  DeprecationWarning)
+[2019-06-05 14:26:00,048] {jobs.py:1723} INFO - DAG(s) ['weatherDag'] retrieved from /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:26:00,187] {jobs.py:1446} INFO - Processing weatherDag
+[2019-06-05 14:26:00,197] {jobs.py:921} INFO - Examining DAG run <DagRun weatherDag @ 2019-06-04 00:00:00+00:00: scheduled__2019-06-04T00:00:00+00:00, externally triggered: False>
+[2019-06-05 14:26:00,217] {jobs.py:632} INFO - Skipping SLA check for <DAG: weatherDag> because no tasks in DAG have SLAs
+[2019-06-05 14:26:00,220] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py took 0.202 seconds
+[2019-06-05 14:26:42,050] {jobs.py:398} INFO - Started process (PID=12745) to work on /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:26:42,053] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py for tasks to queue
+[2019-06-05 14:26:42,053] {logging_mixin.py:95} INFO - [2019-06-05 14:26:42,053] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:26:42,058] {logging_mixin.py:95} WARNING - /home/micah/Desktop/Work/ETL/airflow_virtualenv/local/lib/python2.7/site-packages/airflow/utils/helpers.py:387: DeprecationWarning: Importing 'PythonOperator' directly from 'airflow.operators' has been deprecated. Please import from 'airflow.operators.[operator_module]' instead. Support for direct imports will be dropped entirely in Airflow 2.0.
+  DeprecationWarning)
+[2019-06-05 14:26:42,072] {logging_mixin.py:95} WARNING - /home/micah/Desktop/Work/ETL/airflow_virtualenv/local/lib/python2.7/site-packages/airflow/utils/helpers.py:387: DeprecationWarning: Importing 'PostgresHook' directly from 'airflow.hooks' has been deprecated. Please import from 'airflow.hooks.[operator_module]' instead. Support for direct imports will be dropped entirely in Airflow 2.0.
+  DeprecationWarning)
+[2019-06-05 14:26:42,076] {jobs.py:1723} INFO - DAG(s) ['weatherDag'] retrieved from /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:26:42,200] {jobs.py:1446} INFO - Processing weatherDag
+[2019-06-05 14:26:42,210] {jobs.py:921} INFO - Examining DAG run <DagRun weatherDag @ 2019-06-04 00:00:00+00:00: scheduled__2019-06-04T00:00:00+00:00, externally triggered: False>
+[2019-06-05 14:26:42,230] {jobs.py:632} INFO - Skipping SLA check for <DAG: weatherDag> because no tasks in DAG have SLAs
+[2019-06-05 14:26:42,232] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py took 0.182 seconds
+[2019-06-05 14:27:24,094] {jobs.py:398} INFO - Started process (PID=12818) to work on /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:27:24,097] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py for tasks to queue
+[2019-06-05 14:27:24,097] {logging_mixin.py:95} INFO - [2019-06-05 14:27:24,097] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:27:24,103] {logging_mixin.py:95} WARNING - /home/micah/Desktop/Work/ETL/airflow_virtualenv/local/lib/python2.7/site-packages/airflow/utils/helpers.py:387: DeprecationWarning: Importing 'PythonOperator' directly from 'airflow.operators' has been deprecated. Please import from 'airflow.operators.[operator_module]' instead. Support for direct imports will be dropped entirely in Airflow 2.0.
+  DeprecationWarning)
+[2019-06-05 14:27:24,119] {logging_mixin.py:95} WARNING - /home/micah/Desktop/Work/ETL/airflow_virtualenv/local/lib/python2.7/site-packages/airflow/utils/helpers.py:387: DeprecationWarning: Importing 'PostgresHook' directly from 'airflow.hooks' has been deprecated. Please import from 'airflow.hooks.[operator_module]' instead. Support for direct imports will be dropped entirely in Airflow 2.0.
+  DeprecationWarning)
+[2019-06-05 14:27:24,122] {jobs.py:1723} INFO - DAG(s) ['weatherDag'] retrieved from /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:27:24,263] {jobs.py:1446} INFO - Processing weatherDag
+[2019-06-05 14:27:24,273] {jobs.py:921} INFO - Examining DAG run <DagRun weatherDag @ 2019-06-04 00:00:00+00:00: scheduled__2019-06-04T00:00:00+00:00, externally triggered: False>
+[2019-06-05 14:27:24,292] {jobs.py:632} INFO - Skipping SLA check for <DAG: weatherDag> because no tasks in DAG have SLAs
+[2019-06-05 14:27:24,409] {logging_mixin.py:95} INFO - [2019-06-05 14:27:24,409] {__init__.py:512} INFO - Marked zombie job <TaskInstance: weatherDag.get_weather 2019-06-04 00:00:00+00:00 [up_for_retry]> as up_for_retry
+[2019-06-05 14:27:24,410] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py took 0.316 seconds
+[2019-06-05 14:28:06,134] {jobs.py:398} INFO - Started process (PID=12883) to work on /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:28:06,139] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py for tasks to queue
+[2019-06-05 14:28:06,139] {logging_mixin.py:95} INFO - [2019-06-05 14:28:06,139] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:28:06,148] {logging_mixin.py:95} WARNING - /home/micah/Desktop/Work/ETL/airflow_virtualenv/local/lib/python2.7/site-packages/airflow/utils/helpers.py:387: DeprecationWarning: Importing 'PythonOperator' directly from 'airflow.operators' has been deprecated. Please import from 'airflow.operators.[operator_module]' instead. Support for direct imports will be dropped entirely in Airflow 2.0.
+  DeprecationWarning)
+[2019-06-05 14:28:06,163] {logging_mixin.py:95} WARNING - /home/micah/Desktop/Work/ETL/airflow_virtualenv/local/lib/python2.7/site-packages/airflow/utils/helpers.py:387: DeprecationWarning: Importing 'PostgresHook' directly from 'airflow.hooks' has been deprecated. Please import from 'airflow.hooks.[operator_module]' instead. Support for direct imports will be dropped entirely in Airflow 2.0.
+  DeprecationWarning)
+[2019-06-05 14:28:06,166] {jobs.py:1723} INFO - DAG(s) ['weatherDag'] retrieved from /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:28:06,284] {jobs.py:1446} INFO - Processing weatherDag
+[2019-06-05 14:28:06,294] {jobs.py:921} INFO - Examining DAG run <DagRun weatherDag @ 2019-06-04 00:00:00+00:00: scheduled__2019-06-04T00:00:00+00:00, externally triggered: False>
+[2019-06-05 14:28:06,312] {jobs.py:632} INFO - Skipping SLA check for <DAG: weatherDag> because no tasks in DAG have SLAs
+[2019-06-05 14:28:06,315] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py took 0.181 seconds
+[2019-06-05 14:29:00,645] {jobs.py:398} INFO - Started process (PID=12986) to work on /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:29:00,648] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py for tasks to queue
+[2019-06-05 14:29:00,648] {logging_mixin.py:95} INFO - [2019-06-05 14:29:00,648] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:29:00,653] {logging_mixin.py:95} WARNING - /home/micah/Desktop/Work/ETL/airflow_virtualenv/local/lib/python2.7/site-packages/airflow/utils/helpers.py:387: DeprecationWarning: Importing 'PythonOperator' directly from 'airflow.operators' has been deprecated. Please import from 'airflow.operators.[operator_module]' instead. Support for direct imports will be dropped entirely in Airflow 2.0.
+  DeprecationWarning)
+[2019-06-05 14:29:00,668] {logging_mixin.py:95} WARNING - /home/micah/Desktop/Work/ETL/airflow_virtualenv/local/lib/python2.7/site-packages/airflow/utils/helpers.py:387: DeprecationWarning: Importing 'PostgresHook' directly from 'airflow.hooks' has been deprecated. Please import from 'airflow.hooks.[operator_module]' instead. Support for direct imports will be dropped entirely in Airflow 2.0.
+  DeprecationWarning)
+[2019-06-05 14:29:00,670] {jobs.py:1723} INFO - DAG(s) ['weatherDag'] retrieved from /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:29:00,802] {jobs.py:1446} INFO - Processing weatherDag
+[2019-06-05 14:29:00,815] {jobs.py:921} INFO - Examining DAG run <DagRun weatherDag @ 2019-06-04 00:00:00+00:00: scheduled__2019-06-04T00:00:00+00:00, externally triggered: False>
+[2019-06-05 14:29:00,845] {jobs.py:632} INFO - Skipping SLA check for <DAG: weatherDag> because no tasks in DAG have SLAs
+[2019-06-05 14:29:00,849] {jobs.py:1787} INFO - Creating / updating <TaskInstance: weatherDag.get_weather 2019-06-04 00:00:00+00:00 [scheduled]> in ORM
+[2019-06-05 14:29:00,978] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py took 0.333 seconds
+[2019-06-05 14:29:48,533] {jobs.py:398} INFO - Started process (PID=13066) to work on /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:29:48,537] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py for tasks to queue
+[2019-06-05 14:29:48,538] {logging_mixin.py:95} INFO - [2019-06-05 14:29:48,538] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:29:48,543] {logging_mixin.py:95} WARNING - /home/micah/Desktop/Work/ETL/airflow_virtualenv/local/lib/python2.7/site-packages/airflow/utils/helpers.py:387: DeprecationWarning: Importing 'PythonOperator' directly from 'airflow.operators' has been deprecated. Please import from 'airflow.operators.[operator_module]' instead. Support for direct imports will be dropped entirely in Airflow 2.0.
+  DeprecationWarning)
+[2019-06-05 14:29:48,560] {logging_mixin.py:95} WARNING - /home/micah/Desktop/Work/ETL/airflow_virtualenv/local/lib/python2.7/site-packages/airflow/utils/helpers.py:387: DeprecationWarning: Importing 'PostgresHook' directly from 'airflow.hooks' has been deprecated. Please import from 'airflow.hooks.[operator_module]' instead. Support for direct imports will be dropped entirely in Airflow 2.0.
+  DeprecationWarning)
+[2019-06-05 14:29:48,563] {jobs.py:1723} INFO - DAG(s) ['weatherDag'] retrieved from /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:29:48,692] {jobs.py:1446} INFO - Processing weatherDag
+[2019-06-05 14:29:48,706] {jobs.py:921} INFO - Examining DAG run <DagRun weatherDag @ 2019-06-04 00:00:00+00:00: scheduled__2019-06-04T00:00:00+00:00, externally triggered: False>
+[2019-06-05 14:29:48,731] {jobs.py:632} INFO - Skipping SLA check for <DAG: weatherDag> because no tasks in DAG have SLAs
+[2019-06-05 14:29:48,737] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py took 0.204 seconds
+[2019-06-05 14:30:30,575] {jobs.py:398} INFO - Started process (PID=13133) to work on /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:30:30,581] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py for tasks to queue
+[2019-06-05 14:30:30,581] {logging_mixin.py:95} INFO - [2019-06-05 14:30:30,581] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:30:30,587] {logging_mixin.py:95} WARNING - /home/micah/Desktop/Work/ETL/airflow_virtualenv/local/lib/python2.7/site-packages/airflow/utils/helpers.py:387: DeprecationWarning: Importing 'PythonOperator' directly from 'airflow.operators' has been deprecated. Please import from 'airflow.operators.[operator_module]' instead. Support for direct imports will be dropped entirely in Airflow 2.0.
+  DeprecationWarning)
+[2019-06-05 14:30:30,601] {logging_mixin.py:95} WARNING - /home/micah/Desktop/Work/ETL/airflow_virtualenv/local/lib/python2.7/site-packages/airflow/utils/helpers.py:387: DeprecationWarning: Importing 'PostgresHook' directly from 'airflow.hooks' has been deprecated. Please import from 'airflow.hooks.[operator_module]' instead. Support for direct imports will be dropped entirely in Airflow 2.0.
+  DeprecationWarning)
+[2019-06-05 14:30:30,604] {jobs.py:1723} INFO - DAG(s) ['weatherDag'] retrieved from /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:30:30,740] {jobs.py:1446} INFO - Processing weatherDag
+[2019-06-05 14:30:30,749] {jobs.py:921} INFO - Examining DAG run <DagRun weatherDag @ 2019-06-04 00:00:00+00:00: scheduled__2019-06-04T00:00:00+00:00, externally triggered: False>
+[2019-06-05 14:30:30,769] {jobs.py:632} INFO - Skipping SLA check for <DAG: weatherDag> because no tasks in DAG have SLAs
+[2019-06-05 14:30:30,771] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py took 0.196 seconds
+[2019-06-05 14:31:12,741] {jobs.py:398} INFO - Started process (PID=13193) to work on /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:31:12,748] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py for tasks to queue
+[2019-06-05 14:31:12,748] {logging_mixin.py:95} INFO - [2019-06-05 14:31:12,748] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:31:12,753] {logging_mixin.py:95} WARNING - /home/micah/Desktop/Work/ETL/airflow_virtualenv/local/lib/python2.7/site-packages/airflow/utils/helpers.py:387: DeprecationWarning: Importing 'PythonOperator' directly from 'airflow.operators' has been deprecated. Please import from 'airflow.operators.[operator_module]' instead. Support for direct imports will be dropped entirely in Airflow 2.0.
+  DeprecationWarning)
+[2019-06-05 14:31:12,770] {logging_mixin.py:95} WARNING - /home/micah/Desktop/Work/ETL/airflow_virtualenv/local/lib/python2.7/site-packages/airflow/utils/helpers.py:387: DeprecationWarning: Importing 'PostgresHook' directly from 'airflow.hooks' has been deprecated. Please import from 'airflow.hooks.[operator_module]' instead. Support for direct imports will be dropped entirely in Airflow 2.0.
+  DeprecationWarning)
+[2019-06-05 14:31:12,773] {jobs.py:1723} INFO - DAG(s) ['weatherDag'] retrieved from /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:31:12,890] {jobs.py:1446} INFO - Processing weatherDag
+[2019-06-05 14:31:12,903] {jobs.py:921} INFO - Examining DAG run <DagRun weatherDag @ 2019-06-04 00:00:00+00:00: scheduled__2019-06-04T00:00:00+00:00, externally triggered: False>
+[2019-06-05 14:31:12,984] {jobs.py:632} INFO - Skipping SLA check for <DAG: weatherDag> because no tasks in DAG have SLAs
+[2019-06-05 14:31:12,986] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py took 0.245 seconds
+[2019-06-05 14:31:54,784] {jobs.py:398} INFO - Started process (PID=13249) to work on /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:31:54,787] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py for tasks to queue
+[2019-06-05 14:31:54,787] {logging_mixin.py:95} INFO - [2019-06-05 14:31:54,787] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:31:54,792] {logging_mixin.py:95} WARNING - /home/micah/Desktop/Work/ETL/airflow_virtualenv/local/lib/python2.7/site-packages/airflow/utils/helpers.py:387: DeprecationWarning: Importing 'PythonOperator' directly from 'airflow.operators' has been deprecated. Please import from 'airflow.operators.[operator_module]' instead. Support for direct imports will be dropped entirely in Airflow 2.0.
+  DeprecationWarning)
+[2019-06-05 14:31:54,808] {logging_mixin.py:95} WARNING - /home/micah/Desktop/Work/ETL/airflow_virtualenv/local/lib/python2.7/site-packages/airflow/utils/helpers.py:387: DeprecationWarning: Importing 'PostgresHook' directly from 'airflow.hooks' has been deprecated. Please import from 'airflow.hooks.[operator_module]' instead. Support for direct imports will be dropped entirely in Airflow 2.0.
+  DeprecationWarning)
+[2019-06-05 14:31:54,811] {jobs.py:1723} INFO - DAG(s) ['weatherDag'] retrieved from /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:31:54,955] {jobs.py:1446} INFO - Processing weatherDag
+[2019-06-05 14:31:54,972] {jobs.py:921} INFO - Examining DAG run <DagRun weatherDag @ 2019-06-04 00:00:00+00:00: scheduled__2019-06-04T00:00:00+00:00, externally triggered: False>
+[2019-06-05 14:31:55,060] {jobs.py:632} INFO - Skipping SLA check for <DAG: weatherDag> because no tasks in DAG have SLAs
+[2019-06-05 14:31:55,064] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py took 0.280 seconds
+[2019-06-05 14:32:36,829] {jobs.py:398} INFO - Started process (PID=13318) to work on /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:32:36,832] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py for tasks to queue
+[2019-06-05 14:32:36,833] {logging_mixin.py:95} INFO - [2019-06-05 14:32:36,833] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:32:36,840] {logging_mixin.py:95} WARNING - /home/micah/Desktop/Work/ETL/airflow_virtualenv/local/lib/python2.7/site-packages/airflow/utils/helpers.py:387: DeprecationWarning: Importing 'PythonOperator' directly from 'airflow.operators' has been deprecated. Please import from 'airflow.operators.[operator_module]' instead. Support for direct imports will be dropped entirely in Airflow 2.0.
+  DeprecationWarning)
+[2019-06-05 14:32:36,859] {logging_mixin.py:95} WARNING - /home/micah/Desktop/Work/ETL/airflow_virtualenv/local/lib/python2.7/site-packages/airflow/utils/helpers.py:387: DeprecationWarning: Importing 'PostgresHook' directly from 'airflow.hooks' has been deprecated. Please import from 'airflow.hooks.[operator_module]' instead. Support for direct imports will be dropped entirely in Airflow 2.0.
+  DeprecationWarning)
+[2019-06-05 14:32:36,863] {jobs.py:1723} INFO - DAG(s) ['weatherDag'] retrieved from /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:32:37,010] {jobs.py:1446} INFO - Processing weatherDag
+[2019-06-05 14:32:37,027] {jobs.py:921} INFO - Examining DAG run <DagRun weatherDag @ 2019-06-04 00:00:00+00:00: scheduled__2019-06-04T00:00:00+00:00, externally triggered: False>
+[2019-06-05 14:32:37,130] {jobs.py:632} INFO - Skipping SLA check for <DAG: weatherDag> because no tasks in DAG have SLAs
+[2019-06-05 14:32:37,281] {logging_mixin.py:95} INFO - [2019-06-05 14:32:37,281] {__init__.py:512} INFO - Marked zombie job <TaskInstance: weatherDag.get_weather 2019-06-04 00:00:00+00:00 [up_for_retry]> as up_for_retry
+[2019-06-05 14:32:37,282] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py took 0.453 seconds
+[2019-06-05 14:33:18,855] {jobs.py:398} INFO - Started process (PID=13448) to work on /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:33:18,858] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py for tasks to queue
+[2019-06-05 14:33:18,858] {logging_mixin.py:95} INFO - [2019-06-05 14:33:18,858] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:33:18,864] {logging_mixin.py:95} WARNING - /home/micah/Desktop/Work/ETL/airflow_virtualenv/local/lib/python2.7/site-packages/airflow/utils/helpers.py:387: DeprecationWarning: Importing 'PythonOperator' directly from 'airflow.operators' has been deprecated. Please import from 'airflow.operators.[operator_module]' instead. Support for direct imports will be dropped entirely in Airflow 2.0.
+  DeprecationWarning)
+[2019-06-05 14:33:18,880] {logging_mixin.py:95} WARNING - /home/micah/Desktop/Work/ETL/airflow_virtualenv/local/lib/python2.7/site-packages/airflow/utils/helpers.py:387: DeprecationWarning: Importing 'PostgresHook' directly from 'airflow.hooks' has been deprecated. Please import from 'airflow.hooks.[operator_module]' instead. Support for direct imports will be dropped entirely in Airflow 2.0.
+  DeprecationWarning)
+[2019-06-05 14:33:18,884] {jobs.py:1723} INFO - DAG(s) ['weatherDag'] retrieved from /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:33:19,117] {jobs.py:1446} INFO - Processing weatherDag
+[2019-06-05 14:33:19,200] {jobs.py:921} INFO - Examining DAG run <DagRun weatherDag @ 2019-06-04 00:00:00+00:00: scheduled__2019-06-04T00:00:00+00:00, externally triggered: False>
+[2019-06-05 14:33:19,228] {jobs.py:632} INFO - Skipping SLA check for <DAG: weatherDag> because no tasks in DAG have SLAs
+[2019-06-05 14:33:19,232] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py took 0.377 seconds
+[2019-06-05 14:34:00,939] {jobs.py:398} INFO - Started process (PID=13596) to work on /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:34:00,943] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py for tasks to queue
+[2019-06-05 14:34:00,943] {logging_mixin.py:95} INFO - [2019-06-05 14:34:00,943] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:34:00,949] {logging_mixin.py:95} WARNING - /home/micah/Desktop/Work/ETL/airflow_virtualenv/local/lib/python2.7/site-packages/airflow/utils/helpers.py:387: DeprecationWarning: Importing 'PythonOperator' directly from 'airflow.operators' has been deprecated. Please import from 'airflow.operators.[operator_module]' instead. Support for direct imports will be dropped entirely in Airflow 2.0.
+  DeprecationWarning)
+[2019-06-05 14:34:00,970] {logging_mixin.py:95} WARNING - /home/micah/Desktop/Work/ETL/airflow_virtualenv/local/lib/python2.7/site-packages/airflow/utils/helpers.py:387: DeprecationWarning: Importing 'PostgresHook' directly from 'airflow.hooks' has been deprecated. Please import from 'airflow.hooks.[operator_module]' instead. Support for direct imports will be dropped entirely in Airflow 2.0.
+  DeprecationWarning)
+[2019-06-05 14:34:00,975] {jobs.py:1723} INFO - DAG(s) ['weatherDag'] retrieved from /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:34:01,199] {jobs.py:1446} INFO - Processing weatherDag
+[2019-06-05 14:34:01,213] {jobs.py:921} INFO - Examining DAG run <DagRun weatherDag @ 2019-06-04 00:00:00+00:00: scheduled__2019-06-04T00:00:00+00:00, externally triggered: False>
+[2019-06-05 14:34:01,242] {jobs.py:632} INFO - Skipping SLA check for <DAG: weatherDag> because no tasks in DAG have SLAs
+[2019-06-05 14:34:01,249] {jobs.py:1787} INFO - Creating / updating <TaskInstance: weatherDag.get_weather 2019-06-04 00:00:00+00:00 [scheduled]> in ORM
+[2019-06-05 14:34:01,405] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py took 0.466 seconds
+[2019-06-05 14:35:01,939] {jobs.py:398} INFO - Started process (PID=13783) to work on /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:35:01,941] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py for tasks to queue
+[2019-06-05 14:35:01,941] {logging_mixin.py:95} INFO - [2019-06-05 14:35:01,941] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:35:01,947] {logging_mixin.py:95} WARNING - /home/micah/Desktop/Work/ETL/airflow_virtualenv/local/lib/python2.7/site-packages/airflow/utils/helpers.py:387: DeprecationWarning: Importing 'PythonOperator' directly from 'airflow.operators' has been deprecated. Please import from 'airflow.operators.[operator_module]' instead. Support for direct imports will be dropped entirely in Airflow 2.0.
+  DeprecationWarning)
+[2019-06-05 14:35:01,967] {logging_mixin.py:95} WARNING - /home/micah/Desktop/Work/ETL/airflow_virtualenv/local/lib/python2.7/site-packages/airflow/utils/helpers.py:387: DeprecationWarning: Importing 'PostgresHook' directly from 'airflow.hooks' has been deprecated. Please import from 'airflow.hooks.[operator_module]' instead. Support for direct imports will be dropped entirely in Airflow 2.0.
+  DeprecationWarning)
+[2019-06-05 14:35:01,970] {jobs.py:1723} INFO - DAG(s) ['weatherDag'] retrieved from /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:35:02,134] {jobs.py:1446} INFO - Processing weatherDag
+[2019-06-05 14:35:02,145] {jobs.py:921} INFO - Examining DAG run <DagRun weatherDag @ 2019-06-04 00:00:00+00:00: scheduled__2019-06-04T00:00:00+00:00, externally triggered: False>
+[2019-06-05 14:35:02,166] {jobs.py:632} INFO - Skipping SLA check for <DAG: weatherDag> because no tasks in DAG have SLAs
+[2019-06-05 14:35:02,313] {logging_mixin.py:95} INFO - [2019-06-05 14:35:02,313] {__init__.py:512} INFO - Marked zombie job <TaskInstance: weatherDag.get_weather 2019-06-04 00:00:00+00:00 [up_for_retry]> as up_for_retry
+[2019-06-05 14:35:02,314] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py took 0.375 seconds
+[2019-06-05 14:35:44,733] {jobs.py:398} INFO - Started process (PID=13859) to work on /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:35:44,735] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py for tasks to queue
+[2019-06-05 14:35:44,736] {logging_mixin.py:95} INFO - [2019-06-05 14:35:44,735] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:35:44,742] {logging_mixin.py:95} WARNING - /home/micah/Desktop/Work/ETL/airflow_virtualenv/local/lib/python2.7/site-packages/airflow/utils/helpers.py:387: DeprecationWarning: Importing 'PythonOperator' directly from 'airflow.operators' has been deprecated. Please import from 'airflow.operators.[operator_module]' instead. Support for direct imports will be dropped entirely in Airflow 2.0.
+  DeprecationWarning)
+[2019-06-05 14:35:44,806] {logging_mixin.py:95} WARNING - /home/micah/Desktop/Work/ETL/airflow_virtualenv/local/lib/python2.7/site-packages/airflow/utils/helpers.py:387: DeprecationWarning: Importing 'PostgresHook' directly from 'airflow.hooks' has been deprecated. Please import from 'airflow.hooks.[operator_module]' instead. Support for direct imports will be dropped entirely in Airflow 2.0.
+  DeprecationWarning)
+[2019-06-05 14:35:44,809] {jobs.py:1723} INFO - DAG(s) ['weatherDag'] retrieved from /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:35:45,112] {jobs.py:1446} INFO - Processing weatherDag
+[2019-06-05 14:35:45,121] {jobs.py:921} INFO - Examining DAG run <DagRun weatherDag @ 2019-06-04 00:00:00+00:00: scheduled__2019-06-04T00:00:00+00:00, externally triggered: False>
+[2019-06-05 14:35:45,140] {jobs.py:632} INFO - Skipping SLA check for <DAG: weatherDag> because no tasks in DAG have SLAs
+[2019-06-05 14:35:45,142] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py took 0.410 seconds
+[2019-06-05 14:36:26,873] {jobs.py:398} INFO - Started process (PID=13921) to work on /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:36:26,877] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py for tasks to queue
+[2019-06-05 14:36:26,877] {logging_mixin.py:95} INFO - [2019-06-05 14:36:26,877] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:36:26,883] {logging_mixin.py:95} WARNING - /home/micah/Desktop/Work/ETL/airflow_virtualenv/local/lib/python2.7/site-packages/airflow/utils/helpers.py:387: DeprecationWarning: Importing 'PythonOperator' directly from 'airflow.operators' has been deprecated. Please import from 'airflow.operators.[operator_module]' instead. Support for direct imports will be dropped entirely in Airflow 2.0.
+  DeprecationWarning)
+[2019-06-05 14:36:26,955] {logging_mixin.py:95} WARNING - /home/micah/Desktop/Work/ETL/airflow_virtualenv/local/lib/python2.7/site-packages/airflow/utils/helpers.py:387: DeprecationWarning: Importing 'PostgresHook' directly from 'airflow.hooks' has been deprecated. Please import from 'airflow.hooks.[operator_module]' instead. Support for direct imports will be dropped entirely in Airflow 2.0.
+  DeprecationWarning)
+[2019-06-05 14:36:26,958] {jobs.py:1723} INFO - DAG(s) ['weatherDag'] retrieved from /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:36:27,103] {jobs.py:1446} INFO - Processing weatherDag
+[2019-06-05 14:36:27,112] {jobs.py:921} INFO - Examining DAG run <DagRun weatherDag @ 2019-06-04 00:00:00+00:00: scheduled__2019-06-04T00:00:00+00:00, externally triggered: False>
+[2019-06-05 14:36:27,138] {jobs.py:632} INFO - Skipping SLA check for <DAG: weatherDag> because no tasks in DAG have SLAs
+[2019-06-05 14:36:27,142] {jobs.py:1787} INFO - Creating / updating <TaskInstance: weatherDag.get_weather 2019-06-04 00:00:00+00:00 [scheduled]> in ORM
+[2019-06-05 14:36:27,281] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py took 0.409 seconds
+[2019-06-05 14:37:14,869] {jobs.py:398} INFO - Started process (PID=13993) to work on /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:37:14,879] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py for tasks to queue
+[2019-06-05 14:37:14,880] {logging_mixin.py:95} INFO - [2019-06-05 14:37:14,880] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:37:14,885] {logging_mixin.py:95} WARNING - /home/micah/Desktop/Work/ETL/airflow_virtualenv/local/lib/python2.7/site-packages/airflow/utils/helpers.py:387: DeprecationWarning: Importing 'PythonOperator' directly from 'airflow.operators' has been deprecated. Please import from 'airflow.operators.[operator_module]' instead. Support for direct imports will be dropped entirely in Airflow 2.0.
+  DeprecationWarning)
+[2019-06-05 14:37:14,975] {logging_mixin.py:95} WARNING - /home/micah/Desktop/Work/ETL/airflow_virtualenv/local/lib/python2.7/site-packages/airflow/utils/helpers.py:387: DeprecationWarning: Importing 'PostgresHook' directly from 'airflow.hooks' has been deprecated. Please import from 'airflow.hooks.[operator_module]' instead. Support for direct imports will be dropped entirely in Airflow 2.0.
+  DeprecationWarning)
+[2019-06-05 14:37:14,978] {jobs.py:1723} INFO - DAG(s) ['weatherDag'] retrieved from /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:37:15,124] {jobs.py:1446} INFO - Processing weatherDag
+[2019-06-05 14:37:15,139] {jobs.py:921} INFO - Examining DAG run <DagRun weatherDag @ 2019-06-04 00:00:00+00:00: scheduled__2019-06-04T00:00:00+00:00, externally triggered: False>
+[2019-06-05 14:37:15,172] {jobs.py:632} INFO - Skipping SLA check for <DAG: weatherDag> because no tasks in DAG have SLAs
+[2019-06-05 14:37:15,175] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py took 0.306 seconds
+[2019-06-05 14:37:56,899] {jobs.py:398} INFO - Started process (PID=14059) to work on /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:37:56,902] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py for tasks to queue
+[2019-06-05 14:37:56,903] {logging_mixin.py:95} INFO - [2019-06-05 14:37:56,903] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:37:56,909] {logging_mixin.py:95} WARNING - /home/micah/Desktop/Work/ETL/airflow_virtualenv/local/lib/python2.7/site-packages/airflow/utils/helpers.py:387: DeprecationWarning: Importing 'PythonOperator' directly from 'airflow.operators' has been deprecated. Please import from 'airflow.operators.[operator_module]' instead. Support for direct imports will be dropped entirely in Airflow 2.0.
+  DeprecationWarning)
+[2019-06-05 14:37:56,979] {logging_mixin.py:95} WARNING - /home/micah/Desktop/Work/ETL/airflow_virtualenv/local/lib/python2.7/site-packages/airflow/utils/helpers.py:387: DeprecationWarning: Importing 'PostgresHook' directly from 'airflow.hooks' has been deprecated. Please import from 'airflow.hooks.[operator_module]' instead. Support for direct imports will be dropped entirely in Airflow 2.0.
+  DeprecationWarning)
+[2019-06-05 14:37:56,981] {jobs.py:1723} INFO - DAG(s) ['weatherDag'] retrieved from /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:37:57,099] {jobs.py:1446} INFO - Processing weatherDag
+[2019-06-05 14:37:57,112] {jobs.py:921} INFO - Examining DAG run <DagRun weatherDag @ 2019-06-04 00:00:00+00:00: scheduled__2019-06-04T00:00:00+00:00, externally triggered: False>
+[2019-06-05 14:37:57,133] {jobs.py:632} INFO - Skipping SLA check for <DAG: weatherDag> because no tasks in DAG have SLAs
+[2019-06-05 14:37:57,137] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py took 0.238 seconds
+[2019-06-05 14:38:38,936] {jobs.py:398} INFO - Started process (PID=14115) to work on /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:38:38,939] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py for tasks to queue
+[2019-06-05 14:38:38,939] {logging_mixin.py:95} INFO - [2019-06-05 14:38:38,939] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:38:39,000] {logging_mixin.py:95} WARNING - /home/micah/Desktop/Work/ETL/airflow_virtualenv/local/lib/python2.7/site-packages/airflow/utils/helpers.py:387: DeprecationWarning: Importing 'PythonOperator' directly from 'airflow.operators' has been deprecated. Please import from 'airflow.operators.[operator_module]' instead. Support for direct imports will be dropped entirely in Airflow 2.0.
+  DeprecationWarning)
+[2019-06-05 14:38:39,016] {logging_mixin.py:95} WARNING - /home/micah/Desktop/Work/ETL/airflow_virtualenv/local/lib/python2.7/site-packages/airflow/utils/helpers.py:387: DeprecationWarning: Importing 'PostgresHook' directly from 'airflow.hooks' has been deprecated. Please import from 'airflow.hooks.[operator_module]' instead. Support for direct imports will be dropped entirely in Airflow 2.0.
+  DeprecationWarning)
+[2019-06-05 14:38:39,018] {jobs.py:1723} INFO - DAG(s) ['weatherDag'] retrieved from /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:38:39,143] {jobs.py:1446} INFO - Processing weatherDag
+[2019-06-05 14:38:39,153] {jobs.py:921} INFO - Examining DAG run <DagRun weatherDag @ 2019-06-04 00:00:00+00:00: scheduled__2019-06-04T00:00:00+00:00, externally triggered: False>
+[2019-06-05 14:38:39,177] {jobs.py:632} INFO - Skipping SLA check for <DAG: weatherDag> because no tasks in DAG have SLAs
+[2019-06-05 14:38:39,179] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py took 0.243 seconds
+[2019-06-05 14:39:20,977] {jobs.py:398} INFO - Started process (PID=14177) to work on /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:39:20,981] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py for tasks to queue
+[2019-06-05 14:39:20,982] {logging_mixin.py:95} INFO - [2019-06-05 14:39:20,982] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:39:20,987] {logging_mixin.py:95} WARNING - /home/micah/Desktop/Work/ETL/airflow_virtualenv/local/lib/python2.7/site-packages/airflow/utils/helpers.py:387: DeprecationWarning: Importing 'PythonOperator' directly from 'airflow.operators' has been deprecated. Please import from 'airflow.operators.[operator_module]' instead. Support for direct imports will be dropped entirely in Airflow 2.0.
+  DeprecationWarning)
+[2019-06-05 14:39:21,001] {logging_mixin.py:95} WARNING - /home/micah/Desktop/Work/ETL/airflow_virtualenv/local/lib/python2.7/site-packages/airflow/utils/helpers.py:387: DeprecationWarning: Importing 'PostgresHook' directly from 'airflow.hooks' has been deprecated. Please import from 'airflow.hooks.[operator_module]' instead. Support for direct imports will be dropped entirely in Airflow 2.0.
+  DeprecationWarning)
+[2019-06-05 14:39:21,004] {jobs.py:1723} INFO - DAG(s) ['weatherDag'] retrieved from /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:39:21,149] {jobs.py:1446} INFO - Processing weatherDag
+[2019-06-05 14:39:21,166] {jobs.py:921} INFO - Examining DAG run <DagRun weatherDag @ 2019-06-04 00:00:00+00:00: scheduled__2019-06-04T00:00:00+00:00, externally triggered: False>
+[2019-06-05 14:39:21,194] {jobs.py:632} INFO - Skipping SLA check for <DAG: weatherDag> because no tasks in DAG have SLAs
+[2019-06-05 14:39:21,197] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py took 0.220 seconds
+[2019-06-05 14:40:03,014] {jobs.py:398} INFO - Started process (PID=14278) to work on /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:40:03,017] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py for tasks to queue
+[2019-06-05 14:40:03,017] {logging_mixin.py:95} INFO - [2019-06-05 14:40:03,017] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:40:03,023] {logging_mixin.py:95} WARNING - /home/micah/Desktop/Work/ETL/airflow_virtualenv/local/lib/python2.7/site-packages/airflow/utils/helpers.py:387: DeprecationWarning: Importing 'PythonOperator' directly from 'airflow.operators' has been deprecated. Please import from 'airflow.operators.[operator_module]' instead. Support for direct imports will be dropped entirely in Airflow 2.0.
+  DeprecationWarning)
+[2019-06-05 14:40:03,042] {logging_mixin.py:95} WARNING - /home/micah/Desktop/Work/ETL/airflow_virtualenv/local/lib/python2.7/site-packages/airflow/utils/helpers.py:387: DeprecationWarning: Importing 'PostgresHook' directly from 'airflow.hooks' has been deprecated. Please import from 'airflow.hooks.[operator_module]' instead. Support for direct imports will be dropped entirely in Airflow 2.0.
+  DeprecationWarning)
+[2019-06-05 14:40:03,045] {jobs.py:1723} INFO - DAG(s) ['weatherDag'] retrieved from /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:40:03,186] {jobs.py:1446} INFO - Processing weatherDag
+[2019-06-05 14:40:03,201] {jobs.py:921} INFO - Examining DAG run <DagRun weatherDag @ 2019-06-04 00:00:00+00:00: scheduled__2019-06-04T00:00:00+00:00, externally triggered: False>
+[2019-06-05 14:40:03,226] {jobs.py:632} INFO - Skipping SLA check for <DAG: weatherDag> because no tasks in DAG have SLAs
+[2019-06-05 14:40:03,229] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py took 0.215 seconds
+[2019-06-05 14:40:45,060] {jobs.py:398} INFO - Started process (PID=14355) to work on /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:40:45,066] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py for tasks to queue
+[2019-06-05 14:40:45,067] {logging_mixin.py:95} INFO - [2019-06-05 14:40:45,067] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:40:45,078] {logging_mixin.py:95} WARNING - /home/micah/Desktop/Work/ETL/airflow_virtualenv/local/lib/python2.7/site-packages/airflow/utils/helpers.py:387: DeprecationWarning: Importing 'PythonOperator' directly from 'airflow.operators' has been deprecated. Please import from 'airflow.operators.[operator_module]' instead. Support for direct imports will be dropped entirely in Airflow 2.0.
+  DeprecationWarning)
+[2019-06-05 14:40:45,107] {logging_mixin.py:95} WARNING - /home/micah/Desktop/Work/ETL/airflow_virtualenv/local/lib/python2.7/site-packages/airflow/utils/helpers.py:387: DeprecationWarning: Importing 'PostgresHook' directly from 'airflow.hooks' has been deprecated. Please import from 'airflow.hooks.[operator_module]' instead. Support for direct imports will be dropped entirely in Airflow 2.0.
+  DeprecationWarning)
+[2019-06-05 14:40:45,110] {jobs.py:1723} INFO - DAG(s) ['weatherDag'] retrieved from /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py
+[2019-06-05 14:40:45,251] {jobs.py:1446} INFO - Processing weatherDag
+[2019-06-05 14:40:45,261] {jobs.py:921} INFO - Examining DAG run <DagRun weatherDag @ 2019-06-04 00:00:00+00:00: scheduled__2019-06-04T00:00:00+00:00, externally triggered: False>
+[2019-06-05 14:40:45,285] {jobs.py:632} INFO - Skipping SLA check for <DAG: weatherDag> because no tasks in DAG have SLAs
+[2019-06-05 14:40:45,287] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/airflow_home/dags/weatherDag.py took 0.227 seconds

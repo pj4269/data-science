@@ -1,0 +1,66 @@
+[2019-06-04 17:01:17,451] {jobs.py:398} INFO - Started process (PID=17766) to work on /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py
+[2019-06-04 17:01:17,458] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py for tasks to queue
+[2019-06-04 17:01:17,459] {logging_mixin.py:95} INFO - [2019-06-04 17:01:17,458] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py
+[2019-06-04 17:01:17,477] {jobs.py:1723} INFO - DAG(s) ['hello_world'] retrieved from /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py
+[2019-06-04 17:01:17,490] {logging_mixin.py:95} INFO - [2019-06-04 17:01:17,490] {__init__.py:4113} INFO - Creating ORM DAG for hello_world
+[2019-06-04 17:01:17,579] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py took 0.129 seconds
+[2019-06-04 17:01:57,476] {jobs.py:398} INFO - Started process (PID=17823) to work on /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py
+[2019-06-04 17:01:57,479] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py for tasks to queue
+[2019-06-04 17:01:57,480] {logging_mixin.py:95} INFO - [2019-06-04 17:01:57,479] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py
+[2019-06-04 17:01:57,489] {jobs.py:1723} INFO - DAG(s) ['hello_world'] retrieved from /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py
+[2019-06-04 17:01:57,659] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py took 0.183 seconds
+[2019-06-04 17:02:37,519] {jobs.py:398} INFO - Started process (PID=17874) to work on /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py
+[2019-06-04 17:02:37,522] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py for tasks to queue
+[2019-06-04 17:02:37,522] {logging_mixin.py:95} INFO - [2019-06-04 17:02:37,522] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py
+[2019-06-04 17:02:37,532] {jobs.py:1723} INFO - DAG(s) ['hello_world'] retrieved from /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py
+[2019-06-04 17:02:37,639] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py took 0.120 seconds
+[2019-06-04 17:03:41,760] {jobs.py:398} INFO - Started process (PID=17956) to work on /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py
+[2019-06-04 17:03:41,763] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py for tasks to queue
+[2019-06-04 17:03:41,764] {logging_mixin.py:95} INFO - [2019-06-04 17:03:41,764] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py
+[2019-06-04 17:03:41,772] {jobs.py:1723} INFO - DAG(s) ['hello_world'] retrieved from /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py
+[2019-06-04 17:03:41,854] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py took 0.094 seconds
+[2019-06-04 17:04:21,800] {jobs.py:398} INFO - Started process (PID=18014) to work on /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py
+[2019-06-04 17:04:21,806] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py for tasks to queue
+[2019-06-04 17:04:21,807] {logging_mixin.py:95} INFO - [2019-06-04 17:04:21,806] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py
+[2019-06-04 17:04:21,818] {jobs.py:1723} INFO - DAG(s) ['hello_world'] retrieved from /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py
+[2019-06-04 17:04:21,920] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py took 0.120 seconds
+[2019-06-04 17:05:01,841] {jobs.py:398} INFO - Started process (PID=18070) to work on /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py
+[2019-06-04 17:05:01,844] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py for tasks to queue
+[2019-06-04 17:05:01,844] {logging_mixin.py:95} INFO - [2019-06-04 17:05:01,844] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py
+[2019-06-04 17:05:01,853] {jobs.py:1723} INFO - DAG(s) ['hello_world'] retrieved from /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py
+[2019-06-04 17:05:01,921] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py took 0.080 seconds
+[2019-06-04 17:07:55,687] {jobs.py:398} INFO - Started process (PID=18215) to work on /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py
+[2019-06-04 17:07:55,690] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py for tasks to queue
+[2019-06-04 17:07:55,691] {logging_mixin.py:95} INFO - [2019-06-04 17:07:55,691] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py
+[2019-06-04 17:07:55,699] {jobs.py:1723} INFO - DAG(s) ['hello_world'] retrieved from /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py
+[2019-06-04 17:07:55,799] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py took 0.112 seconds
+[2019-06-04 17:08:35,721] {jobs.py:398} INFO - Started process (PID=18270) to work on /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py
+[2019-06-04 17:08:35,724] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py for tasks to queue
+[2019-06-04 17:08:35,724] {logging_mixin.py:95} INFO - [2019-06-04 17:08:35,724] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py
+[2019-06-04 17:08:35,725] {jobs.py:1725} WARNING - No viable dags retrieved from /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py
+[2019-06-04 17:08:35,726] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py took 0.005 seconds
+[2019-06-04 17:09:15,760] {jobs.py:398} INFO - Started process (PID=18319) to work on /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py
+[2019-06-04 17:09:15,763] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py for tasks to queue
+[2019-06-04 17:09:15,763] {logging_mixin.py:95} INFO - [2019-06-04 17:09:15,763] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py
+[2019-06-04 17:09:15,764] {jobs.py:1725} WARNING - No viable dags retrieved from /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py
+[2019-06-04 17:09:15,765] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py took 0.005 seconds
+[2019-06-04 17:09:55,815] {jobs.py:398} INFO - Started process (PID=18372) to work on /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py
+[2019-06-04 17:09:55,820] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py for tasks to queue
+[2019-06-04 17:09:55,821] {logging_mixin.py:95} INFO - [2019-06-04 17:09:55,821] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py
+[2019-06-04 17:09:55,822] {jobs.py:1725} WARNING - No viable dags retrieved from /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py
+[2019-06-04 17:09:55,822] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py took 0.007 seconds
+[2019-06-04 17:10:35,838] {jobs.py:398} INFO - Started process (PID=18430) to work on /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py
+[2019-06-04 17:10:35,845] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py for tasks to queue
+[2019-06-04 17:10:35,845] {logging_mixin.py:95} INFO - [2019-06-04 17:10:35,845] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py
+[2019-06-04 17:10:35,846] {jobs.py:1725} WARNING - No viable dags retrieved from /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py
+[2019-06-04 17:10:35,847] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py took 0.009 seconds
+[2019-06-04 17:11:15,877] {jobs.py:398} INFO - Started process (PID=18479) to work on /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py
+[2019-06-04 17:11:15,879] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py for tasks to queue
+[2019-06-04 17:11:15,880] {logging_mixin.py:95} INFO - [2019-06-04 17:11:15,880] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py
+[2019-06-04 17:11:15,881] {jobs.py:1725} WARNING - No viable dags retrieved from /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py
+[2019-06-04 17:11:15,881] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py took 0.005 seconds
+[2019-06-04 17:11:55,916] {jobs.py:398} INFO - Started process (PID=18543) to work on /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py
+[2019-06-04 17:11:55,918] {jobs.py:1711} INFO - Processing file /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py for tasks to queue
+[2019-06-04 17:11:55,919] {logging_mixin.py:95} INFO - [2019-06-04 17:11:55,919] {__init__.py:305} INFO - Filling up the DagBag from /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py
+[2019-06-04 17:11:55,920] {jobs.py:1725} WARNING - No viable dags retrieved from /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py
+[2019-06-04 17:11:55,920] {jobs.py:406} INFO - Processing /home/micah/Desktop/Work/ETL/pwd/airflow_home/dags/test1.py took 0.005 seconds
