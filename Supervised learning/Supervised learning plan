@@ -35,3 +35,8 @@ spam => knn classifier
      => random forest
 
 amazon reviews => naive bayesian
+
+Data leakage:
+Data preparation and feature engineering steps are done separately for the training and testing sets.
+
+nested cross validation. 
