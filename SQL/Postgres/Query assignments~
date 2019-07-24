@@ -83,7 +83,7 @@ a)
 WITH rainy as (SELECT DATE(date) rain_date From weather WHERE events = 'Rain' GROUP BY 1 ) SELECT t.trip_id, t.duration, DATE(t.start_date) FROM trips t JOIN rainy r on DATE(t.start_date) = r.rain_date ORDER BY duration DESC LIMIT 3;
 
 b)
-SELECT DATE(r.date) rain_date, t.trip_id, t.duration, DATE(t.start_date) FROM trips t JOIN weather r on DATE(t.start_date) = DATE(r.date) WHERE r.events = 'Rain' group by 1, 2, 3, 4 ORDER BY duration DESC LIMIT 3;
+SELECT DATE(r.date) rain_date, t.trip_id, t.duration FROM trips t JOIN weather r on DATE(t.start_date) = DATE(r.date) WHERE r.events = 'Rain' group by 1, 2, 3 ORDER BY duration DESC LIMIT 3;
 
 
 

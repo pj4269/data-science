@@ -1,0 +1,107 @@
+Ensemble Methods: 
+
+A ) Bagging is one such ensemble technique. In bagging you take subsets of the data and train a model on each subset. Then the subsets are allowed to SIMULTANEOUSLY vote on the outcome, either taking a majority or a mean. You just saw this in action with Random Forests, the most popular bagging technique.
+
+Random forest: with each bag, a different decision tree is done. In decision tree, it is chooses random vairable and picks a random number within that variable and keep asking random questions until max_depth (or levels) is reached. So it votes(or averages), accordingly on each level and chooses that for the new test data! the data should use random_state argument for reproducibality and consistency. max_features = 1 asks 1 question at a time! Entropy gives you the confidence level. 0 meaning confident, 1 being unconfident!
+
+example: 
+iris = datasets.load_iris()
+X, y = iris.data[:, 0:2], iris.target
+    
+clf1 = DecisionTreeClassifier(criterion='entropy', max_depth=1)
+clf2 = KNeighborsClassifier(n_neighbors=1)    
+
+bagging1 = BaggingClassifier(base_estimator=clf1, n_estimators=10, max_samples=0.8, max_features=0.8)
+bagging2 = BaggingClassifier(base_estimator=clf2, n_estimators=10, max_samples=0.8, max_features=0.8)
+
+label = ['Bagging Tree', 'Bagging K-NN']
+clf_list = [clf1, clf2, bagging1, bagging2]
+
+fig = plt.figure(figsize=(10, 8))
+gs = gridspec.GridSpec(2, 2)
+grid = itertools.product([0,1],repeat=2)
+
+for clf, label, grd in zip(clf_list, label, grid):        
+    scores = cross_val_score(clf, X, y, cv=3, scoring='accuracy')
+    print "Accuracy: %.2f (+/- %.2f) [%s]" %(scores.mean(), scores.std(), label)
+        
+    clf.fit(X, y)
+    ax = plt.subplot(gs[grd[0], grd[1]])
+    fig = plot_decision_regions(X=X, y=y, clf=clf, legend=2)
+    plt.title(label)
+
+plt.show()
+
+
+B) Boosting (ADA or Gradient boosting): 
+Another ensemble technique is called boosting. Rather than build multiple models simultaneously like bagging, boosting uses the output of one model as an input into the next in a form of SERIAL processing. These models then get daisy-chained together sequentially until some stopping condition is met. It convert weak learners to strong learners. We start by fitting a simple model on all the data. We identify the information that the model was not able to account for (incorrect predictions in classifier, and residuals in regression) and build a new simple model that targets that new pool of information. We repeat this until we reach some predetermined stopping rule. The combination of all the models is then used to make the final predictions.
+
+How the next iteration targets the error. You can weight inaccurately-predicted cases high and accurately-predicted cases low, you can directly model residuals, or you can model only the subset of the data that was inaccurately predicted.
+
+Stopping rule. You can stop once you've run a certain number of models, once the amount of variance explained by the most recent iteration of the model is lower than some threshold, or once the change in weights between the two most recent model iterations is lower than some threshold.
+
+
+Example: 
+
+clf = DecisionTreeClassifier(criterion='entropy', max_depth=1)
+
+num_est = [1, 2, 3, 10]
+label = ['AdaBoost (n_est=1)', 'AdaBoost (n_est=2)', 'AdaBoost (n_est=3)', 'AdaBoost (n_est=10)']
+
+
+figfig  ==  pltplt..figurefigure((figsizefigsize==((1010,,  88))))
+ gsgs  ==  gridspecgridspec.GridSpec(2, 2)
+grid = itertools.product([0,1],repeat=2)
+
+for n_est, label, grd in zip(num_est, label, grid):     
+    boosting = AdaBoostClassifier(base_estimator=clf, n_estimators=n_est)   
+    boosting.fit(X, y)
+    ax = plt.subplot(gs[grd[0], grd[1]])
+    fig = plot_decision_regions(X=X, y=y, clf=boosting, legend=2)
+    plt.title(label)
+
+plt.show()
+
+C) Stacking: 
+
+Stacking is a two PHASE process. In the first phase multiple models are trained in parallel. Then in the second phase those models are used as inputs into a final model to give your prediction. This approach combines the parallel approach embodied by bagging with the serial approach of boosting to create a hybrid of the two.
+
+
+Example: 
+
+clf1 = KNeighborsClassifier(n_neighbors=1)
+clf2 = RandomForestClassifier(random_state=1)
+clf3 = GaussianNB()
+lr = LogisticRegression()
+sclf = StackingClassifier(classifiers=[clf1, clf2, clf3],  meta_classifier=lr)
+
+label = ['KNN', 'Random Forest', 'Naive Bayes', 'Stacking Classifier']
+clf_list = [clf1, clf2, clf3, sclf]
+    
+fig = plt.figure(figsize=(10,8))
+gs = gridspec.GridSpec(2, 2)
+grid = itertools.product([0,1],repeat=2)
+
+clf_cv_mean = []
+clf_cv_std = []
+for clf, label, grd in zip(clf_list, label, grid):
+        
+    scores = cross_val_score(clf, X, y, cv=3, scoring='accuracy')
+    print "Accuracy: %.2f (+/- %.2f) [%s]" %(scores.mean(), scores.std(), label)
+    clf_cv_mean.append(scores.mean())
+    clf_cv_std.append(scores.std())
+        
+    clf.fit(X, y)
+    ax = plt.subplot(gs[grd[0], grd[1]])
+    fig = plot_decision_regions(X=X, y=y, clf=clf)
+    plt.title(label)
+
+plt.show()
+
+
+D) Random Forest: 
+
+
+- Firstly in either classification or regression it will not predict outside of sample, meaning it will only return values that are within a range it has seen before.
+- Random Forests can also get rather large and slow if you let them grow too wildly.
+- Bblackbox

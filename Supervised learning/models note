@@ -1,0 +1,60 @@
+1. Linear regression: sum(sq.error) or OLS => minimized by trial and error
+2. LogisticRegression: 
+                       appply sigmoid function to a regression equation: y=b0+b1x1+b2x2
+                       sigmoid: y=1/(1+e^-y) => probability
+                       Linear regression is estimated using Ordinary Least Squares (OLS) vs. Logistic regression is estimated using Maximum Likelihood Estimation (MLE) approach.
+                       Sigmoid Function
+The sigmoid function, also called logistic function gives an 'S' shaped curve that can take any real-valued number and map it into a value between 0 and 1. If the curve goes to positive infinity, y predicted will become 1, and if the curve goes to negative infinity, y predicted will become 0. If the output of the sigmoid function is more than 0.5, we can classify the outcome as 1 or YES, and if it is less than 0.5, we can classify it as 0 or NO. The outputcannotFor example: If the output is 0.75, we can say in terms of probability as: There is a 75 percent chance that patient will suffer from cancer.
+
+
+3.
+ l1 - lasso : penalizes by the sum of the absolute values of the coefficients. 
+ l2 - ridge : penalizes by the sum of squared coefficients or minimizes: OLS + alpha * sum(beta sq) => it increases the error ( penalty, bias) => coz it tend to work well with both test and training set.
+
+SKlearn LogisticRegression method has a "penalty" argument that takes either 'l1' or 'l2' 
+
+SVM - decision boundary line!
+
+In SVM we use the margin as the distance between the nearest point of each class and the boundary.
+
+Finding the margin for our initial red boundary line is easy. The nearest point for each class is at (85,100) and (74,75). These nearest points are the support vectors that our model is named after. The distance from our support vectors to the red boundary line is just the horizontal distance (because our boundary happens to be vertical). The margin is 5 from the pass support vector and 6 from the fail support vector. The goal of SVM is find the best boundary, or the boundary that optimizes the margin.
+
+"kernel trick"  - SVM uses it to actually find our boundary hyperplane in an efficient way 
+
+SVM  - can be used as a multi-classifer
+
+
+Gradient Descent: 
+In n - dimensional space existed defined by all the parameters plus the cost/loss function to minimize, the combination of parameters and loss function define a surface within the space. The regression model is fitted by moving down the steepest 'downhill' gradient until we reach the lowest point of the surface, where all possible gradients are 'uphill.' The final model is made up of the parameter estimates that define that location on the surface.
+
+Gradient Boosting: 
+Throughout all iterations of the gradient descent algorithm for linear regression, one thing remains constant: The underlying data used to estimate the parameters and calculate the loss function never changes. In gradient boosting, however, the underlying data do change. 
+
+Gradient boosting can work on any combination of loss function and model type, as long as we can calculate the derivatives of the loss function with respect to the model parameters. Most often, however, gradient boosting uses decision trees, and minimizes either the residual (regression trees) or the negative log-likelihood (classification trees). 
+
+The loss function to minimize is the sum of the squared residuals: $$\frac1{n}\sum_{i=1}^n(y_i-(\alpha + \beta x_i))^2$$
+
+Each time we run a decision tree, we extract the residuals. Then we run a new decision tree, using those residuals as the outcome to be predicted. After reaching a stopping point, we add together the predicted values from all of the decision trees to create the final gradient boosted prediction.
+
+ Cross-validation will check for overfitting, but there are also methods that can be applied before using the test set that will reduce the likelihood of overfit.
+
+One option is subsampling, where each iteration of the boost algorithm uses a subsample of the original data. By introducing some randomness into the process, subsampling makes it harder to overfit.
+
+Overfitting can be a problem with GB. Use the subsample option with high n_estimators with a low learning rate. 
+
+Exercise: 
+1.  Predict the running times of prospective Olympic sprinters using data from the last 20 Olympics. => regression (fast)
+2.  You have more features (columns) than rows in your dataset. => random forest ( learn complex relationships. )
+3.  Identify the most important characteristic predicting likelihood of being jailed before age 20. => SVM,log
+4.  Implement a filter to “highlight” emails that might be important to the recipient
+5.  You have 1000+ features. => Random forest feature selection + PCA
+6.  Predict whether someone who adds items to their cart on a website will purchase the items. => naive bayesian ?
+7.  Your dataset dimensions are 982400 x 500 => SVM
+8.  Identify faces in an image. => SVM (pattern recognition purpose. Speech data, emotions), neural network
+9.  Predict which of three flavors of ice cream will be most popular with boys vs girls. => naive bayesian. works well with categorical input
+
+SVM: 
+1) When number of features (variables) and number of training data is very large (say millions of features and millions of instances (data)).
+2) When sparsity in the problem is very high, i.e., most of the features have zero value.
+3) It is the best for document classification problems where sparsity is high and features/instances are also very high.
+4) It also performs very well for problems like image classification, genes classsification, drug disambiguation etc. where number of features are high.

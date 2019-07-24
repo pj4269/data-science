@@ -9,7 +9,7 @@ Preprocessing:
                                        => researches suggest over and over again FuzzyKMeans() seem produce the best results. 
     data imputation: a) Categorical: mode
                      b) Numeric:
-                        continuous data: interpolation:  populate missing values using representative values from similar rows. => common for time 
+                        continuous data interpolation:  populate missing values using representative values from similar rows. => common for time 
                                                                                                                            series data
 
 3. skewnewss (numeric data): box - cox transformation or apply log => from scipy.special import boxcox1p vs sklearn powertransformer()

@@ -12,7 +12,9 @@
 
 4. What is the average trip duration, by end station?
 
-- select avg(duration) from trips group by end_station;
+
+select avg(duration), end_station from trips group by end_station;
+
 
 
 5. To know the column data types: 

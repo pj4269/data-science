@@ -31,7 +31,7 @@ imp_mean = SimpleImputer( strategy='mean') #for median imputation replace 'mean'
 imp_mean.fit(train)
 
 
-3. Use KNN feature similarity
+3. Use KNN feature similarity: takes long time
 
 Pros:
 - Can be much more accurate than the mean, median or most frequent imputation methods (It depends on the dataset).
@@ -53,7 +53,7 @@ imputed_training=fast_knn(train.values, k=30)
 
 4. Multivariate Imputation by Chained Equation (MICE) 
 
-This type of imputation works by filling the missing data multiple times
+This type of imputation works by filling the missing data multiple times and used for numeric values.
 
 Pros: 
 - Multiple Imputations (MIs) are much better than a single imputation as it measures the uncertainty of the missing values in a better way. 
@@ -100,6 +100,13 @@ Works by randomly choosing the missing value from a set of related and similar v
 
 7. Extrapolation and Interpolation:
 It tries to estimate values from other observations within the range of a discrete set of known data points.
+
+
+8. Best results: FuzzyKMeans() and bayesian principal component analysis (bPCA) seem to produce the best results. 
+
+FKM may represent the method of choice but its execution time can be a drag to its use and we consider bPCA as a more adapted solution to high-dimensional data.
+
+FuzzyKMeans() seem to be only supported by Python 3 while bPCA in python is there yet. 
 
 
 Recommendation: 

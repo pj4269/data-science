@@ -48,14 +48,13 @@ class Puzzlebox(object):
 
 puzzlebox = Puzzlebox()
 print(dir(puzzlebox))
-'''
+
 print puzzlebox.lock(puzzlebox.key)
 
 def answer(puzzlebox):
   return  42
 
 print answer(puzzlebox)
-'''
 # Vector
 '''
 class Vector(object):

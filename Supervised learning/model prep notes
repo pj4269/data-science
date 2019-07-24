@@ -1,0 +1,268 @@
+focus on Target Variable!
+
+Variable type <=> missing values <=> outliers <=> EDA <=> feature engineering
+
+data cleaning (eliminate problems) => EDA (using stat and visual. if we detect problem, we go back to cleaning)=> feature engineering(select features or create a new one)
+
+1. data cleaning 1) variable types:
+                 continuous(numeric) or categorical. Continuous variables => unlimited number of values => reg problem
+                                                     Categorical variables => limited number of categories as their values => class problem
+
+                a) continuous: interval: lacks absolute Zero point! Celcius, year 0 => can be treated as both categorial or numeric
+                               ratio: meaningful 0 point! 0_yr_old => not born yet
+                b) categorical: ordinal: order matters: 1st place vs 2nd place. (but the distance is defined. )
+                                nominal: Countries, race, .. . E.g gelationships such as ">=," "<=" or "=" makes no sense. 
+
+
+                   note: 1) This guideline of continuous(numeric) or categorical is not rigid. E.g. Age in theory is continuous but in practice it is often just classes.
+                         2) Reg vs Class => different EDA techniques
+                         3) If the columns contain observations that can't be handled as numeric such as  missing values and observations such as '--', it will be stored as Object!
+                         4) rule of thumb: apply df.nunique() and if the categories are small, then => Object, if high => numeric. But not always as names can have millions of values.
+                         5) Sometimes we want to see numeric variable as categorical:
+                              def market_cap(revenue):
+                                  if revenue >= 1000000000:
+                                     return 1
+                                  elif revenue >= 100000000:
+                                     return 2
+                                  else:
+                                     return 3
+                    2) missing values: read Data Imputation
+                    3) outliers(numeir var) a ) Visually => IQR or Boxplot (points beyond whiskers)
+                                => In Matplotlib the whiskers by default reach to 1.5 * the SD away from the 1st and the 3rd quartile
+                                => but you can change the 1.5 by plt.boxplot(youtube_df["Video views"], whis=20)
+                                                                 plt.title("Box plot of video views (whis=20)")
+                                                                 plt.show()
+                                => Use histogram plt.hist(youtube_df["Video views"])
+                                b) Statistics: use Z-score or  IQR (tukey's methpd)
+
+                       How to treat outliers?
+                       - We can drop the outliers from our dataset.=> only use if the outlier is from a measurement error.
+                       - We can cap the values of the outliers by assigning them cap values.
+                               a) use Scipy Winsorize: from scipy.stats.mstats import winsorize
+                                     winsorized_views_array = winsorize(youtube_df["Video views"], (0.05, 0.05)) => lowest became the 5th, 
+                                                        highest became 95th percentiles => 2 way vs 1 way (0.0, 0.10)) => 90% per cut on 
+                                                        one side
+                               b) use your own custom code
+                       - Apply log or box-Cox or sq.root transformations => both be applied to columns with positive values. (value >0 )
+                    4) EDA ( an iterative process.)
+                       - Univariate(one var at a time) vs Multivariate
+                       a) Univariate: Categorical: bar chart => look for class imbalance in target variable. 
+                                                      # bar chart of grades
+                                                      plt.figure(figsize=(15,5))
+                                                      plt.barh(youtube_df.groupby("Grade")["Grade"].count().index, youtube_df.groupby
+                                                      ("Grade")["Grade"].count(), color=["red","green","blue","grey","pink"])
+                                                      plt.title("horizontal bar chart of grades")
+                                                      plt.show()
+
+                                                  text => apply wordcloud for word frequency
+                                                      from wordcloud import WordCloud
+                                                      # Generate a word cloud image
+                                                      wordcloud = WordCloud(background_color="orange").generate(" ".join(youtube_df
+                                                                  ["Channel name"]))
+                                                      plt.figure(figsize=(15,10))
+                                                      # Display the generated image:
+                                                      plt.imshow(wordcloud, interpolation='bilinear')
+                                                      plt.axis("off")
+                                                      plt.show()
+                                      Numeric    : historgram => log transform the highly skewed features. 
+
+                                                      plt.figure(figsize=(18,15))
+                                                      # histograms of the original data
+                                                      plt.subplot(3, 3, 1)
+                                                      plt.hist(youtube_df["Subscribers"])
+                                                      plt.title("histogram of subscribers")
+
+                                                      plt.subplot(3, 3, 2)
+                                                      plt.hist(youtube_df["Video Uploads"])
+                                                      plt.title("histogram of video uploads")
+
+                                                      plt.subplot(3, 3, 3)
+                                                      plt.hist(youtube_df["Video views"])
+                                                      plt.title("histogram of video views")
+
+                                                      # histograms of the winsorized data
+                                                      plt.subplot(3, 3, 4)
+                                                      plt.hist(youtube_df["winsorized_subscribers"])
+                                                      plt.title("histogram of subscribers (winsorized)")
+                                                      plt.show()
+
+
+
+                            b) bivariate: continuous-continuous, continuous-categorical, categorical-categorical. 
+                                 continuous-continuous => scatterplot(look for a pos or neg relationship => look for a 2-dimensional 
+                                                                     outlier)
+                                                       => correlation coefficient => df.corr() =>  heatmeap
+                                 continuous-categorical =>barplot
+                                                        => df.groupby("Categorical_column").mean() (.coun())
+                                                       plt.figure(figsize=(18,5))
+                                                       plt.subplot(1,3,1) 
+                                                       # draw the barplot using seaborn.
+                                                       sns.barplot(youtube_df["Grade"], youtube_df["winsorized_uploads"])
+                                                       plt.title("average uploads")
+
+                                                       plt.subplot(1,3,2)
+                                                       sns.barplot(youtube_df["Grade"], youtube_df["winsorized_subscribers"])
+                                                       plt.title("average subscribers")
+
+                                                       plt.subplot(1,3,3)
+                                                       sns.barplot(youtube_df["Grade"], youtube_df["winsorized_views"])
+                                                       plt.title("average views")
+                                                       plt.show()
+                                                       => use T test of Anova to find out if the differencesare statistically 
+                                                        significant.(grade A vs B) 
+                                                       # however visualizing it is not a formal process. Use Anove or t-test
+# Test whether group differences are significant.
+grades = youtube_df["Grade"].unique()
+grouped_df = youtube_df.groupby("Grade")
+for var in ["winsorized_uploads", "winsorized_subscribers", "winsorized_views"]:
+    print("------------------------------------------------")
+    print("Comparisons for variable: {}".format(var))
+    print("------------------------------------------------")
+    for i in range(0, len(grades)):
+        for j in range(i+1, len(grades)):
+            print("t-test between groups {0} and {1}:".format(grades[i], grades[j]))
+            print(stats.ttest_ind(
+                youtube_df[youtube_df["Grade"]==grades[i]][var], 
+                youtube_df[youtube_df["Grade"]==grades[j]][var]
+            ))
+
+# result would like: 
+Comparisons for variable: winsorized_uploads
+------------------------------------------------
+t-test between groups A++ and A+:
+Ttest_indResult(statistic=2.3701079407396466, pvalue=0.021763510628877547)
+t-test between groups A++ and A:
+Ttest_indResult(statistic=4.635430718045579, pvalue=4.046909833444881e-06)
+t-test between groups A++ and A-:
+Ttest_indResult(statistic=5.8495708
+
+
+
+                                 categorical-categorical => countplot (barplot where count number)
+                                                            # Plot counts for each combination of levels.
+                                                            sns.countplot(y="race", hue="gender", data=df, palette="Green")
+                                                            plt.show()
+                                                         => use crosstab: 
+                                                         # create crosstab: gender by race/ethnicity
+                                                         count_table = pd.crosstab(df["gender"], df["race"])
+                                                         => use chi-square test: whether one combination of variables is significantly 
+                                                                                 different than the rest.
+                                                             print(stats.chisquare(count_table, axis=None))
+
+                                                         Caution: groups with very small variances relative to other groups and groups 
+                                                          with a very small number of observations can also mislead us.
+- keep all the differen versions together!
+
+
+
+2)  Feature engineering - The process of selecting or modifying the existing variables and creating new ones that will be used in our models.
+     a) balance the data:   
+             1. Use tree based algos: Random Forest, Gradient Boosting
+             2. Use metrics: Area under curve, F1 (the weighted average of precision and recall.)
+                     
+             3. Over sample minority class: 
+                    a. Use random resampling from sklearn with # sample with replacement
+
+                       from sklearn.utils import resample
+                       # Separate input features and target
+                       y = df.Class
+                       X = df.drop('Class', axis=1)
+                       # setting up testing and training sets
+                       X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=27)
+                       # concatenate our training data back together
+                       X = pd.concat([X_train, y_train], axis=1)
+
+                       # separate minority and majority classes
+                       not_fraud = X[X.Class==0]
+                       fraud = X[X.Class==1]
+                       # upsample minority
+                       fraud_upsampled = resample(fraud,
+                          replace=True, # sample with replacement
+                          n_samples=len(not_fraud), # match number in majority class
+                          random_state=27) # reproducible results
+                       # combine majority and upsampled minority
+                       upsampled = pd.concat([not_fraud, fraud_upsampled])
+
+                      # check new class counts
+                      upsampled.Class.value_counts()
+                          1    213245
+                          0    213245
+
+                      y_train = upsampled.Class
+                      X_train = upsampled.drop('Class', axis=1)
+
+                      #upsampled = LogisticRegression(solver='liblinear').fit(X_train, y_train)
+                      upsampled = RandomForestClassifier.fit(X_train, y_train)
+
+                      upsampled_pred = upsampled.predict(X_test)
+
+                      accuracy_score(y_test, upsampled_pred)
+                      f1_score(y_test, upsampled_pred)
+                      recall_score(y_test, upsampled_pred)
+
+
+                    b. Use smote
+
+
+                    c. Combined over and under sampling
+                     SMOTEENN
+                     SMOTETomek
+
+             4. Under sample
+                  a. random:    not_fraud_downsampled = resample(not_fraud,
+                                   replace = False, # sample without replacement
+                                   n_samples = len(fraud), # match minority n
+                                   random_state = 27) # reproducible results
+                  b. ClusterCentroids
+                  c. NearMiss
+
+# combine minority and downsampled majority
+downsampled = pd.concat([not_fraud_downsampled, fraud])
+
+     b) Transforming the existing variables. 
+          => target variable has to be normal => log or box-cox => use jarque_bera or normaltest to verify its normal:
+                       from scipy.stats import jarque_bera
+                       from scipy.stats import normaltest
+                       # tests the diffrence between normal and logged data if The p-values are 0 which indicates that the distribution 
+                       # of the log transformed variables is statistically different from the normal distribution. H_0= no difference => 
+                       p=0 => reject null!
+                       jb_stats = jarque_bera(subscribers_boxcox)
+                       norm_stats = normaltest(subscribers_boxcox)
+
+                       print("Jarque-Bera test statistics is {0} and p value is {1}".format(jb_stats[0], jb_stats[1]))
+                       print("Normality test statistics is {0} and p value is {1}".format(norm_stats[0], norm_stats[1]))
+                       # 
+                                        => categorical into numeric => get_dummies, one-hot-encoder, ...
+                                                 set the drop_first parameter of .get_dummies() to True. This will exclude the 1st 
+                                                 category from dummy-coding coz it is the reference variable      
+         => scale the data => normalize => [0,1] ( SKLearn's .normalize() method from the preprocessing module)
+                           => Standardization => mean =0 and SD= 1. SKLearn's .scale() method from the preprocessing module.
+                             from sklearn.preprocessing import scale, normalize
+
+                             df["norm_winsorized_uploads"] = normalize(np.array(df["winsorized_uploads"]).reshape(1,-1)).reshape(-1,1)
+                             df["scaled_winsorized_subscribers"] = scale(df["winsorized_subscribers"])
+         => one-hot-encoding  vs labelbinarizer(binary encoding tend to give the best results.) vs label encoder
+           -----------------------------------------------
+           |   Level   | "Decimal  | Binary   | One hot  |
+           |           | encoding" | encoding | encoding |
+           -----------------------------------------------
+           | No        |     0     |    000   |  000001  |
+           | Primary   |     1     |    001   |  000010  |
+           | Secondary |     2     |    010   |  000100  |
+           | BSc/BA    |     3     |    011   |  001000  |
+           | MSc/MA    |     4     |    100   |  010000  |
+           | PhD       |     5     |    101   |  100000  |
+
+     c) Creating new variables: column name: Mr. Adam Smith, Sir Anthony Hopkins, Queen Elizabeth, Papa James Hetfiel => make a gender column
+     d) Selecting the features. PCA = reduces the correlated set of variables into a smaller set of uncorrelated features
+                                feature interaction = we can multiply our 'partner' indicator by the 'sadness' feature to create the interaction. => People who live with a partner are probably less likely to watch TV alone.
+                                  many models assume linear relationship between a feature and a target variable. 
+
+     e) PCA: curse of dimensionality: dimensionality(variable) reduction
+
+Imagine that you left your glasses on a thin table. The width of the table is the same width as your glasses(1-d), and the table length is 100 times the length of your glasses. At most, you need to touch 100 areas to find your glasses on the table. This time the table surface is a square(2-d) and the length of each edge is 100 times the length of your glasses. Now, you may need to touch 100∗100=10,000
+
+areas to find your glasses. We just increased the dimension of the table from 1 to 2, but the areas we need to search for in the worst case increased by 100 times!
+
+Last, assume that the table is 3-D. You can think of it like a cube or, even better, a room full of shelves to store the glasses! If the length of each edge is 100 times the length of your glasses, then you may need to touch 100∗100∗100=1,000,000
+(1 million) areas! What a dramatic increase!
