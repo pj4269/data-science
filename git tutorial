@@ -20,7 +20,7 @@ Examples:
 
    git add *.html = will add all the html files into staging area
    git add .  = will add everything!
-   - git add --ignore-removal 'Supervised learning/credit_card_fraud.ipynb'
+   git add --ignore-removal 'Supervised learning/credit_card_fraud.ipynb' => specified file is ignored
 
    if you modify a file, then always make sure git add . it afterwards!
    
@@ -83,7 +83,7 @@ Examples:
 21. to store changes in a temp space: 
     $ git stash
 
-22. To remove deleted files: 
+22. To remove deleted files:  => seem to work the best
     git add -u .
     git commit -m 'deleted files'
     git push -u origin master

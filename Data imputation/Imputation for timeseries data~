@@ -27,3 +27,4 @@ df = df.assign(InterpolateSpline4=df.target.interpolate(method='spline', order=4
 df = df.assign(InterpolateSpline5=df.target.interpolate(method='spline', order=5))
 
 
+Recommendation: Based on my experience, interpolation methods tend to give a better result!
