@@ -1,0 +1,19 @@
+import tensorflow as tf
+tf.VERSION
+'''
+import pandas as pd
+import numpy as np
+from datetime import datetime
+import matplotlib.pyplot as plt
+import seaborn as sns
+import scipy.stats as stats
+import statsmodels.api as sm
+from sklearn.metrics import classification_report, f1_score, roc_auc_score, accuracy_score
+
+#from tensorflow.python.keras import models, layers, optimizers
+import tensorflow
+from tensorflow.keras.preprocessing.text import Tokenizer, text_to_word_sequence
+from tensorflow.keras.preprocessing.sequence import pad_sequences
+import bz2
+
+'''

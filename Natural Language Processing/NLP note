@@ -1,0 +1,284 @@
+
+Libraries: 
+- NLTK: NLP tasks: tokenization, lemmatization, stemming, parsing, POS tagging, etc., ..
+- Spacy: NLTK's better version (intro 2015)=> can be used with neural network
+- sklearn - preprocessing, machine learning
+- gensim: -  topic and vector space modeling, document similarity.Tfidf vectorization, word2vec, document2vec, lsa, lda 
+          - large unsupervised learning; supports deep learning
+          - doc2vec: numerical representation of sentence/paragraphs/documents 
+          - lsa, lda : topic modeling
+- Pattern: web and dom crawler, apis(facebook, twitter)
+
+Ref:
+: Spacy- https://stackabuse.com/python-for-nlp-tokenization-stemming-and-lemmatization-with-spacy-library/
+
+0. Preprocessing: 
+   - tokenization: process of breaking a document down into words, punctuation marks, numeric digits, etc.
+                 token : individual meaningful piece from a text that is generally words and punctuation.
+   - lemmatization
+   - stemming
+   - parsing
+   - POS tagging
+
+   Example: 
+      a) tokenization: 
+      # spacy
+      import spacy as sp
+      sentence4 = sp(u"Hello, I am non-vegetarian, email me at abc-xyz@gmai.com")
+      
+      for word in sentence4:
+          print(word.text): Hello
+                            ,
+                            I
+                            am
+                            non
+                            -
+                           vegetarian
+                           ,
+                           email
+                           me
+                           at
+                           abc-xyz@gmai.com
+
+     # nltk
+     from nltk.tokenize import sent_tokenize, word_tokenize
+     data = "all work and no play"
+     print(word_tokenize(data))# ['All', 'work', 'and', 'no', 'play']
+     #####################
+     Stopwords:   potentially-uninformative tokens (caution: sometimes it can be useful: President of the USA)
+     example: print(stopwords.words('english'))
+     #####################
+     b) Detecting Entities: entity such as a company, place, building, currency, institution, etc.
+     sentence5 = sp(u'Manchester United is looking to sign Harry Kane for $90 million')  
+
+     for entity in sentence.ents:
+        print(entity.text + ' - ' + entity.label_ + ' - ' + str(spacy.explain(entity.label_)))
+     # Manchester United - ORG - Companies, agencies, institutions, etc.
+     # Harry Kane - PERSON - People, including fictional
+     # $90 million - MONEY - Monetary values, including unit
+     
+     c) Detecting Nouns
+    for noun in sentence5.noun_chunks:
+        print(noun.text)
+    # Manchester United
+    # Harry Kane
+
+     d) Stemming and Lemmatization:
+     -  both generate the root form of the inflected words. The difference is that stem might not be an actual word whereas, lemma is an 
+    actual language word. Stemming - Only NLTK, Lemmatization- both Spacy and NLTK
+    # compute, computer, computing, computed, etc. You may want to reduce the words to their root form for the sake of uniformity
+   
+    -  Porter Stemmer and Snowball stemmers( slightly improved version of Porter). 
+    Example: 
+
+    import nltk
+    from nltk.stem.porter import *
+    stemmer = PorterStemmer()
+    tokens = ['compute', 'computer', 'computed', 'computing']
+    
+    for token in tokens:
+        print(stemmer.stem(token)) # comput
+    - Lemmas: converts words in the second or third forms to their first form variants
+
+    #compute -> compute, computer-> computer, computed-> compute, computing-> computing
+
+    sentence7 = sp(u'A letter has been written')
+    for word in sentence7:
+        print(word.text, '->', word.lemma_)
+
+     A ===> a
+     letter ===> letter
+     has ===> have
+     been ===> be
+     written ===> write
+
+
+    e) parts of speech tagging: google, can => can be both verb and a noun 
+        1) NLTK
+        2) Spacy: 
+        sen = sp(u"I like to play football.")
+        
+        for word in sen:
+           print(f'{word.text:{12}} {word.pos_:{10}} {word.tag_:{8}} {spacy.explain(word.tag_)}')# adding 12, 10, 8 spaces in between
+
+        I            PRON       PRP      pronoun, personal
+        like         VERB       VBP      verb, non-3rd person singular present
+        to           PART       TO       infinitival to
+        play         VERB       VB       verb, base form
+        football     NOUN       NN       noun, singular or mass
+        .            PUNCT      .        punctuation mark, sentence closer
+
+        Visualizing:
+ 
+        from spacy import displacy
+        sen = sp(u"I like to play football. I hated it in my childhood though")
+        displacy.render(sen, style='dep', jupyter=True, options={'distance': 85})
+     f) named entity recognition: 
+        sen = sp(u'Manchester United is looking to sign Harry Kane for $90 million')
+
+        for entity in sen.ents:
+           print(entity.text + ' - ' + entity.label_ + ' - ' + str(spacy.explain(entity.label_)))
+
+       #Manchester United - ORG - Companies, agencies, institutions, etc.
+       #Harry Kane - PERSON - People, including fictional
+       #$90 million - MONEY - Monetary values, including unit
+       visualizing: 
+       displacy.render(sen, style='ent', jupyter=True)
+
+
+I.  Representing text in numeric form: 
+
+1) Bag of words = simplest - Scikit
+
+   Use it to buildi a baseline model or if your dataset is small and context is domain specific, BoW may work better than Word Embedding. Context is very domain specific which means that you cannot find corresponding Vector from pre-trained word embedding models (GloVe, fastText etc).
+
+Example: Doc1 = "I like to play football", Doc2 = "It is a good game", Doc3 = "I prefer football over rugby"
+         vocabulary  = [I, like, to, play, football, it, is, a, good, game, prefer, over, rugby]
+         Convert Doc1 into vector features based on the frequency of each words: Doc1, the feature vector will look like this: [1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+
+    How do you transform text to numbers? 
+
+    TF-IDF: a) CountVectorizer - count the word occurance. keyword or important signal will occur again and again.
+              count_vec = CountVectorizer()
+              count_occurs = count_vec.fit_transform([doc])
+              countvectorizer.get_feature_names() => prints out the actual words
+            b) Normalized CountVectorizer = Tf id Vectorizer -  extremely high frequency may dominate the result and causing model bias. Normalization can be apply to pipeline easily.
+ 
+              norm_count_vec = TfidfVectorizer(use_idf=False, norm='l2')
+ 
+            c) TF-IDF vectorizer - Term Frequency-Inverse Document Frequency  - low frequency contribute more weights to the model. Word importance will be increased if the number of occurrence within same document (i.e. training record). On the other hand, it will be decreased if it occurs in corpus or vocabulary (i.e. other training records).
+
+               tfidf_vec = TfidfVectorizer()
+             
+          options: 
+          ngram_range=(1, 2) => unigrams bigrams => {'hi ': 0, 'bye': 1, 'run away': 2}
+          max_features = 2500, which means that it only uses the 2500 most frequently occurring words to create a bag of words feature vector.
+          max_df = specifies that only use those words that occur in a maximum of 80% of the documents. Words that occur in all documents are too common and are not very useful for classification. Similarly, => 'Duh'
+          min-df = is set to 7 which shows that include words that occur in at least 7 documents.
+
+ The idea behind the TF-IDF approach is that the words that occur less in all the documents and more in individual document contribute more towards classification.
+TF-IDF is a combination of two terms. Term frequency and Inverse Document frequency. They can be calculated as:
+TF  = (Frequency of a word in the document)/(Total words in the document)
+IDF = Log((Total number of docs)/(Number of docs containing the word))=> to weed out words like I, he/she, the, ...
+
+
+# ref: 
+https://datascience.stackexchange.com/questions/19160/why-word2vec-performs-much-worst-than-both-countvectorizer-and-tfidfvectorizer
+https://towardsdatascience.com/3-basic-approaches-in-bag-of-words-which-are-better-than-word-embeddings-c2cbc7398016
+
+
+2) Word embedding: more advanced than bag-of-word (BoW), Latent Dirichlet Allocation (LDA), Latent Semantic Analysis (LSA) => these can lead to high dimensional vector, sparse feature, while Word embedding leads to dense features in low dimensions. 
+  - uses pre-trained model.
+  - have lots and lots of text data in the relevant domain. For example, if your goal is to build a sentiment lexicon, then using a dataset from the medical domain or even wikipedia may not be effective.
+   a) Gensim provide a amazing wrapper so that we can adopt different pre-trained word embedding models which including Word2Vec (by Google), GloVe (by Stanford), fastText (by Facebook).
+   
+
+word_embedding = WordEmbedding()
+word_embedding.load(source='word2vec', file_path=word2vec_file_path)# source can word2vec, glove, fastText
+   
+   b) Visualization: 
+  - We can visualize it by using PCA or T-distributed Stochastic Neighbor Embedding (t-SNE)
+  word_embedding.build_visual_metadata(embedding=embedding, words=words, file_dir='./word_embedding')
+
+Maximum model size of GloVe, Word2Vec and fasttext are ~5.5GB, ~3.5GB and ~8.2GB respectively. It takes about 9, 1, 9 minutes for GloVe, Word2Vec and fasttext respectively. It may not easier to deploy to production with limited resource.
+
+# ref: https://towardsdatascience.com/3-silver-bullets-of-word-embedding-in-nlp-10fa8f50cc5a
+
+II. Topic modeling: clustering in NLP-  group large volumes of unlabeled text data.
+- Topic modeling is an unsupervised technique that intends to analyze large volumes of text data by clustering the documents into groups. In the case of topic modeling, the text data do not have any labels attached to it. Rather, topic modeling tries to group the documents into clusters based on similar characteristics.A typical example of topic modeling is clustering a large number of newspaper articles that belong to the same category. In other words, cluster documents that have the same topic. It is important to mention here that it is extremely difficult to evaluate the performance of topic modeling since there are no right answers. It depends upon the user to find similar characteristics between the documents of one cluster and assign it an appropriate label or topic.
+    
+    Assumption: 
+    - each document consists of a mixture of topics, and
+    - each topic consists of a collection of words.
+    A. LSA:
+LSI (also known as Latent Semantic Analysis, LSA) learns latent topics by performing a matrix decomposition (SVD) on the term-document matrix. LDA is a generative probabilistic model, that assumes a Dirichlet prior over the latent topics. In practice, LSI is much faster to train than LDA, but has lower accuracy
+    B. LDA: 
+        Assumptions: 
+        1. Documents that have similar words usually have the same topic:  "economy", "profit", "the stock market", "loss"=> BUsiness Topiv
+        2. Documents that have groups of words frequently occurring together usually have the same topic:  if these words frequently occur together in multiple documents, those documents may belong to the same category.
+
+    C. PLSA
+    D. lda2Vec - Deep learning based
+    E. NMF
+ 
+
+   Example: 
+   B. 
+   LDA - The data set contains user reviews for different products in the food category. We will use LDA to group the user reviews into 5 categories.
+   import pandas as pd
+   import numpy as np
+   from sklearn.decomposition import LatentDirichletAllocation
+   from sklearn.feature_extraction.text import CountVectorizer
+
+   reviews_datasets = pd.read_csv(r'E:\Datasets\Reviews.csv')
+   reviews_datasets = reviews_datasets.head(20000)
+   reviews_datasets.dropna()
+   # Before we can apply LDA, we need to create vocabulary of all the words in our data.
+   count_vect = CountVectorizer(max_df=0.8, min_df=2, stop_words='english')
+   doc_term_matrix = count_vect.fit_transform(reviews_datasets['Text'].values.astype('U'))
+   # Include those words that appear in less than 80% of the document and appear in at least 2 documents and remove all the stop words
+
+   LDA = LatentDirichletAllocation(n_components=5, random_state=42) # n_components specifies the number of categories, or topics
+   LDA.fit(doc_term_matrix)
+   # Let's find 10 words with the highest probability for the first topic. 
+   first_topic = LDA.components_[0] # 0 = first topic
+   top_topic_words = first_topic.argsort()[-10:] # 10 words => array([14106,  5892,  7088,  4290, 12596,  5771,  5187, 12888,  7498,
+                                                 # 12921], dtype=int64)
+ 
+   for i in top_topic_words:
+    print(count_vect.get_feature_names()[i]) # water great just drink sugar good flavor taste like tea
+   # Let's print the 10 words with highest probabilities for all the five topics:
+
+   for i,topic in enumerate(LDA.components_):
+      print(f'Top 10 words for topic #{i}:')
+      print([count_vect.get_feature_names()[i] for i in topic.argsort()[-10:]])
+      print('\n')
+
+   Top 10 words for topic #0:
+   ['water', 'great', 'just', 'drink', 'sugar', 'good', 'flavor', 'taste', 'like', 'tea']
+ 
+   Top 10 words for topic #1:
+   ['br', 'chips', 'love', 'flavor', 'chocolate', 'just', 'great', 'taste', 'good', 'like']
+
+   Top 10 words for topic #2: 
+   ['just', 'drink', 'orange', 'sugar', 'soda', 'water', 'like', 'juice', 'product', 'br']
+
+   Top 10 words for topic #3:
+   ['gluten', 'eat', 'free', 'product', 'like', 'dogs', 'treats', 'dog', 'br', 'food']
+
+   Top 10 words for topic #4:
+   ['cups', 'price', 'great', 'like', 'amazon', 'good', 'br', 'product', 'cup', 'coffee']
+
+   # As a final step, we will add a column to the original data frame that will store the topic for the text. To do so, we can use    
+   # LDA.transform() method and pass it our document-term matrix. This method will assign the probability of all the topics to each 
+   # document.
+   topic_values = LDA.transform(doc_term_matrix)
+   topic_values.shape # (20000, 5) => each of the document has 5 columns where each column corresponds to the probability
+   # create a new dataset
+   reviews_datasets['Topic'] = topic_values.argmax(axis=1)
+
+   E. NMF - Non-Negative Matrix Factorization- supervised learning technique which performs clustering as well as dimensionality reduction
+
+   #-  It fixes values for the probability vectors of the multinomials, whereas LDA allows the topics and words themselves to vary.
+   #Thus, in cases where we believe that the topic probabilities should remain fixed per document (oftentimes unlikely)—or in small data 
+   #settings in which the additional variability coming from the hyperpriors is too much—NMF performs better.
+
+   tfidf_vect = TfidfVectorizer(max_df=0.8, min_df=2, stop_words='english')
+   doc_term_matrix = tfidf_vect.fit_transform(reviews_datasets['Text'].values.astype('U')
+   from sklearn.decomposition import NMF
+
+   nmf = NMF(n_components=5, random_state=42)
+   nmf.fit(doc_term_matrix )
+
+   first_topic = nmf.components_[0]
+   top_topic_words = first_topic.argsort()[-10:]
+
+   topic_values = nmf.transform(doc_term_matrix)
+   reviews_datasets['Topic'] = topic_values.argmax(axis=1)
+   reviews_datasets.head()
+
+III. Doc2vec
+https://kanoki.org/2019/03/07/sentence-similarity-in-python-using-doc2vec/
+
+
+# reference: https://www.guru99.com/word-embedding-word2vec.html
