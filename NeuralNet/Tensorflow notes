@@ -1,0 +1,243 @@
+I. 
+
+fully connected = all input is connected to neurons (units) of hidden_layes => 6 connections = dense layer
+
+1)Visual
+
+input   hidden_layer    output
+
+o
+             x
+o                         y
+             x
+o
+
+
+
+2) Math: weights  and biases are being tuned to match inputs to the putputs.
+
+x1 = o1*w1+ o2*w2+ o3*w3 + b1
+x2 = o1*w4+ o2*w5+ o3*w6 + b2
+
+y = x1*w1+x2*w2 + b3
+
+3) Code:
+hidden_layer = keras.layers.Dense(units=2, input_shape=[3])# 3 o's = first layer must have the input shape
+output = keras.layers.Dense(units=1)
+model = tf.keras.Sequential([hidden_layer, output])
+
+
+
+II. 
+Mnist(Fashion + digits): 28*28(28 cells) pixel grey scale image = 784 bytes per image=> 70,000 images
+                       : each pixel has a value between [0-255] => 8 bit => for 16 bits(higher quality) [0:65550] 
+
+
+
+model = tf.keras.Sequential([
+    tf.keras.layers.Flatten(input_shape=(28, 28, 1)),# or (28, 28) => flattens to 784 nodes = 2D image to 1 D
+                                                     # A single image is coming!
+    tf.keras.layers.Dense(128, activation=tf.nn.relu),# An activation function that allows a model to solve nonlinear problems
+                                                      # negative values become 0=> most common activation function (.. Sigmoid, tanh, ELU)
+    tf.keras.layers.Dense(10,  activation=tf.nn.softmax) # The sum of all 10 node values is 1.
+])
+
+
+model.compile(optimizer='adam', # An algorithm for adjusting the inner parameters of the model in order to minimize loss.
+              loss='sparse_categorical_crossentropy', # An algorithm for measuring how far the model's outputs are from the desired output.
+              metrics=['accuracy'])
+
+
+         Regression              Classification
+output:   1 number               N numbers of probabilities for each class
+loss func: mean squared error    sparse categorical crossentropy
+last layer:   None               Softmax ()
+act. func
+
+last layer: 1                    N number of classes
+output num
+
+III. CNN
+
+a) data loading: 
+
+  _URL = 'https://storage.googleapis.com/mledu-datasets/cats_and_dogs_filtered.zip'
+  zip_dir = tf.keras.utils.get_file('cats_and_dogs_filterted.zip', origin=_URL, extract=True)
+
+###############################################################
+  Directory structure: 
+
+  cats_and_dogs_filtered
+|__ train
+    |______ cats: [cat.0.jpg, cat.1.jpg, cat.2.jpg ...]
+    |______ dogs: [dog.0.jpg, dog.1.jpg, dog.2.jpg ...]
+|__ validation
+    |______ cats: [cat.2000.jpg, cat.2001.jpg, cat.2002.jpg ...]
+    |______ dogs: [dog.2000.jpg, dog.2001.jpg, dog.2002.jpg ...]
+###############################################################
+
+b) assign variables to directories
+
+base_dir = os.path.join(os.path.dirname(zip_dir), 'cats_and_dogs_filtered')
+train_dir = os.path.join(base_dir, 'train')
+validation_dir = os.path.join(base_dir, 'validation')
+
+train_cats_dir = os.path.join(train_dir, 'cats')  # directory with our training cat pictures
+train_dogs_dir = os.path.join(train_dir, 'dogs')  # directory with our training dog pictures
+validation_cats_dir = os.path.join(validation_dir, 'cats')  # directory with our validation cat pictures
+validation_dogs_dir = os.path.join(validation_dir, 'dogs')  # directory with our validation dog pictures
+
+
+c) data prep   (tf.keras.preprocessing.image.ImageDataGenerator)
+   1) 
+
+   - we need to convert images in jpg format to tensors
+   - rescale them (divide it by 255)
+
+train_image_generator      = ImageDataGenerator(rescale=1./255)  # Generator for our training data
+validation_image_generator = ImageDataGenerator(rescale=1./255)  # Generator for our validation data
+
+BATCH_SIZE = 100  # models will be updated after each 100 examples
+IMG_SHAPE  = 150  # resized image pixel  
+ - 1. 
+
+   2) Resize the images with different sizes. => images can be in different pixels => 28*28, 2134*23, .. => need fixed size for all images
+ 
+  train_data_gen = train_image_generator.flow_from_directory(batch_size=BATCH_SIZE,
+                                                           directory=train_dir,
+                                                           shuffle=True,
+                                                           target_size=(IMG_SHAPE,IMG_SHAPE), #(150,150) => resizing it!
+                                                           class_mode='binary')
+
+
+d) 
+Convolution: 
+
+Lett's say we have image with the following pixels: M1 [1, 4,   255
+                                                        23, 56, 3
+                                                       23,  45, 56]
+
+With CNN :
+ M1 * kernel (-1 0 -1                   = Gets a new matrix = convoluted_matrix with the same shape as M1
+             5 -1  0                                        = new convoluted_matrix is more blurred, sharpened, .. depending on the kernel
+             -1 0  2) => sharpen Kernel                       matrix used. 
+
+
+
+a kernel, convolution matrix, or mask is a small matrix(usually 3*3). It is used for blurring, sharpening, embossing, edge detection, and more. This is accomplished by doing a convolution between a kernel and an image.
+
+
+
+
+e) Model: 4 convolution blocks
+model = tf.keras.models.Sequential([
+    tf.keras.layers.Conv2D(32, (3,3), activation='relu', input_shape=(150, 150, 3)), # creates 32 convoluted images as an output
+                                                                                     # kernel_size = (3, 3) = or yu can put just 3
+                                                                                     # image height, weight = 150
+                                                                                     # input_shape => 3 => RGB channel = color image
+                                                                                     # depth = 3 => color images is composed of 3 
+                                                                                     # independent red, blue, green images
+
+                                                                                     # input_shape = 1 => greyscale = black/white image
+ 
+                                                                                     # CMYK images = 4
+ 
+    tf.keras.layers.MaxPooling2D(2, 2, strides = 2),                                 # used to downsample the  convoluted_matrix
+                                                                                     # for each 2*2 cells, the the cell with the MAX 
+                                                                                     # value is selected
+                                                                                     # stride =  how many cells(steps) 2*2 cell moves
+                                                                                     # 2*2 => downsizes the original image by 4 times
+    tf.keras.layers.Conv2D(64, (3,3), activation='relu'),
+    tf.keras.layers.MaxPooling2D(2,2),
+    
+    tf.keras.layers.Conv2D(128, (3,3), activation='relu'),
+    tf.keras.layers.MaxPooling2D(2,2),
+    
+    tf.keras.layers.Conv2D(128, (3,3), activation='relu'),
+    tf.keras.layers.MaxPooling2D(2,2),
+    
+    tf.keras.layers.Flatten(),
+    tf.keras.layers.Dense(512, activation='relu'),
+    tf.keras.layers.Dense(2, activation='softmax')                                  # for binary outcome use Dense(1, activation='sigmoid')
+         
+])
+
+For binary classification: 
+tf.keras.layers.Dense(2, activation='softmax')     =   tf.keras.layers.Dense(1, activation='sigmoid') 
+model.compile(optimizer='adam', 
+loss = 'sparse_categorical_crossentropy'           vs  loss='binary_crossentropy',  # works with sigmoid!
+              metrics=['accuracy'])
+
+
+
+CNNs: Convolutional neural network. That is, a network which has at least one convolutional layer. A typical CNN also includes other 
+      types of layers, such as pooling layers and dense layers.
+
+Convolution: The process of applying a kernel (filter) to an image
+
+Kernel / filter: A matrix which is smaller than the input, used to transform the input into chunks
+
+Padding: Adding pixels of some value, usually 0, around the input image
+          # padding='same' => original image is retained. No '0' padding
+
+Pooling The process of reducing the size of an image through downsampling.There are several types of pooling layers. For example, average 
+         pooling converts many values into a single value by taking the average. However, maxpooling is the most common.
+
+Maxpooling: A pooling process in which many values are converted into a single value by taking the maximum value from among them.
+
+
+Stride: the number of pixels to slide the kernel (filter) across the image.
+
+Downsampling: The act of reducing the size of an image
+
+
+f) Fitting: Since our batches are coming from a generator (ImageDataGenerator), we'll use fit_generator instead of fit.
+
+
+EPOCHS = 100
+history = model.fit_generator(
+    train_data_gen,
+    steps_per_epoch=int(np.ceil(total_train / float(BATCH_SIZE))),
+    epochs=EPOCHS,
+    validation_data=val_data_gen,
+    validation_steps=int(np.ceil(total_val / float(BATCH_SIZE)))
+)
+
+
+
+g) others: 
+
+BATCH_SIZE = 32
+train_dataset = train_dataset.repeat().shuffle(num_train_examples).batch(BATCH_SIZE)
+test_dataset = test_dataset.batch(BATCH_SIZE)
+
+ - processes 32 images at a time
+ - repeat() => epoch = infinity
+ - shuffle => shuffle the images randomly so that the model doesn't learn from the repeated order
+
+model.fit(train_dataset, epochs=10, steps_per_epoch=math.ceil(num_train_examples/BATCH_SIZE))
+ -
+ -
+ -
+
+ 
+h) How to fight overfitting? => no need to apply it to the validation set
+  
+  1. Data augmentation => add flipped, moved, zoomed versions of the image to the data
+
+      image_gen_train = ImageDataGenerator(
+      rescale=1./255,
+      rotation_range=40,        # rotates random images at 40%
+      width_shift_range=0.2,
+      height_shift_range=0.2,
+      shear_range=0.2,
+      zoom_range=0.2,           # zooms random images by 20%
+      horizontal_flip=True,     #
+      fill_mode='nearest')
+
+  2. add dropout() => simple
+     - some neurons play more heavy role than others. If we apply dropout, it evens out the work load for the neurons
+
+  3. add Early Stopping: In this method, we track the loss on the validation set during the training phase and use it to determine when to stop training such that the model is accurate but not overfitting.
+
+  4. add more data

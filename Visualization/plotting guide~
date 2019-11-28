@@ -1,0 +1,15 @@
+
+
+Univariate Analysis: 
+a) Continuous: 1. Histograms (distribution of the dataset )
+               2. QQ plots (close a variable is to known distribution, and any outliers. )
+
+b) Categorical:1. Barchart
+               2. User wordcloud: from wordcloud import WordCloud
+               3. Pie Chart
+
+Bivariate analysis: 
+a) Continuous - Categorical     : Boxplot (compare groups and to identify differences in variance, as well as outliers.)
+                                  Line plots, barplot
+b) Continuous - Continuous      : Scatterplots, Heatmap, Line plots
+c) Categorical - Categorical    : Countplot

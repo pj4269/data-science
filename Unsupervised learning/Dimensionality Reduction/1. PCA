@@ -1,0 +1,27 @@
+
+Curse of dimensionality: the amount of data needed to support the result often grows exponentially with the dimensionality.
+
+
+The main idea of PCA is to find a low-dimensional representation of the high-dimensional data by retaining as much variation in the data as possible.
+
+
+1. Find the middle point along with axis and this point will become a reference point
+2. Find the best fitting line along the refrence point. Best fitting can be find by minimizing the squared distance(SSE) from each point to the line or equivalently, maximize the distance between the projected points (SSE) on the line to the reference point. The equivalency can proved by using Pythogerean theorem!
+3. Then standardize the maximum distances between [0-1] and it is caled Eigenvalue (SS(distance for PC1)) and i unit is called Eigenvector. 
+
+4. Then create create perpendicular line to the best fitted line and find the distance for each projected point to the reference point. 
+    These numbers become Eigenvalues for PC2. 
+
+Now PC1 and PC2 original points becomes X, Y for PCA visualization. 
+
+EigenValue PC1 = SSE(distances for PC1)
+EigenValue PC2 = SSE(distances for PC2)
+
+Variation for PC1 = SSE(distances for PC1)/(n-i) = variance = 7 => responsible for 70% of the variation(explanation)
+Variation for PC2 = SSE(distances for PC2)/(n-i) = variance =  3 => responsible for 30% of the variation(explanation)
+
+Visualization of 70%, 30% is called Scree Plot
+
+5. Apply same process for PC3, PC4, ...
+
+ref: https://www.youtube.com/watch?v=FgakZw6K1QQ

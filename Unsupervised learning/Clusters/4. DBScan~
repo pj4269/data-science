@@ -1,0 +1,12 @@
+DBScan
+
+1. Hyperparameters: 
+ a) a radius epsilon =  𝜖 defines the radius within which to search for nearby neighbors.
+ b) a neighborhood density 𝛳. 
+ c) minPts is the minimum number of points required to form a cluster.
+
+
+2. Types of data:
+  a) Core point: A point that has at least a minimum number of other points (minPts) within its radius.
+  b) Border point: A point that is within the radius
+  c) Noise point: A point that is neither a core point nor a border point.

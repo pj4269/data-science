@@ -1,0 +1,79 @@
+Corpus:
+1. The best Monty Python sketch is the one about the dead parrot, I laughed so hard."
+2. "I laugh when I think about Python's Ministry of Silly Walks sketch, it is funny, funny, funny, the best!"
+3. "Chocolate is the best ice cream dessert topping, with a great taste."
+4. "The Lumberjack Song is the funniest Monty Python bit: I can't think of it without laughing."
+5. "I would rather put strawberries on my ice cream for dessert, they have the best taste."
+6. "The taste of caramel is a fantastic accompaniment to tasty mint ice cream."
+
+
+Step 1:
+
+TF: how many times word occured in each document?
+
+ 	1 	2 	3 	4 	5 	6
+Monty 	1 	0 	0 	1 	0 	0
+Python 	1 	1 	0 	1 	0 	0
+sketch 	1 	1 	0 	0 	0 	0
+laugh 	1 	1 	0 	1 	0 	0
+funny 	0 	3 	0 	1 	0 	0
+best 	1 	1 	1 	0 	1 	0
+ice C 	0 	0 	1 	0 	1 	1
+desse 	0 	0 	1 	0 	1 	0
+taste 	0 	0 	1 	0 	1 	2
+
+######################################################################
+
+step 2: 
+
+calculate df, cf, idf.
+
+ a) df = document frequency = how many documents(sentences) has the word in it?
+ b) cf = count frequency = how many word occurs in the corpus?
+ c) idf =  log_2 (total_document_num /df)     # log_2 means log base of 2
+
+
+|       |df |cf | idf | 
+|-----------|---|---  | 
+| Monty | 2 | 2 | 1.585 | 
+| Python | 3 | 3 | 1 | 
+| sketch | 2 | 2 | 1.585 | 
+| laugh | 3 | 3 | 1 | 
+| funny | 2 | 4 | 1.585 | 
+| best | 4 | 4 | .585 | 
+| ice cream | 3 | 3 | 1 | 
+| dessert | 2 | 2 | 1.585 | 
+| taste | 3 | 4 | 1 |
+
+##############################################################
+step 3:
+
+calculate tfidf
+
+tfidf = TF * idf
+
+TF is from step 1, idf from step 2.
+
+
+tfidf for the first 3 sentenses.
+        1 	2 	3
+Monty 	1.585 	0 	0
+Python 	1 	1 	0
+sketch 	1.585 	1.585 	0
+laugh 	1 	1 	0
+funny 	0 	4.755 	0                       =>   4.755  =  3 *   1.585
+best 	.585 	.585 	.585
+ice cream 	0 	0 	1
+dessert 	0 	0 	1.585
+taste 	0 	0 	1
+##############################################################
+
+
+
+
+
+
+
+
+
+

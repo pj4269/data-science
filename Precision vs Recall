@@ -1,0 +1,19 @@
+
+Email Spam| Sick Person| Fraud | Terrorist = S
+
+
+              Prediction                             Prediction
+        -------------------                       ---------------
+              No   | S                                No  | S                     S = Spam or Sick (person with contagious virus)
+        ------------------                       -----------------
+Actual| No  | 950  | 10                 Actual  | No  | TN | FP
+      | S   | 15   | 25                         | S   | FN | TP                   TN= True Negative, FN = False Negative, TP= True Positive
+
+
+
+Accuracy = 970/1000 => biased toward data that has HIGH TN
+
+Recall = 25/ (15 + 25 )= 62.5% = TP/(TP + FN) => row wise => when FN importance is high => misclassified contgiously Sick person as healthy@
+       => sick person
+
+Precision = 25/ (25 + 10) = 71%= TP/(TP +FP ) => column wise => when FP importance is high => misclassified 'College Acceptance Letter' as a Spam!   => spam

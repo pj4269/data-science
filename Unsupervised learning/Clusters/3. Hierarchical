@@ -1,0 +1,28 @@
+
+Hierarchical clustering : instead of giving you clusters, it gives you hierarchy of relationships and you pick the hierarchy based on your needs. The visualization is called dendogram. 
+
+0. 
+Hyperparameters:  
+     a) Affinity: Distance or similarity => closer distance = more similar => Can be "euclidean"= "l1", "l2"= "manhattan", "cosine".
+
+L1 = Lasso = Uses Euclidean Distance as a regularization = adds 'squared magnitude' of coefficient as penalty term to the loss function
+           = Lambda * Square root of Sum of Squared Error
+L2 = Ridge = Lambda * Manhatten Distance =>  adds 'absolute value' of magnitude” of coefficient as penalty term to the loss function = Manhattan distance = In a plane with p1 at (x1, y1) and p2 at (x2, y2), it is |x1 - x2| + |y1 - y2|. Lm distance
+
+Cosine = similarity(A, B) =  Cos(O) = Cosine similarity is a measure of similarity between two non-zero vectors of an inner product space that measures the cosine of the angle between them = It is a judgement of orientation(direction) and not magnitude => very efficient for Sparse vectors(big vectors)
+                        cos(O)= 1 => same orientation,
+                        cos(O)= 0 => two vectors at 90°
+                        cos(0)= -1=> opposite direction
+
+
+(Jaccard is for sets[not vectors])
+
+
+     b)n_clusters=  It is not required but it uses it to determine when to stop.
+
+1. Bottom-up approach: Also called agglomerative clustering, this approach starts with the individual observations as stand-alone clusters. Then,
+
+    It combines the two most similar clusters into one, hence decreasing the total number of clusters by one.
+    It repeats the previous step above until only a single cluster remains. The figure above illustrates this approach.
+
+Top-down approach: Also called divisive clustering, this approach starts with a single cluster. Then,

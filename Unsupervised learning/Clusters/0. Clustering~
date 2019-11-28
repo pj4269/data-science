@@ -1,0 +1,34 @@
+
+Unsupervised learning are hard to formalize and evaluate and runs algorithms on unlabeled data to create patterns and features.
+
+A. Clustering 
+
+A. Clustering puts observations into groups based on the similarity of the data. For example, some cats and dogs can look similar. But if the animal barks, you most likely to group it as a dog based on feature similarity with other dogs. So you deriving the conclusion or labeling it by yourself instead of someone is telling you what it is. Or you can group phone calls as scam or not scam based on phone duration, content and timing and you could 2^3 = 8 classify it into 8 different groups ( 2^3 = 8). But what if there were 100's of features?
+
+This could complicate our math but thanks to clustering algorithms, we can group it in simpler way. 
+
+
+Types of clustering: 
+
+1. Hard clusterers: 1 data belongs to 1 group.
+
+  1) Exclusive (partitioning) : Data are grouped in a way that one data can belong to one cluster only. Example: K-means
+- K-means groups the data into K groups based on the nearest mean of each cluster. It is mathematically easy to understand but computationally intensive algorithm. => however, in pracitce, K means is one of the fastest clustering algortihm. 
+   K-Means = Apply when data has a spherical distribution shape = circular
+
+  2) Hierarchical = When you are interested in the groups inside your groups, or the groups inside of those groups
+          = works well with complex structures = For example rings inside rings.
+          = works well in the circular shape(convex)
+          = works well with hidden structures.
+
+  3) Density Based = DBScan = All the other clustering methods assume that each data point belongs to some cluster. But that is not the case all the time. When there are some irrelevant data, use dbscan.It focuses on tightly packed data and assumes everything else is a noise!
+          = works well with non-convex shapes
+          = circles within circles
+          = non- sensitive to outliers
+          = more efficient than others (fast)
+          = No need to provide K
+
+2. Soft clusterer: 1 data belongs to more than 1 group.
+ 1) Gaussian Mixture Model = Probability based
+          = not based on geomtry so it can tackle non-linear geometry.
+

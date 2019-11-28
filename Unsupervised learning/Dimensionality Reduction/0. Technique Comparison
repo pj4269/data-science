@@ -1,0 +1,10 @@
+
+1. PCA = has been around since 1933
+       = very linear => has hard with non-linear data like image processing, NLP
+
+2. T-sne = since 2008
+         = good at capturing the non-linear structure in high dimensional data => image, audio, text, ...
+
+3. UMAP = since 2018
+        = very similar to T-sne on visualization ut much faster
+        = more general use in ML

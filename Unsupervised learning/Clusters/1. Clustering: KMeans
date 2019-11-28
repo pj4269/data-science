@@ -1,0 +1,77 @@
+K-means
+
+   Exclusive (partitioning) : Data are grouped in a way that one data can belong to one cluster only. Example: K-means
+- K-means groups the data into K groups based on the nearest mean of each cluster. It is mathematically easy to understand but computationally intensive algorithm. => however, in pracitce, K means is one of the fastest clustering algortihm. 
+
+
+   0. Assumptions: 
+       a) Clusters are isotropic(circular) =  underlying "true" clusters  = symmetrical
+       b) Similar variance K-means also assumes all clusters have similar variance.
+
+   1. How it works?
+   Step 1: It will randomly choose 3 points (it could be blank points) from the dataset. 
+   Step 2: It will compute the distance (usually Euclidian) between 3 points and each data point and group the data into 3 based on the closest point. 
+   Step 3: Now it will find the centroid (actual data point) on three groups and will recalculate the distances and regroup them based on the closest centroid. 
+   Step 4. It will find a new centroid based on the mean of th vectors and start from Step 2 until the distance, which is decreasing, between old centroid and new centroid reaches a certain threshold. 
+
+   2. When to stop iterations?
+
+   - Centroids or datapoints remain the same => time consuming
+   - The distance of datapoints from their centroid is minimum  => the thresh you’ve set
+   - Max number of iteration  => can lead to poor results
+
+
+
+   3. How to choose an optimal K?
+      a) Elbow Method.
+       Loss function: Inertia. Calculate and visualize Distortion and inertia.  If you plot k against the SSE, you will see that the error decreases as k gets larger; The idea of the elbow method is to choose the k at which the SSE decreases abruptly. And if the elbow is not sharp, then any of the transitional K's would be fine given computational cost. 
+       Then iterate the values of k from 1 to 9 until distortion/inertia start decreasing in a linear fashion. 
+       ref: https://www.analyticsvidhya.com/blog/2019/08/comprehensive-guide-k-means-clustering/
+
+      b) Consistency.
+       Divide your data in 10 samples and visualize k from 1 to 9. K that has the most consistent grouping among samples would be chosen.
+
+      c) Silhouette Coef [-1, 1]=> K with the highest Coef => chosen
+                                => measure of similarity between 2 clusters.
+      d) if you know the labels, then: 
+
+         1) Contingency tables = pd.crosstab()
+         2) Rand index =>  measure of similarity between 2 clusters.
+         3) Adjusted Rand Index =>
+
+   4. Metrics- how well we grouped the data
+      a) Silhouette Coef = higher the better = if the values is closer to 1, that means that the data is far away from the neighboring clusters, which is good. A value around 0 indicates that the sample is on or very close to the decision boundary between two neighboring clusters and negative values indicate that those samples might have been assigned to the wrong cluster.
+
+       silhouette coefficients = b(i)- a(i)/ max(a(i), b(i))
+       b(i) = mean distance between that datapoint and all other points in the nearest cluster (not its own cluster)
+       a(i) = mean distance between that datapoint and all other points in its own cluster
+
+      b) Rand index: is the ratio of the number of pairs(ground truth and suggested group) where the ground truth and the new solution agree
+         : [0 to 1] => 1 indicates perfect agreement between the ground truth and the new solution
+         : # number of same grouping / total num of data
+         : probability of fidning truth
+      c) Adjusted Rand Index => If we just group the data randomly, then we get Expected RI. For RI to be good, it has to beat Excepted RI
+
+         ARI = RI-E(RI)/Max(RI-E(RI))
+
+   5. Problems: 
+      a) When the data is unlabanced => K means will give you more balanced result. => use higher K
+      b) When the density of the groups are different => K means will give you wrong results. => use higher K
+      c) Initial randomization could give you bad results => choose "k-means++"for sklearn.cluster.KMeans  => optimizes initial values
+                                                      => starts with centroids that are distant from each other
+                                                      => also sklearn runs the algorithm 10 times (we can set it to a different value using n_init parameter) with different centroid seeds and selects the best output in terms of inertia. 
+      d) The output for any fixed training set won't be always the same, because the initial centroids are set randomly and that will influence the whole algorithm process.
+
+   6. Best practice for K means: 
+      a) Standardize the data
+      b) apply PCA to reduce dimensionality
+      c) When the number of observations is high (>=100k)and we have limited computational power or time => MiniBatchKMeans (scikit) => randomly samples subsets of the training data in each iteration. => faster but lower quality(result) than K means
+      d) Works best when data is isotropic(circular)
+      e) apply KMedian() when there are outliers. 
+   7. Hyperparameters: 
+      a) Number of clusters of K.
+      b) Maximum iterations: Of the algorithm for a single run.
+      C) N_Init: The numbe rof times the algorithm will be run with different centroid seeds. The final result will be the best output of the number defined of consecutives runs, in terms of inertia.
+
+
+

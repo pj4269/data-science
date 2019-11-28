@@ -1,0 +1,9 @@
+
+
+
+1.    Which stop words to include or exclude
+2.    Should we use phrases ('Monty Python' instead of 'Monty' and 'Python') as terms => n_grams
+3.    The threshold for infrequent words: Here, we excluded words that only occurred once. In longer documents, it may be a good idea to set a higher threshold.
+
+4.     How many terms to keep. We kept all the terms that fit our criteria (not a stop word, occurred more than once), but for bigger document collections or longer documents, this may create unfeasibly long vectors. We may want to decide to only keep the 10,000 words with the highest collection frequency scores, for example.
+
