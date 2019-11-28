@@ -35,7 +35,7 @@ data cleaning (eliminate problems) => EDA (using stat and visual. if we detect p
                                                                  plt.title("Box plot of video views (whis=20)")
                                                                  plt.show()
                                 => Use histogram plt.hist(youtube_df["Video views"])
-                                b) Statistics: use Z-score or  IQR (tukey's methpd)
+                                b) Statistics: use Z-score or  IQR (tukey's methpd)=boxplot
 
                        How to treat outliers?
                        - We can drop the outliers from our dataset.=> only use if the outlier is from a measurement error.
@@ -169,7 +169,7 @@ Ttest_indResult(statistic=5.8495708
              1. Use tree based algos: Random Forest, Gradient Boosting
              2. Use metrics: Area under curve, F1 (the weighted average of precision and recall.)
                      
-             3. Over sample minority class: 
+             3. Over-Sample minority class: 
                     a. Use random resampling from sklearn with # sample with replacement
 
                        from sklearn.utils import resample
@@ -210,14 +210,14 @@ Ttest_indResult(statistic=5.8495708
                       recall_score(y_test, upsampled_pred)
 
 
-                    b. Use smote
+                    b. Use smote: the algorithm takes samples of the feature space for each target class and its nearest neighbors, and generates new examples that combine features of the target case with features of its neighbor
 
 
                     c. Combined over and under sampling
                      SMOTEENN
                      SMOTETomek
 
-             4. Under sample
+             4. Under-Sample
                   a. random:    not_fraud_downsampled = resample(not_fraud,
                                    replace = False, # sample without replacement
                                    n_samples = len(fraud), # match minority n

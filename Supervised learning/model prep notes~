@@ -27,13 +27,15 @@ data cleaning (eliminate problems) => EDA (using stat and visual. if we detect p
                                   else:
                                      return 3
                     2) missing values: read Data Imputation
-                    3) outliers(numeir var) a ) Visually => IQR or Boxplot (points beyond whiskers)
+                    3) outliers(numeric var)
+                            Detect: 
+                                a ) Visually => IQR or Boxplot (points beyond whiskers)
                                 => In Matplotlib the whiskers by default reach to 1.5 * the SD away from the 1st and the 3rd quartile
                                 => but you can change the 1.5 by plt.boxplot(youtube_df["Video views"], whis=20)
                                                                  plt.title("Box plot of video views (whis=20)")
                                                                  plt.show()
                                 => Use histogram plt.hist(youtube_df["Video views"])
-                                b) Statistics: use Z-score or  IQR (tukey's methpd)
+                                b) Statistics: use Z-score or  IQR (tukey's methpd)=boxplot
 
                        How to treat outliers?
                        - We can drop the outliers from our dataset.=> only use if the outlier is from a measurement error.
@@ -44,6 +46,13 @@ data cleaning (eliminate problems) => EDA (using stat and visual. if we detect p
                                                         one side
                                b) use your own custom code
                        - Apply log or box-Cox or sq.root transformations => both be applied to columns with positive values. (value >0 )
+                           Types: 
+                         -  Univariate method: the 1 I'm using
+                         -  Multivariate method: run variables against target variable when dealing with outliers.
+                         -  Minkowski method:
+                          https://www.neuraldesigner.com/blog/3_methods_to_deal_with_outliers
+                       3) Use robustscaler() on your model or make your model robust to outliers.
+
                     4) EDA ( an iterative process.)
                        - Univariate(one var at a time) vs Multivariate
                        a) Univariate: Categorical: bar chart => look for class imbalance in target variable. 
@@ -160,7 +169,7 @@ Ttest_indResult(statistic=5.8495708
              1. Use tree based algos: Random Forest, Gradient Boosting
              2. Use metrics: Area under curve, F1 (the weighted average of precision and recall.)
                      
-             3. Over sample minority class: 
+             3. Over-Sample minority class: 
                     a. Use random resampling from sklearn with # sample with replacement
 
                        from sklearn.utils import resample
@@ -208,7 +217,7 @@ Ttest_indResult(statistic=5.8495708
                      SMOTEENN
                      SMOTETomek
 
-             4. Under sample
+             4. Under-Sample
                   a. random:    not_fraud_downsampled = resample(not_fraud,
                                    replace = False, # sample without replacement
                                    n_samples = len(fraud), # match minority n

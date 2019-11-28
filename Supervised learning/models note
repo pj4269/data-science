@@ -1,3 +1,19 @@
+0. Gradient Descent: We want to find optimal constant for Intercept + Beta
+
+   - Gradient: taking derivate of mutiple variables(constant and beta)
+
+   Loss function =   SSE(residuals)=SSE(Y-Y_hat) = SSE(Y-(a+beta* X)) # a, X are given
+
+   a)  Take derivate with respect to Intercept  der_SSE(residuals)=der_SSE(Y-Y_hat) = der_SSE(Y-(a+beta* X)) = 0
+   b)  Take derivate with respect to Beta  der_SSE(residuals)=der_SSE(Y-Y_hat) = der_SSE(Y-(a+beta* X)) = 0
+   
+   In a graph:
+   SSE vs Intercept(or beta) => we want to find a pount where slope = 0
+
+   - Step_size (will have a corresponding updated_slope_SSE) = older_slope+SSE * learning rate => stops when Step_size < learning rate  or when num_of_steps reach predetermined amount!
+
+
+
 1. Linear regression: sum(sq.error) or OLS => minimized by trial and error
 2. LogisticRegression: 
                        appply sigmoid function to a regression equation: y=b0+b1x1+b2x2
@@ -6,7 +22,7 @@
                        Sigmoid Function
 The sigmoid function, also called logistic function gives an 'S' shaped curve that can take any real-valued number and map it into a value between 0 and 1. If the curve goes to positive infinity, y predicted will become 1, and if the curve goes to negative infinity, y predicted will become 0. If the output of the sigmoid function is more than 0.5, we can classify the outcome as 1 or YES, and if it is less than 0.5, we can classify it as 0 or NO. The outputcannotFor example: If the output is 0.75, we can say in terms of probability as: There is a 75 percent chance that patient will suffer from cancer.
 
-
+The loss function computes the error for a single training example, while the cost function is the average of the loss functions of the entire training set.
 3.
  l1 - lasso : penalizes by the sum of the absolute values of the coefficients. 
  l2 - ridge : penalizes by the sum of squared coefficients or minimizes: OLS + alpha * sum(beta sq) => it increases the error ( penalty, bias) => coz it tend to work well with both test and training set.

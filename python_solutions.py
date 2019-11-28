@@ -20,6 +20,33 @@ import math
 import random
 
 
+list1 = [["Grae Drake", 98110], ["Bethany Kok"], ["Alex Nussbacher", 94101], ["Darrell Silver", 11201]]
+
+dict1 = {t[0]: t[1:]   for t in list1}
+
+print dict1
+def user_contacts(list1):
+  list3 = [None, None, None, None]
+  list2 = []
+  for i in list1:
+    list2.append(i[0])
+
+  for i in list1:
+    # print i[1]
+    if not i[1]:
+       print 'var is False'
+    #list3.append(i[1])
+  #  try:
+  #    list3.append(i[1])
+  #  except: #i[1]==None:
+  #    list3.append(None)
+
+  dict1 = dict(zip(list2, list3))
+  print dict1
+
+#user_contacts(list1)
+
+
 class Puzzlebox(object):
     """Puzzlebox for codewars kata."""
 
@@ -46,8 +73,8 @@ class Puzzlebox(object):
     def __repr__(self):
         return "The built-in dir() function is useful. Continue adding print statements till you know the answer.\n"
 
-puzzlebox = Puzzlebox()
-print(dir(puzzlebox))
+#puzzlebox = Puzzlebox()
+#print(dir(puzzlebox))
 '''
 print puzzlebox.lock(puzzlebox.key)
 
@@ -306,6 +333,9 @@ def take_umbrella(w, num=0.1):
       return True
    else:
       return False
+
+
+
 #print take_umb('sunny', 0.3)
 # box_capacity(32, 64, 16) should return 13824.
 def box_capacity(a, b, c):# should return 13824.

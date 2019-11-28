@@ -8,7 +8,8 @@ neural net = ensembe of perceptrons
 
 
 activation function: 
-1) sigmoid: 0, 1
+1) sigmoid: 0, 1  => forces you choose between 0, 1 => 1 output
+   softmax => 0.53
 2) hyperbolic tangent: -1, 1: y=tahn(N)
 3) RELU: rectified linear units: y = Sigma(wN) => if y < 0 then o, else y = y => it gives you the number that you out into activation function!
 

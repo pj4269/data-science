@@ -81,3 +81,12 @@ group 0 has a mean difference that r large and statistically significant. Group 
 
 
 ref: http://cleverowl.uk/2015/07/01/using-one-way-anova-and-tukeys-test-to-compare-data-sets/
+
+
+
+
+Nonparametric tests
+
+If visual inspection of the data (potentially in combination with the Shapiro-Wilk test) show that the data is meaningfully non-normal (remember, perfect normality is only possible in theory), then statistics that assume normality (linear regression, t-tests, ANOVA, correlations, and others) will give results that are biased or just straight-up wrong. Fortunately, there are nonparametric versions of all common statistical methods. Nonparametric methods are less powerful (given the same sample size, a parametric test will be able to detect smaller trends in the data), which is why they are not used all the time.
+
+Generally speaking, a nonparametric test works by first converting variable values into rankings, from the lowest value (1st place) to the highest value (last place). Here is an example of a “height in inches” variable in its original scale, and when converted into ranks:

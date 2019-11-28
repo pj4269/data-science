@@ -1,15 +1,24 @@
-For Categorical data, use Bar chart and pie chart. 
-For Numeric data is composed of continuous and discrete data. It uses scatter plot, histograms and whisker plots (for quartiles, median, min, max)
 
-Discrete data example: number of children you have, SAT score. 
-Continous: you weight
+
 
 
 - Line plots show data over time'
-- Scatterplots show the relationship between two variables.
-- Histograms show the distribution of the dataset and any outliers.
-- QQ plots show how close a variable is to known distribution, and any outliers.
-- Boxplots are used to compare groups and to identify differences in variance, as well as outliers.
+
 
 
 when data is skewed apply square root, cube root, log transformation, or box-cox transformation 
+
+
+Univariate Analysis: 
+a) Continuous: 1. Histograms (distribution of the dataset )
+               2. QQ plots (close a variable is to known distribution, and any outliers. )
+
+b) Categorical:1. Barchart
+               2. User wordcloud: from wordcloud import WordCloud
+               3. Pie Chart
+
+Bivariate analysis: 
+a) Continuous - Categorical     : Boxplot (compare groups and to identify differences in variance, as well as outliers.)
+                                  Line plots, barplot
+b) Continuous - Continuous      : Scatterplots, Heatmap, Line plots
+c) Categorical - Categorical    : Countplot

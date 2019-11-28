@@ -1,3 +1,6 @@
+Terms: 
+ 1. Corpus = Whole literature
+ 2. Document = texts, sentences, paragraphs, sometimes whole text files.
 
 Libraries: 
 - NLTK: NLP tasks: tokenization, lemmatization, stemming, parsing, POS tagging, etc., ..
@@ -44,6 +47,8 @@ Ref:
      from nltk.tokenize import sent_tokenize, word_tokenize
      data = "all work and no play"
      print(word_tokenize(data))# ['All', 'work', 'and', 'no', 'play']
+     print (sent_tokenize(sentences)) #['sent1', 'sent2']
+
      #####################
      Stopwords:   potentially-uninformative tokens (caution: sometimes it can be useful: President of the USA)
      example: print(stopwords.words('english'))
@@ -93,7 +98,10 @@ Ref:
      written ===> write
 
 
-    e) parts of speech tagging: google, can => can be both verb and a noun 
+    e) parts of speech tagging: Recognized if the word is verb, noun, etc, ...
+
+        Example: google, can => can be both verb and a noun 
+
         1) NLTK
         2) Spacy: 
         sen = sp(u"I like to play football.")
@@ -113,24 +121,14 @@ Ref:
         from spacy import displacy
         sen = sp(u"I like to play football. I hated it in my childhood though")
         displacy.render(sen, style='dep', jupyter=True, options={'distance': 85})
-     f) named entity recognition: 
-        sen = sp(u'Manchester United is looking to sign Harry Kane for $90 million')
 
-        for entity in sen.ents:
-           print(entity.text + ' - ' + entity.label_ + ' - ' + str(spacy.explain(entity.label_)))
-
-       #Manchester United - ORG - Companies, agencies, institutions, etc.
-       #Harry Kane - PERSON - People, including fictional
-       #$90 million - MONEY - Monetary values, including unit
-       visualizing: 
-       displacy.render(sen, style='ent', jupyter=True)
 
 
 I.  Representing text in numeric form: 
 
 1) Bag of words = simplest - Scikit
 
-   Use it to buildi a baseline model or if your dataset is small and context is domain specific, BoW may work better than Word Embedding. Context is very domain specific which means that you cannot find corresponding Vector from pre-trained word embedding models (GloVe, fastText etc).
+   Use it to build a baseline model or if your dataset is small and context is domain specific, BoW may work better than Word Embedding. Context is very domain specific which means that you cannot find corresponding Vector from pre-trained word embedding models (GloVe, fastText etc).
 
 Example: Doc1 = "I like to play football", Doc2 = "It is a good game", Doc3 = "I prefer football over rugby"
          vocabulary  = [I, like, to, play, football, it, is, a, good, game, prefer, over, rugby]
@@ -138,28 +136,46 @@ Example: Doc1 = "I like to play football", Doc2 = "It is a good game", Doc3 = "I
 
     How do you transform text to numbers? 
 
-    TF-IDF: a) CountVectorizer - count the word occurance. keyword or important signal will occur again and again.
+    TF-IDF: a) CountVectorizer = Bag of Words = count the word occurance. keyword or important signal will occur again and again.
               count_vec = CountVectorizer()
               count_occurs = count_vec.fit_transform([doc])
               countvectorizer.get_feature_names() => prints out the actual words
-            b) Normalized CountVectorizer = Tf id Vectorizer -  extremely high frequency may dominate the result and causing model bias. Normalization can be apply to pipeline easily.
+            b) TF(t) = (Number of times term t appears in a document) / (Total number of terms in the document) = Countvectorizer
+                     = Term Frequency, which measures how frequently a term occurs in a document = all terms are considered equally important. => 
+             - norm_count_vec = TfidfVectorizer(use_idf=False, norm='l2')  = Normalized CountVectorizer = Tf id Vectorizer -  extremely high frequency may dominate the result and causing model bias. Normalization can be apply to pipeline easily.
  
-              norm_count_vec = TfidfVectorizer(use_idf=False, norm='l2')
+    
+               problem: 1. In practice, certain terms, such as "is", "of", and "that", may appear a lot of times but have little importance.
+                        2. Also some common words that describe 2 different topics, such word "engine" may dominate two separate topics of "car" and "boat". So there's a need to weight down these words that occur in different sentences and weigh up words that don't occur much in 2 separate documents or topics. 
  
-            c) TF-IDF vectorizer - Term Frequency-Inverse Document Frequency  - low frequency contribute more weights to the model. Word importance will be increased if the number of occurrence within same document (i.e. training record). On the other hand, it will be decreased if it occurs in corpus or vocabulary (i.e. other training records).
+               => Thus we need to weigh down the frequent terms while scale up the rare ones, by computing the following:
+
+
+            c) TF + IDF(Inverse Document Frequency)
+             - IDF(t) = log_e(Total number of documents / Number of documents with term t in it).=  The idea behind the TF-IDF approach is that the words that occur less in all the documents and more in individual document contribute more towards classification.
+
+
+Example:
+
+Consider a document containing 100 words wherein the word cat appears 3 times. The term frequency (i.e., tf) for cat is then (3 / 100) = 0.03. Now, assume we have 10 million documents and the word cat appears in one thousand of these. Then, the inverse document frequency (i.e., idf) is calculated as log(10,000,000 / 1,000) = 4. Thus, the Tf-idf weight is the product of these quantities: 0.03 * 4 = 0.12.
+
+               
+             - norm_count_vec = TfidfVectorizer(use_idf=True, norm='l2')
+             
+TF-IDF vectorizer - Term Frequency-Inverse Document Frequency  - low frequency contribute more weights to the model. Word importance will be increased if the number of occurrence within same document (i.e. training record). On the other hand, it will be decreased if it occurs in corpus or vocabulary (i.e. other training records).
 
                tfidf_vec = TfidfVectorizer()
              
           options: 
           ngram_range=(1, 2) => unigrams bigrams => {'hi ': 0, 'bye': 1, 'run away': 2}
-          max_features = 2500, which means that it only uses the 2500 most frequently occurring words to create a bag of words feature vector.
-          max_df = specifies that only use those words that occur in a maximum of 80% of the documents. Words that occur in all documents are too common and are not very useful for classification. Similarly, => 'Duh'
-          min-df = is set to 7 which shows that include words that occur in at least 7 documents.
+                             unigram = ['I', 'He', 'She', ..]
+                             Bigrams = ['The quick', 'quick red', ...]
+                              Trigrams =  ['the quick red', 'quick red fox', 'red fox jumps' ..]
+                            => can be used for text prediction, topic modeling, ...
 
- The idea behind the TF-IDF approach is that the words that occur less in all the documents and more in individual document contribute more towards classification.
-TF-IDF is a combination of two terms. Term frequency and Inverse Document frequency. They can be calculated as:
-TF  = (Frequency of a word in the document)/(Total words in the document)
-IDF = Log((Total number of docs)/(Number of docs containing the word))=> to weed out words like I, he/she, the, ...
+          max_features = 2500, which means that it only uses the 2500 most frequently occurring words to create a bag of words feature vector.
+          max_df = 0.8 => include words that occur in a maximum of 80% of the documents. Words that occur in all documents are too common and are not very useful for classification. Similarly, => 'Duh'
+          min_df = 0.7 => include words that occur in at least 70% of the documents.
 
 
 # ref: 
@@ -168,14 +184,25 @@ https://towardsdatascience.com/3-basic-approaches-in-bag-of-words-which-are-bett
 
 
 2) Word embedding: more advanced than bag-of-word (BoW), Latent Dirichlet Allocation (LDA), Latent Semantic Analysis (LSA) => these can lead to high dimensional vector, sparse feature, while Word embedding leads to dense features in low dimensions. 
-  - uses pre-trained model.
+  - Can use pre-trained model.
   - have lots and lots of text data in the relevant domain. For example, if your goal is to build a sentiment lexicon, then using a dataset from the medical domain or even wikipedia may not be effective.
-   a) Gensim provide a amazing wrapper so that we can adopt different pre-trained word embedding models which including Word2Vec (by Google), GloVe (by Stanford), fastText (by Facebook).
-   
 
-word_embedding = WordEmbedding()
-word_embedding.load(source='word2vec', file_path=word2vec_file_path)# source can word2vec, glove, fastText
+  - Uses either Skipgram or Cbow
+    Skipgram:  predicts the surrounding context words given current word. => worls better with large corpus 
+    Cbow: predicts the current word based on the surrounding context.
+
+  
+   a) Gensim provide a amazing wrapper so that we can adopt different pre-trained word embedding models which includes Word2Vec (by Google), GloVe (by Stanford), fastText (by Facebook). => most_similiar, dissimilar, predict next word...
    
+Fasttext: # Skipgram model :
+          model = fasttext.train_unsupervised('data.txt', model='skipgram')
+          # or, cbow model :
+          model = fasttext.train_unsupervised('data.txt', model='cbow')
+
+word_embedding:
+   WordEmbedding().load(source='word2vec', file_path=word2vec_file_path)# source can word2vec, glove, fastText
+ 
+   word2vec.Word2Vec.load_word2vec_format('vectors.bin') => uses pretrained model  
    b) Visualization: 
   - We can visualize it by using PCA or T-distributed Stochastic Neighbor Embedding (t-SNE)
   word_embedding.build_visual_metadata(embedding=embedding, words=words, file_dir='./word_embedding')
@@ -184,22 +211,36 @@ Maximum model size of GloVe, Word2Vec and fasttext are ~5.5GB, ~3.5GB and ~8.2GB
 
 # ref: https://towardsdatascience.com/3-silver-bullets-of-word-embedding-in-nlp-10fa8f50cc5a
 
-II. Topic modeling: clustering in NLP-  group large volumes of unlabeled text data.
+II. Topic modeling: Unsupervised NLP = applies clustering in NLP =  groups large volumes of unlabeled text data.
+   => all of the below can be used to create features for other models, or try to gain insight from decompositions themselves.
+
 - Topic modeling is an unsupervised technique that intends to analyze large volumes of text data by clustering the documents into groups. In the case of topic modeling, the text data do not have any labels attached to it. Rather, topic modeling tries to group the documents into clusters based on similar characteristics.A typical example of topic modeling is clustering a large number of newspaper articles that belong to the same category. In other words, cluster documents that have the same topic. It is important to mention here that it is extremely difficult to evaluate the performance of topic modeling since there are no right answers. It depends upon the user to find similar characteristics between the documents of one cluster and assign it an appropriate label or topic.
     
     Assumption: 
     - each document consists of a mixture of topics, and
     - each topic consists of a collection of words.
-    A. LSA:
-LSI (also known as Latent Semantic Analysis, LSA) learns latent topics by performing a matrix decomposition (SVD) on the term-document matrix. LDA is a generative probabilistic model, that assumes a Dirichlet prior over the latent topics. In practice, LSI is much faster to train than LDA, but has lower accuracy
-    B. LDA: 
+    A. LSA: (aka sklearn.decomposition.TruncatedSVD)
+LSA (also known as Latent Semantic Analysis, LSA) learns latent topics by performing a matrix decomposition (TruncatedSVD or  PCA ) on the term-document matrix. LDA is a generative probabilistic model, that assumes a Dirichlet prior over the latent topics. In practice, LSI is much faster to train than LDA, but has lower accuracy. 
+
+- Good at identifying synonyms but not polysemy(break a leg vs broken leg)
+
+When we represent the words in the vector space, the cosine similarity (between 0 to 1)is used to find the similar words, topics, sentences as it is used in the search engine.  But vector representation of the text can be computationally expensive. That's where LSA comes in. 
+
+
+Latent Semantic Analysis is the process of applying PCA to a tf-idf term-document matrix to get clusters of terms that presumably reflect a topic.  Each document will get a score for each topic, with higher scores indicating that the document is relevant to the topic. Documents can pertain to more than one topic.
+
+LSA is used for a) corpus is too large
+                b) when you don't know what topics characterize your documents. 
+                c) To create features to be used in other models.
+
+    B. LDA: (aka sklearn.decomposition.LatentDirichletAllocation)
         Assumptions: 
-        1. Documents that have similar words usually have the same topic:  "economy", "profit", "the stock market", "loss"=> BUsiness Topiv
+        1. Documents that have similar words usually have the same topic:  "economy", "profit", "the stock market", "loss"=> BUsiness Topic
         2. Documents that have groups of words frequently occurring together usually have the same topic:  if these words frequently occur together in multiple documents, those documents may belong to the same category.
 
-    C. PLSA
+    C. pLSA = probabilistic LSA => will yield similar results to LDA but faster => may overfit
     D. lda2Vec - Deep learning based
-    E. NMF
+    E. NMF (aka decomposition.NMF) => much faster
  
 
    Example: 
@@ -207,7 +248,7 @@ LSI (also known as Latent Semantic Analysis, LSA) learns latent topics by perfor
    LDA - The data set contains user reviews for different products in the food category. We will use LDA to group the user reviews into 5 categories.
    import pandas as pd
    import numpy as np
-   from sklearn.decomposition import LatentDirichletAllocation
+   from sklearn.decomposition import LatentDirichletAllocation  (diriklet)
    from sklearn.feature_extraction.text import CountVectorizer
 
    reviews_datasets = pd.read_csv(r'E:\Datasets\Reviews.csv')
@@ -277,8 +318,28 @@ LSI (also known as Latent Semantic Analysis, LSA) learns latent topics by perfor
    reviews_datasets['Topic'] = topic_values.argmax(axis=1)
    reviews_datasets.head()
 
-III. Doc2vec
+III. Other topics:
+
+
+ Word2Vec(words) vs SensetoVec vs Sentence2Vec(sentences) vcs Doc2Vec (documents) => Gensim allows for all
+
+    A. Word2Vec - neural network approach. => better than LSA => can identify polysemy
+                - creates representations of individual words, based on the words around them. vs LSA (creates vector representations of sentences based on the words in them)
+                - understand the meaning of words better based on the context
+                - used for analogies ("king" is to "queen" as "man" is to "woman")
+                - used for logical expressions ("king" + "woman" - "man" = ?) 
+
+    B. Sense2vec = an upgrade to Word2vec => Word2vec + POS-(noun, verb, adjective, et)
+                   "give me a break" vs "break a leg"
+                    becomes: break_verb vs break_noun
+
+
 https://kanoki.org/2019/03/07/sentence-similarity-in-python-using-doc2vec/
 
 
 # reference: https://www.guru99.com/word-embedding-word2vec.html
+
+
+IV. Text summarization: Extractive vs. abstractive
+
+  or use TextRank algorithm that ranks texts based on similarity! it based on Google's PageRank algorithm. => if the text has a high rank, that means it has a lot of similarity with other texts, therefore can be used to summarize the entire corpus!
