@@ -1,0 +1,335 @@
+1. tf.data.Dataset.from_tensor_slices = works with 4 dimensional data => x_train = x_train[..., tf.newaxis]
+
+  a) add new axis: 
+    x_train = x_train[..., tf.newaxis]  => 4D
+
+  b) train_ds = tf.data.Dataset.from_tensor_slices( (x_train, y_train)).shuffle(10000).batch(32)
+  c) Access it by: 
+
+     for images, labels in train_ds:
+       print(images, labels)
+
+
+2. keras.utils.get_file() => for data from URL address
+   a) CSV: 
+            - tf.data.experimental.CsvDataset() => reads CSV file from GZIP, ZLIB compression
+                 vs.
+            - tf.data.experimental.make_csv_dataset => reads CSV file
+
+3. input:     keras.layers.Flatten(input_shape=(28, 28)) for pics
+             vs. 
+
+             layers.Dense(64, activation='relu', input_shape=[len(train_dataset.keys())]) => for CSV files => # of columns
+                                                                                          => for regression
+
+4. a) to inspect categorical feature: 
+
+    gender_column = feature_columns[0]
+    tf.keras.layers.DenseFeatures([tf.feature_column.indicator_column(gender_column)])(feature_batch).numpy()
+
+  b) to inspect numeric feature: 
+
+   age_column = feature_columns[7]
+   tf.keras.layers.DenseFeatures([age_column])(feature_batch).numpy()
+
+5. Handling Categorical features (handling of numeric columns are same): 
+  
+    CATEGORICAL_COLUMNS = ['sex', 'n_siblings_spouses', 'parch', 'class', 'deck', 'embark_town', 'alone']
+    NUMERIC_COLUMNS = ['age', 'fare']
+   a)
+    feature_columns = []
+      1)
+    for feature_name in CATEGORICAL_COLUMNS:
+      vocabulary = dftrain[feature_name].unique()
+#     feature_columns.append(tf.feature_column.categorical_column_with_vocabulary_list(feature_name, vocabulary))
+
+    for feature_name in NUMERIC_COLUMNS:
+      feature_columns.append(tf.feature_column.numeric_column(feature_name, dtype=tf.float32))
+
+
+
+      2) To improve performance, try crossed features:  Combining features into a single feature.
+   age_x_gender = tf.feature_column.crossed_column(['age', 'sex'], hash_bucket_size=100)
+
+   derived_feature_columns = [age_x_gender]
+   linear_est = tf.estimator.LinearClassifier(feature_columns=feature_columns+derived_feature_columns)
+
+
+   b) One - hot encode => SAME AS a)
+  def one_hot_cat_column(feature_name, vocab):
+    return tf.feature_column.indicator_column(tf.feature_column.categorical_column_with_vocabulary_list(feature_name, vocab))
+
+  feature_columns = []
+  for feature_name in CATEGORICAL_COLUMNS:
+    # Need to one-hot encode categorical features.
+    vocabulary = dftrain[feature_name].unique()
+    feature_columns.append(one_hot_cat_column(feature_name, vocabulary))
+  
+  c) As the number of categories grow large, it becomes infeasible to train a neural network using one-hot encodings  => I use labelencoder
+
+       (1) Emnbedded columns:
+
+       But with Tensorflow, use embedded columns: represents that data as a lower-dimensional, dense vector in which each cell can contain 
+       any number, not just 0 or 1. => you must tune the dimension(8 in this example)
+
+       Example:
+ 
+       thal = feature_column.categorical_column_with_vocabulary_list('thal', ['fixed', 'normal', ... ,'reversible'])
+       thal_embedding = feature_column.embedding_column(thal, dimension=8)   
+
+
+       (2) Hashed columns
+
+       - no need to provide vocabulary => different strings may be categorized as one => but in practice, it works very well!
+
+       thal_hashed = feature_column.categorical_column_with_hash_bucket( 'thal', hash_bucket_size=1000)
+       demo(feature_column.indicator_column(thal_hashed))
+
+   d) building model: 
+
+      feature_columns = []
+
+      # numeric cols
+      for header in ['age', 'trestbps', 'chol', 'thalach', 'oldpeak', 'slope', 'ca']:
+          feature_columns.append(feature_column.numeric_column(header))
+
+      # bucketized cols
+      age_buckets = feature_column.bucketized_column(age, boundaries=[18, 25, 30, 35, 40, 45, 50, 55, 60, 65])
+      feature_columns.append(age_buckets)
+
+      # 1-hot-encoded cols
+      thal = feature_column.categorical_column_with_vocabulary_list( 'thal', ['fixed', 'normal', 'reversible'])
+      thal_one_hot = feature_column.indicator_column(thal)
+      feature_columns.append(thal_one_hot)
+
+      # embedding cols
+      thal_embedding = feature_column.embedding_column(thal, dimension=8)
+      feature_columns.append(thal_embedding)
+
+     # crossed cols
+     crossed_feature = feature_column.crossed_column([age_buckets, thal], hash_bucket_size=1000)
+     crossed_feature = feature_column.indicator_column(crossed_feature)
+     feature_columns.append(crossed_feature)
+
+
+    feature_layer = tf.keras.layers.DenseFeatures(feature_columns)
+    train_ds = df_to_dataset(train, batch_size=batch_size)
+
+
+    model = tf.keras.Sequential([ feature_layer, layers.Dense(128, activation='relu'), layers.Dense(128, activation='relu'), layers.Dense
+              (1) ])
+
+    model.compile(optimizer='adam', loss=tf.keras.losses.BinaryCrossentropy(from_logits=True), metrics=['accuracy'])
+
+    model.fit(train_ds, validation_data=val_ds, epochs=5)
+
+6. Buckatizing:
+
+  train_ds = tf.data.Dataset.from_tensor_slices((dict(dataframe), labels))
+  #train_ds = df_to_dataset(train, batch_size=batch_size)
+  example_batch = next(iter(train_ds))[0]
+
+  age = feature_column.numeric_column("age") 
+  age_buckets = feature_column.bucketized_column(age, boundaries=[18, 25, 30, 35, 40, 45, 50, 55, 60, 65])
+
+  def demo(feature_column):
+    feature_layer = layers.DenseFeatures(feature_column)
+    print(feature_layer(example_batch).numpy())
+    
+  demo(age_buckets)
+
+6. estimators: 
+    First: a) convert pandas dataframe to a tf.data.Dataset 
+           b) use batching for a large dataset. 
+
+   def make_input_fn(data_df, label_df, num_epochs=10, shuffle=True, batch_size=32):
+     def input_function():
+       ds = tf.data.Dataset.from_tensor_slices((dict(data_df), label_df))
+       if shuffle:
+         ds = ds.shuffle(1000)
+       ds = ds.batch(batch_size).repeat(num_epochs)
+       return ds
+     return input_function
+
+   train_input_fn = make_input_fn(dftrain, y_train)
+   eval_input_fn = make_input_fn(dfeval, y_eval, num_epochs=1, shuffle=False)
+   a) Linear model:
+          linear_est = tf.estimator.LinearClassifier(feature_columns=feature_columns)
+          linear_est.train(train_input_fn)
+          result = linear_est.evaluate(eval_input_fn)
+          clear_output()
+          print(result) # print(pd.Series(result))
+    b) Gradient boosting: 
+          est = tf.estimator.BoostedTreesClassifier(feature_columns, n_batches_per_layer=n_batches)
+          est.train(train_input_fn, max_steps=100)
+
+          result = est.evaluate(eval_input_fn)
+          clear_output()
+          print(pd.Series(result))
+
+ 
+
+
+    pred_dicts = list(est.predict(eval_input_fn)) 
+    probs = pd.Series([pred['probabilities'][1] for pred in pred_dicts])
+    y_eval = df_eval.pop('survived')# test set of dataframe
+
+    from sklearn.metrics import roc_curve
+
+    fpr, tpr, _ = roc_curve(y_eval, probs)
+
+    c) Keras estimators: You build layers
+
+    model = tf.keras.models.Sequential([ tf.keras.layers.Dense(16, activation='relu', input_shape=(4,)), tf.keras.layers.Dropout(0.2), 
+                                       tf.keras.layers.Dense(3) ])
+    model.compile(loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True), optimizer='adam')
+    model.summary()
+
+    d) convert keras estimator to tf.data.dataset() => its better for a large dataset
+   
+    import tempfile
+    model_dir = tempfile.mkdtemp()
+    keras_estimator = tf.keras.estimator.model_to_estimator( keras_model=model, model_dir=model_dir)
+    keras_estimator.train(input_fn=input_fn, steps=500)
+    eval_result = keras_estimator.evaluate(input_fn=input_fn, steps=10)
+    print('Eval result: {}'.format(eval_result))
+
+7. feature importance for Gradient boosting: 
+Gain-based feature importances measure the loss change when splitting on a particular feature, while permutation feature importances are computed by evaluating model performance on the evaluation set by shuffling each feature one-by-one and attributing the change in model performance to the shuffled feature.
+   a) gain based:
+
+   importances = est.experimental_feature_importances(normalize=True)
+   df_imp = pd.Series(importances)
+
+
+   b) permutation based is preffered: => thinks the order of data might be affecting the selection process. 
+                   => shuffle 1 column and run accuracy on it. And compare it against the original pre-shuffle accuracy score.
+                      The more the metric falls, the more dependent the target is on that variable!
+
+
+8.                                 tf.data.Dataset.from_tensors([1, 2, 3])  vs  tf.data.Dataset.from_tensor_slices([1, 2, 3]) 
+list(dataset.as_numpy_iterator()) :               array([1, 2, 3])                       [1, 2, 3]
+ 
+
+
+9.                              output_shape    input_shape
+  layer = tf.keras.layers.Dense(10,             input_shape=(None, 5))
+
+
+10. CNN vs GradientTape() => both works. 
+
+
+11. numpy newaxis is used to increase the dimension of the existing array by one more dimension, when used once. Thus,
+
+    1D array will become 2D array, 2D array will become 3D array, ...
+
+12. When you work with pre-trained models(transfer learnig), the final, classification part of the pretrained model is specific to the original classification task, and subsequently specific to the set of classes on which the model was trained.
+
+ So go include_top=False on base_model = tf.keras.applications.MobileNetV2(input_shape=IMG_SHAPE, include_top=False, weights='imagenet')
+
+13. With pre-trained models: base_model.trainable = False => will not update weights, biases => lower accuracy
+
+                             base_model.trainable = True => will update => better result. 
+
+  - Fine tune from layer 100 and onwards:
+   
+    fine_tune_at = 100
+
+    # Freeze all the layers before the `fine_tune_at` layer
+    for layer in base_model.layers[:fine_tune_at]:
+       layer.trainable =  False 
+
+14. Augment training set not the test set!
+
+15. Buffer_SIZE : 
+   a) The buffer_size in Dataset.shuffle() can affect the randomness of your dataset VS. 
+    b) The buffer_size in Dataset.prefetch() only affects the time it takes to produce the next element.
+
+16. losses.SparseCategoricalCrossentropy(from_logits=True) => for multi - class labels
+
+
+17.   ds = tf.data.Dataset.from_tensor_slices((dict(df), df.target)) = tf.data.Dataset.from_tensor_slices((df.values, target.values))
+
+18. iter() and next() methods
+
+    mylist = iter(["apple", "banana", "cherry"])
+    x = next(mylist)
+    print(x)# aaple
+    x = next(mylist)
+    print(x)# banana
+    x = next(mylist)
+    print(x)# cherry
+
+19. Correct initial bias: 
+     # np.bincount(np.array([0, 1, 1, 3, 2, 1, 7]))
+     # array([1, 3, 1, 1, 0, 0, 0, 1])
+     neg, pos = np.bincount(raw_df['Class'])
+
+    - initial_bias = np.log([pos/neg])
+
+      keras.layers.Dense(1, activation='sigmoid', bias_initializer=output_bias)# final output
+
+
+20. Heavy unbalanced data:
+    # Fraudulent data example: => pay more attention to Frauds(1)
+
+    weight_for_0 = (1 / neg)*(total)/2.0 
+    weight_for_1 = (1 / pos)*(total)/2.0
+    class_weight = {0: weight_for_0, 1: weight_for_1}
+
+    weighted_model = make_model()
+    weighted_model.load_weights(initial_weights)
+
+    # Pay attn to class_weight
+    weighted_history = weighted_model.fit( train_features, train_labels, batch_size=BATCH_SIZE, epochs=EPOCHS, callbacks = 
+                                          [early_stopping], validation_data=(val_features, val_labels), class_weight=class_weight) 
+
+
+
+21. Merging 2 dataframes: 
+
+    resampled_ds = tf.data.experimental.sample_from_datasets([pos_ds, neg_ds], weights=[0.5, 0.5])
+
+22. If the data is balanced, the bias should be zero!
+ 
+    ds = tf.data.Dataset.from_tensor_slices((features, labels))#.cache()
+    ds = ds.shuffle(BUFFER_SIZE).repeat()
+    output_layer = ds.layers[-1] 
+    output_layer.bias.assign([0])
+
+
+23. data normalization:
+
+ tf.keras.utils.normalize( x, axis=-1, order=2)
+
+24. Time Series = input shape =>LSTM requires the input shape of the data it is being given.
+
+   simple_lstm_model = tf.keras.models.Sequential([ tf.keras.layers.LSTM(8, input_shape=x_train_uni.shape[-2:]), tf.keras.layers.Dense(1) 
+                       ])
+   simple_lstm_model.compile(optimizer='adam', loss='mae')
+
+
+25. Callbacks: 
+    a) TensorBoard: This callback writes a log for TensorBoard which allows you to visualize the graphs.
+    b) Model Checkpoint: This callback saves the model after every epoch.
+    c) Learning Rate Scheduler: Using this callback, you can schedule the learning rate to change after every epoch/batch.
+
+    callbacks = [
+    tf.keras.callbacks.TensorBoard(log_dir='./logs'),
+    tf.keras.callbacks.ModelCheckpoint(filepath=checkpoint_prefix, save_weights_only=True),
+    tf.keras.callbacks.LearningRateScheduler(decay),
+    PrintLR()   ]
+
+26. Distributed training: 
+     strategy = tf.distribute.MirroredStrategy()
+     with strategy.scope():
+       model = tf.keras.Sequential([
+       tf.keras.layers.Conv2D(32, 3, activation='relu', input_shape=(28, 28, 1)),
+       ...
+       tf.keras.layers.Dense(10) ])
+
+        model.compile(loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
+                optimizer=tf.keras.optimizers.Adam(),
+                metrics=['accuracy'])
+
+

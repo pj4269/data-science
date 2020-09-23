@@ -1,0 +1,12 @@
+null hypothsis: when comparing 2 things: there's no difference. H0: old drug and the new drug has no difference. 
+                when trying figure out 1 variable, then it. H0: there's normal distribution
+
+P-value = difference is due to random chance within the probability 0 to 1. => if p< Alpha => significant
+
+shapiro wilkins test(for small dataset): test of normality: 
+
+other tests of normality: 
+ a ) Skew is a quantification of how much a distribution is pushed left or right, a measure of asymmetry in the distribution.
+ b) Kurtosis quantifies how much of the distribution is in the tail. It is a simple and commonly used statistical test for normality
+ c) The D’Agostino’s K2 test => does both Skewness and Kurtosis
+ d)  Anderson-Darling Test 

@@ -183,13 +183,12 @@ loss = 'sparse_categorical_crossentropy'           vs  loss='binary_crossentropy
                 
 'sparse_categorical_crossentropy' => can used for multiclassification labels
 
-- categorical_crossentropy vs sparse_categorical_crossentropy
-   - If your targets are one-hot encoded, use categorical_crossentropy.
+ - If your targets are one-hot encoded, use categorical_crossentropy.
           Examples:
           [1,0,0]
           [0,1,0]
           [0,0,1]
-   - if your targets are integers, use sparse_categorical_crossentropy.
+- But if your targets are integers, use sparse_categorical_crossentropy.
           Examples:
           1
           2

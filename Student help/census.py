@@ -1,0 +1,24 @@
+import pandas as pd
+census_population = pd.read_csv('https://tf-assets-prod.s3.amazonaws.com/tf-curric/data-science/state-populations.csv')
+census_regions = pd.read_csv('https://tf-assets-prod.s3.amazonaws.com/tf-curric/data-science/census-divisions.csv')
+#print(census_population.columns)
+#print(census_regions.columns)
+# 1. Merge these two DataFrames into a single DataFrame called census
+census = pd.merge(census_population, census_regions)
+#print(census.columns)
+#census.head(10)
+# 2.  Re-shape census so that one column contains all population measures, and another the year attributes.
+#census_pivot = census.pivot(index = '', columns = 'state', values = 'year')
+#one = census.groupby(['2010', '2011', '2012', '2013', '2014', '2015', '2016']) 
+#print (one.head())
+print (census.head()), census.info()
+
+#df=(pd.melt(df,id_vars='Country',value_name='Var1', var_name='year'))
+
+#  state      2010      2011      2012      2013      2014      2015      2016 region            division
+
+print census.melt(id_vars=['state','region', 'division'],var_name='Year')
+#    .set_index(['Country','Year','Variable'])
+#    .squeeze()
+#    .unstack()
+#    .reset_index())

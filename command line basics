@@ -1,0 +1,15 @@
+
+    cd: change directory, used to move from one directory (a.k.a., folder) to another
+    pwd: print working directory, used to print the name of the folder you're currently in
+    ls: list, used to list the contents of a directory
+    mkdir: make directory, used to create a new directory
+    touch: used to create a new (empty) file with a given name
+    rm -i: remove, used to remove a file (or folder) and -i tells you what you are about to do
+    rmdir: remove directory, used to remove a directory
+    mv: move, used to move a file or directory: mv old_name.txt new_name.txt
+    cp: copy, used to copy a file or directory:  cp a.txt b.txt   => a is copied to b
+
+snapshots = commits
+
+Branches = creates different, diverging versions of a code repository.
+

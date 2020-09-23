@@ -36,6 +36,7 @@ thinkful=# \dt
 thinkful=# CREATE TABLE leads (id INTEGER PRIMARY KEY, name VARCHAR);
 
 6. To quit and exit:
+to exit: press "q"
 postgres=# \q
 postgres=# exit
 
@@ -81,4 +82,23 @@ postgres=# \du
 
 11. To create a username:
 CREATE USER yourname WITH SUPERUSER PASSWORD 'yourpassword';
+
+
+12. ALL case sensitive. 
+
+
+
+
+
+commands: 
+1. \d table = describe table
+2. \timing = query execution time
+3. \q = quit
+
+4. change col type: ALTER TABLE test2 ALTER COLUMN dimension TYPE VARCHAR;
+
+5. Rename the table: ALTER TABLE IF EXISTS test2 RENAME TO fund;
+6. load csv file: 
+COPY fund ( ticker ,   dimension  , 	  calendar ,  	key , 	  reportperiod , 	  lastupd ,  	accoci	,   assets	,   assetsavg     , 	  assetsc	,   assetsnc	,   assetturnover     ,   bvps     ,  	capex	,   cashneq	,   cashnequsd     ,  	cor	,   consolinc     ,  	currentratio     ,  	de	,   debt	,   debtc	,   debtnc	,   debtusd	,   deferredrev 	,   depamor	,  deposits	, divyield	,  dps      , 	ebit	,  ebitda     , 	ebitdamargin     , 	ebitdausd	,  ebitusd	,  ebt	,  eps	,  epsdil 	,  epsusd     , 	equity ,  equityavg	,  equityusd	,  ev	, evebit   , 	evebitda 	,  fcf	,  fcfps     , 	fxusd     , 	gp     , 	grossmargin     , 	intangibles 	,  intexp	,  invcap 	,  invcapavg 	,  inventory	,  investments     , 	investmentsc     , 	investmentsnc	, liabilities     ,liabilitiesc     , liabilitiesnc	, marketcap   , ncf	, ncfbus     ,ncfcommon	    ,ncfdebt     ,	ncfdiv     ,	ncff     ,	ncfi     ,	ncfinv	,ncfo	,ncfx     ,netinc     ,	netinccmn     ,	netinccmnusd     ,	netincdis     ,	netincnci 	,netmargin 	,opex     ,	opinc 	,payables 	,payoutratio	,pb	,pe     ,	pe1	    ,ppnenet     ,	prefdivis 	,price 	,ps 	,ps1 	,receivables 	,retearn     ,	revenue 	,revenueusd	,rnd     ,	roa	,roe     ,	roic     ,	ros	    ,sbcomp     ,	sgna     ,	sharefactor     ,	sharesbas 	,shareswa	,shareswadil	    ,sps	    ,tangibles	    ,taxassets	    ,taxexp	    ,taxliabilities	    ,tbvps	    ,workingcapital      )FROM '/home/micah/Desktop/new_sharadar/test.csv' DELIMITER ',' CSV HEADER;
+7. to empty table: truncate events;
 

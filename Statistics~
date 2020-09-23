@@ -87,6 +87,6 @@ H_0 = No difference.  High t value => there's a difference! => "The t-value scal
 Rule 1: Null hypothesis always includes the equal sign
 Rule 2: For differences in groups do the 1) ANOVA one way first 2) T tests or Tuckey's HSD =>  prevent false positive results, or Type I errors.
 
-Rule 3: paired T test  => When we compare dependent variable to a dep. variable use: => person A smoking vs non-smkoing period, website color white vs color black => difference in time points. 
+Rule 3: When we compare dependent variable to a dep. variable use: paired T test => person A smoking vs non-smkoing period, website color white vs color black
         For independent groups, use t-test
 

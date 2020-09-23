@@ -1,0 +1,71 @@
+import numpy as np
+import pandas as pd
+import scipy
+from datetime import datetime
+import datetime as dt
+import matplotlib.pyplot as plt
+#from sklearn import linear_model 
+from sklearn.linear_model import LinearRegression
+
+# Create a data frame.
+learning_progress = pd.DataFrame()
+
+# Add a range of 100 dates starting Jan 1, 2017.
+learning_progress['date'] = pd.date_range(start='2017-01-01', periods=100)
+
+# Add linearly increasing knowledge and oscillating confidence.
+learning_progress['knowledge'] = np.arange(0, 100)
+learning_progress['confidence'] = 10 * np.cos(np.arange(0, 100) * np.pi / 7) + np.arange(0, 100)
+
+plt.scatter(learning_progress.knowledge, learning_progress.confidence)
+plt.title('Scatter Plot')
+plt.show()
+
+
+lm = LinearRegression()
+
+# A. Trend ( slope )
+
+# Note that for sklearn we must convert our data to numeric.
+X = pd.DataFrame(pd.to_numeric(learning_progress['date']))# datetime to numeric => will give seconds till 1970
+Y = learning_progress['confidence']
+lm.fit(X, Y)
+lm.score(X, Y)
+print X.head()
+print Y.head()
+print lm.coef_[0] # 1.163532736462698e-14
+print lm.coef_[0] * 1000000000 * 24 * 60 * 60 # 1.005292284303771
+
+# B. Seasonality 
+   # 1)  Indicator
+
+plt.plot(learning_progress.date, learning_progress.confidence)
+plt.xticks(rotation=60) # for text on X axis
+plt.title('Time Series Linear Plots')
+plt.show()
+
+print learning_progress.head()
+learning_progress['day_of_week'] = learning_progress.date.apply(lambda x: str(dt.datetime.weekday(x)))
+print learning_progress.head()
+
+X = pd.get_dummies(learning_progress.day_of_week)
+print X.head()
+#   0  1  2  3  4  5  6
+#0  0  0  0  0  0  0  1
+#1  1  0  0  0  0  0  0
+#2  0  1  0  0  0  0  0
+#3  0  0  1  0  0  0  0
+#4  0  0  0  1  0  0  0
+
+X['date'] = pd.to_numeric(learning_progress.date) / (1000000000 * 24 * 60 * 60)
+print X.head()
+#   0  1  2  3  4  5  6     date
+#0  0  0  0  0  0  0  1  17167.0
+#1  1  0  0  0  0  0  0  17168.0
+#2  0  1  0  0  0  0  0  17169.0
+#3  0  0  1  0  0  0  0  17170.0
+#4  0  0  0  1  0  0  0  17171.0
+
+Y = learning_progress['confidence']
+lm.fit(X, Y)
+lm.score(X, Y)

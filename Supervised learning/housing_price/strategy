@@ -1,0 +1,22 @@
+
+10 - 11.40?
+
+A) train
+1. train: sales_price = y => separate it = target
+2. y, cat, num => visualize it
+            => outliers => cut or replace it or make models robust => dealing with them 1-1 by is boring
+                                                                   => test set with outliers =>  
+            => distribution => normalize it
+            => missing values => fillna()
+            => cat vs numeric typecd 
+3. cat => to numeric => one-hot-encoder or label_encoder
+4. test it
+
+
+  - drop id
+  - outliers: how? 
+          - numeric columns
+
+
+B) test
+2. test : sales_price = y => predixc

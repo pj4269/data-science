@@ -1,0 +1,11 @@
+
+
+Concerns of time
+
+Time is not a variable like every other. It has specific concerns. Before we talk about how to model those concerns, we should identify what they are. This will directly affect how we model them.
+
+Trends are probably the most common concern with time. Things change over time, and a trend is a way to quantify how that change is occurring. Sometimes that trend will be linear, other times it may have a different functional form. The key is the data is moving in a direction as time passes, and understanding the direction and speed of that change can fundamentally affect a business.
+
+Seasonality is another concept we've encountered before. This is the idea that there is a repeating pattern over some period of time. Ice cream sales are higher in summer than in winter. Retail sales might be stronger on the weekends, or people might tend to miss morning appointments. Seasonality concerns arise whenever you have a repeating pattern over a set, consistent period of time, whether that time period is a season, a week a day, an hour.
+
+Events are the final type of concern we'll talk about. Events are a moment in time where everything changes. It can be a phase shift, a shock, or a total change of directions. What it means practically is that what comes before is not the same as what comes after. How that change manifests depends on the data, but the inclusion of time allows us to find events and adjust accordingly.

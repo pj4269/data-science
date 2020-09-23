@@ -13,18 +13,6 @@ activation function:
 2) hyperbolic tangent: -1, 1: y=tahn(N)
 3) RELU: rectified linear units: y = Sigma(wN) => if y < 0 then 0, else y = y => it gives you the number that you out into activation function!
 
-activation func: It’s just a thing function that you use to get the output of node.
-  - linear vs non-linear: sigmoid (logistc regression, s shape)  =>softmax function is a more generalized logistic activation function which is used for multiclass classification.
-                        :tanh (better than sigmoid) and logistic sigmoid activation functions are used in feed-forward nets
-                        :ReLU (Rectified Linear Unit) : most used:  convolutional neural networks or deep learning.
-
-
-
-
-
-
-feedforward vs recurrent(feedback): forward => from input to output
-
 
 
 

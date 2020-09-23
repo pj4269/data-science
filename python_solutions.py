@@ -321,10 +321,54 @@ def color_probability(col, bum):
       return ''
    else: 
       return ''
+'''
+def color_probability(color, texture):
+
+  if texture == 'bumpy':
+    if color == 'red':
+      return red_bumpy/all_bumpy
+    elif color == 'yellow':
+      return yellow_bumpy/all_bumpy
+    elif color == 'green':
+      return green_bumpy/all_bumpy
+  elif texture == 'smooth':
+    if color == 'red':
+      return red_smooth/all_smooth
+    elif color == 'yellow':
+      return yellow_smooth/all_smooth
+    elif color == 'green':
+      return green_smooth/all_smooth
+'''
 
 #print color_probability('red', 'bumpy')
 
 
+
+def take_umbrella(weather, rain_chance):
+
+  umbrella_yes=(weather=="rainy") or (weather=="cloudy" and rain_chance >0.2) 
+  
+  return umbrella_yes
+take_umbrella("sunny",0.4)
+
+
+def function(argument):
+  
+    switch(argument) {
+        case 0:
+            return "This is Case Zero";
+        case 1:
+            return " This is Case One";
+        case 2:
+            return " This is Case Two ";
+        default:
+            return "nothing";
+    };
+
+
+print function(0)
+
+'''
 # take_umbrella('sunny', 0.40) should return False.
 def take_umbrella(w, num=0.1):
    if w == 'rainy' or num>=0.4:
@@ -335,6 +379,20 @@ def take_umbrella(w, num=0.1):
       return False
 
 
+def add_to_x (x):
+    if x == 3:
+        x += 2
+    elif x == 4:
+        x += 4
+    elif x == 5:
+        x += 5
+    return x
+Here's my alternative:
+
+def add_to_x (x):
+    vals = { 'rainy' : True  ,  'sunny' : True  ,  'else' : False }
+    return vals[x]
+'''
 
 #print take_umb('sunny', 0.3)
 # box_capacity(32, 64, 16) should return 13824.
